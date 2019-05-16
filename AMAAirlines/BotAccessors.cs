@@ -40,7 +40,6 @@ namespace BotPepe
 
         /// <summary>Gets or sets the state property accessor for the user information we're tracking.</summary>
         /// <value>Accessor for user information.</value>
-        public IStatePropertyAccessor<CustomerInfo> CustomerInfoAccessor { get; set; }
 
         /// <summary>Gets or sets the state property accessor for the dialog state.</summary>
         /// <value>Accessor for the dialog state.</value>

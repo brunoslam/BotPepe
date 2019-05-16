@@ -201,8 +201,8 @@ namespace BotPepe
                 dc = await _dialogs.CreateContextAsync(turnContext, cancellationToken);
 
                 // Get the state properties from the turn context.
-                CustomerInfo userProfile =
-                    await _accessors.CustomerInfoAccessor.GetAsync(turnContext, () => new CustomerInfo());
+                Usuario userProfile =
+                    await _accessors.UserProfile.GetAsync(turnContext, () => new Usuario());
 
                 // Continue any current dialog.
                 DialogTurnResult dialogTurnResult = await dc.ContinueDialogAsync();
