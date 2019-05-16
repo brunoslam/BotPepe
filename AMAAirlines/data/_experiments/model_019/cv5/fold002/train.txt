@@ -1,0 +1,38 @@
+Label	Weight	Text
+l_Office365Luis	1.454545	ver ultimos correos
+l_Office365Luis	1.454545	leer ultimos correos
+l_Office365Luis	1.454545	ver mi foto de perfil
+l_Office365Luis	1.454545	crear item de lista
+l_Office365Luis	1.454545	ver proximas reuniones
+l_Office365Luis	1.454545	ver ultimos correos
+l_Office365Luis	1.454545	leer ultimos correos
+l_Office365Luis	1.454545	ver ultimos correos
+l_Office365Luis	1.454545	leer ultimos correos
+l_Office365Luis	1.454545	ver ultimos correos
+l_Office365Luis	1.454545	leer ultimos correos
+None	1.6	enviar correo
+None	1.6	eliminar grupo de sharepoint
+None	1.6	eliminar documento de biblioteca
+None	1.6	leer correo
+None	1.6	eliminar sitio de sharepoint
+None	1.6	leer items de lista
+None	1.6	enviar documento por correo
+None	1.6	leer proximas reuniones
+None	1.6	eliminar item de lista
+None	1.6	enviar foto por correo
+q_AMAQnA	1	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	1	Crear una lista en SharePoint Server 2010
+q_AMAQnA	1	Crear una lista en SharePoint Server 2016 o SharePoint Server 2013
+q_AMAQnA	1	Agregar una lista a una página en SharePoint Server 2016 o SharePoint Server 2013
+q_AMAQnA	1	Is the QnA Maker Service free
+q_AMAQnA	1	How large a knowledge base can I create
+q_AMAQnA	1	¿Quiere hacer lo mismo con las bibliotecas
+q_AMAQnA	1	How do I log in to the QnA Maker Portal
+q_AMAQnA	1	Who is the target audience for the QnA Maker tool
+q_AMAQnA	1	Minimizar o restaurar una lista o biblioteca en una página de SharePoint Server 2016 o SharePoint Server 2013
+q_AMAQnA	1	Crear una lista en una página de SharePoint Server 2010
+q_AMAQnA	1	Crear listas a partir de otros tipos de plantillas de lista
+q_AMAQnA	1	Crear una lista a partir de una plantilla de lista en SharePoint Server 2007
+q_AMAQnA	1	How do I embed the QnA Maker service on my website
+q_AMAQnA	1	Agregar una lista a una página en SharePoint Server 2010
+q_AMAQnA	1	What format does the tool expect the file content to be

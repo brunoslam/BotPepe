@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "AMAAirlines": {
+    "BotPepe": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

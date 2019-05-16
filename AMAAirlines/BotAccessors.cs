@@ -2,23 +2,23 @@
 // Licensed under the MIT License.
 
 using System;
-using AMAAirlines.Models;
+using BotPepe.Models;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 
-namespace AMAAirlines
+namespace BotPepe
 {
     /// <summary>
     /// This class is created as a Singleton and passed into the IBot-derived constructor.
-    ///  - See <see cref="AMABot"/> constructor for how that is injected.
+    ///  - See <see cref="BotPepe"/> constructor for how that is injected.
     ///  - See the Startup.cs file for more details on creating the Singleton that gets
     ///    injected into the constructor.
     /// </summary>
     public class BotAccessors
     {
         // The property accessor keys to use.
-        public const string CustomerInfoAccessorName = "AMAAirlines.CustomerInfo";
-        public const string DialogStateAccessorName = "AMAAirlines.DialogState";
+        public const string CustomerInfoAccessorName = "BotPepe.CustomerInfo";
+        public const string DialogStateAccessorName = "BotPepe.DialogState";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BotAccessors"/> class.

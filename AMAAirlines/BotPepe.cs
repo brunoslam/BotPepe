@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
-using AMAAirlines.Dialogs;
-using AMAAirlines.Models;
+using BotPepe.Dialogs;
+using BotPepe.Models;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Dialogs.Choices;
@@ -17,9 +17,9 @@ using Microsoft.Bot.Connector.Teams;
 using Microsoft.Bot.Connector.Authentication;
 using Microsoft.Bot.Schema.Teams;
 using Microsoft.Extensions.Logging;
-using AMAAirlines.Controller;
+using BotPepe.Controller;
 
-namespace AMAAirlines
+namespace BotPepe
 {
     /// <summary>
     /// Represents a bot that processes incoming activities.
@@ -32,7 +32,7 @@ namespace AMAAirlines
     /// <see cref="IStatePropertyAccessor{T}"/> object are created with a singleton lifetime.
     /// </summary>
     /// <seealso cref="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1"/>
-    public class AMABot : IBot
+    public class BotPepe : IBot
     {
 
         private const string FAQDialogID = "faqDialog";
@@ -57,32 +57,32 @@ namespace AMAAirlines
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AMABot"/> class.
+        /// Initializes a new instance of the <see cref="BotPepe"/> class.
         /// </summary>
         /// <param name="accessors">A class containing <see cref="IStatePropertyAccessor{T}"/> used to manage state.</param>
         /// <param name="loggerFactory">A <see cref="ILoggerFactory"/> that is hooked to the Azure App Service provider.</param>
         /// <seealso cref="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#windows-eventlog-provider"/>
-        public AMABot(BotServices services, BotAccessors accessors, ILoggerFactory loggerFactory)
+        public BotPepe(BotServices services, BotAccessors accessors, ILoggerFactory loggerFactory)
         {
             if (loggerFactory == null)
             {
                 throw new System.ArgumentNullException(nameof(loggerFactory));
             }
 
-            _logger = loggerFactory.CreateLogger<AMABot>();
+            _logger = loggerFactory.CreateLogger<BotPepe>();
             _logger.LogTrace("EchoBot turn start.");
             _accessors = accessors ?? throw new System.ArgumentNullException(nameof(accessors));
 
             botServices = services ?? throw new System.ArgumentNullException(nameof(services));
 
-            if (!botServices.QnAServices.ContainsKey("AMAQnA"))
+            if (!botServices.QnAServices.ContainsKey("PepeQnA"))
             {
-                throw new System.ArgumentException($"Invalid configuration. Please check your '.bot' file for a QnA service named AMAQnA'. holamundo " + botServices.QnAServices);
+                throw new System.ArgumentException($"Invalid configuration. Please check your '.bot' file for a QnA service named PepeQnA'. holamundo " + botServices.QnAServices);
             }
 
-            if (!botServices.LuisServices.ContainsKey("AMALuis"))
+            if (!botServices.LuisServices.ContainsKey("PepeLuis"))
             {
-                throw new System.ArgumentException($"Invalid configuration. Please check your '.bot' file for a Luis service named AMALuis'.");
+                throw new System.ArgumentException($"Invalid configuration. Please check your '.bot' file for a Luis service named PepeLuis'.");
             }
 
             // Defining dialogs
@@ -446,7 +446,7 @@ namespace AMAAirlines
         {
             const string luisO365DispatchKey = "l_Office365Luis";
             const string noneDispatchKey = "None";
-            const string qnaDispatchKey = "q_AMAQnA";
+            const string qnaDispatchKey = "q_PepeQnA";
 
             //var dc = await _dialogs.CreateContextAsync(context, cancellationToken);
 
@@ -474,7 +474,7 @@ namespace AMAAirlines
                     // You can provide logic here to handle the known None intent (none of the above).
                     // In this example we fall through to the QnA intent.
                     case qnaDispatchKey:
-                        await DispatchToQnAMakerAsync(context, "AMAQnA", dc);
+                        await DispatchToQnAMakerAsync(context, "PepeQnA", dc);
                         break;
                     case luisO365DispatchKey:
                         await DispatchToLuisO365ModelAsync(context, "Office365Luis", dc);

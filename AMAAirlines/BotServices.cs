@@ -6,7 +6,7 @@ using Microsoft.Bot.Builder.AI.QnA;
 using System;
 using System.Collections.Generic;
 
-namespace AMAAirlines
+namespace BotPepe
 {
     /// <summary>
     /// Stores counter state for the conversation.

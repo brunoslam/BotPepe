@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using AMAAirlines.Models;
+using BotPepe.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Bot.Builder;
@@ -21,7 +21,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace AMAAirlines
+namespace BotPepe
 {
     /// <summary>
     /// The Startup class configures services and the request pipeline.
@@ -98,13 +98,13 @@ namespace AMAAirlines
 
             services.AddSingleton(sp => connectedServices);
 
-            services.AddBot<AMABot>(options =>
+            services.AddBot<BotPepe>(options =>
             {
 
                 options.CredentialProvider = new SimpleCredentialProvider(endpointService.AppId, endpointService.AppPassword);
 
                 // Creates a logger for the application to use.
-                ILogger logger = _loggerFactory.CreateLogger<AMABot>();
+                ILogger logger = _loggerFactory.CreateLogger<BotPepe>();
 
                 // Catches any errors that occur during a conversation turn and logs them.
                 options.OnTurnError = async (context, exception) =>

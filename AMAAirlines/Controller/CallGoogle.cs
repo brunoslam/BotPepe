@@ -12,10 +12,10 @@ using Google.Apis.Customsearch.v1.Data;
 using Microsoft.Graph;
 using Newtonsoft.Json;
 using System.Net;
-using AMAAirlines.Models;
+using BotPepe.Models;
 using Newtonsoft.Json.Linq;
 
-namespace AMAAirlines.Controller
+namespace BotPepe.Controller
 {
     public class CallGoogle
     {

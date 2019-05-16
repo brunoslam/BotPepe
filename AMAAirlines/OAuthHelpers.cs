@@ -5,13 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AMAAirlines.Controller;
+using BotPepe.Controller;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
 using Attachment = Microsoft.Bot.Schema.Attachment;
 
-namespace AMAAirlines
+namespace BotPepe
 {
     // This class calls the Microsoft Graph API. The following OAuth scopes are used:
     // 'OpenId' 'email' 'Mail.Send.Shared' 'Mail.Read' 'profile' 'User.Read' 'User.ReadBasic.All'

@@ -20,7 +20,7 @@
       "hostname": "https://qnabotpepe.azurewebsites.net/qnamaker",
       "endpointKey": "c2d41ccb-06d9-44d1-8f46-586482594d69",
       "type": "qna",
-      "name": "AMAQnA",
+      "name": "PepeQnA",
       "id": "123"
     }
   ],

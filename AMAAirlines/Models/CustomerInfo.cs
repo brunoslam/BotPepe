@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AMAAirlines.Models
+namespace BotPepe.Models
 {
     public class CustomerInfo
     {

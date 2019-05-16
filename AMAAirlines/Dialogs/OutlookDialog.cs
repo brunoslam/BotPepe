@@ -1,5 +1,5 @@
-﻿using AMAAirlines.Controller;
-using AMAAirlines.Models;
+﻿using BotPepe.Controller;
+using BotPepe.Models;
 using Google.Apis.Customsearch.v1.Data;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AMAAirlines.Dialogs
+namespace BotPepe.Dialogs
 {
     public class OutlookDialog : ComponentDialog
     {

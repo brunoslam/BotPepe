@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 
 
-namespace AMAAirlines.Controller
+namespace BotPepe.Controller
 {
     // This class is a wrapper for the Microsoft Graph API
     // See: https://developer.microsoft.com/en-us/graph

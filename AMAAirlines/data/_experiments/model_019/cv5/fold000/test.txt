@@ -1,0 +1,33 @@
+Label	Weight	Text
+l_Office365Luis	1.7	ver ultimos correos
+l_Office365Luis	1.7	ver ultimos correos
+l_Office365Luis	1.7	ver ultimos correos
+l_Office365Luis	1.7	ver ultimos correos
+l_Office365Luis	1.7	ver ultimos correos
+l_Office365Luis	1.7	ver ultimos correos
+l_Office365Luis	1.7	ver ultimos correos
+l_Office365Luis	1.7	ver ultimos correos
+l_Office365Luis	1.7	ver ultimos correos
+l_Office365Luis	1.7	ver ultimos correos
+None	1.7	enviar correo
+None	1.7	eliminar grupo de sharepoint
+None	1.7	enviar correo
+None	1.7	eliminar grupo de sharepoint
+None	1.7	enviar correo
+None	1.7	eliminar grupo de sharepoint
+None	1.7	enviar correo
+None	1.7	eliminar grupo de sharepoint
+None	1.7	enviar correo
+None	1.7	eliminar grupo de sharepoint
+q_AMAQnA	1.416667	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	1.416667	Crear una lista en SharePoint Server 2010
+q_AMAQnA	1.416667	Crear una lista en SharePoint Server 2016 o SharePoint Server 2013
+q_AMAQnA	1.416667	Agregar una lista a una página en SharePoint Server 2016 o SharePoint Server 2013
+q_AMAQnA	1.416667	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	1.416667	Crear una lista en SharePoint Server 2010
+q_AMAQnA	1.416667	Crear una lista en SharePoint Server 2016 o SharePoint Server 2013
+q_AMAQnA	1.416667	Agregar una lista a una página en SharePoint Server 2016 o SharePoint Server 2013
+q_AMAQnA	1.416667	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	1.416667	Crear una lista en SharePoint Server 2010
+q_AMAQnA	1.416667	Crear una lista en SharePoint Server 2016 o SharePoint Server 2013
+q_AMAQnA	1.416667	Agregar una lista a una página en SharePoint Server 2016 o SharePoint Server 2013

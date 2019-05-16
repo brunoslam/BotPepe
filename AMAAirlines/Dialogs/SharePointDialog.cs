@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AMAAirlines.Dialogs
+namespace BotPepe.Dialogs
 {
     public class SharePointDialog : ComponentDialog
     {

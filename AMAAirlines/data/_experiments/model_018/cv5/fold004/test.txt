@@ -1,0 +1,33 @@
+Label	Weight	Text
+l_Office365Luis	1.7	ver mi foto de perfil
+l_Office365Luis	1.7	ver mi foto de perfil
+l_Office365Luis	1.7	ver mi foto de perfil
+l_Office365Luis	1.7	ver mi foto de perfil
+l_Office365Luis	1.7	ver mi foto de perfil
+l_Office365Luis	1.7	ver mi foto de perfil
+l_Office365Luis	1.7	ver mi foto de perfil
+l_Office365Luis	1.7	ver mi foto de perfil
+l_Office365Luis	1.7	ver mi foto de perfil
+l_Office365Luis	1.7	ver mi foto de perfil
+None	1.7	enviar correo
+None	1.7	leer foto de perfil
+None	1.7	enviar correo
+None	1.7	leer foto de perfil
+None	1.7	enviar correo
+None	1.7	leer foto de perfil
+None	1.7	enviar correo
+None	1.7	leer foto de perfil
+None	1.7	enviar correo
+None	1.7	leer foto de perfil
+q_AMAQnA	1.416667	Minimizar o restaurar una lista o biblioteca en una página de SharePoint Server 2016 o SharePoint Server 2013
+q_AMAQnA	1.416667	How do I embed the QnA Maker service on my website
+q_AMAQnA	1.416667	Is the QnA Maker Service free
+q_AMAQnA	1.416667	Agregar una lista a una página en SharePoint Server 2016 o SharePoint Server 2013
+q_AMAQnA	1.416667	Minimizar o restaurar una lista o biblioteca en una página de SharePoint Server 2016 o SharePoint Server 2013
+q_AMAQnA	1.416667	How do I embed the QnA Maker service on my website
+q_AMAQnA	1.416667	Is the QnA Maker Service free
+q_AMAQnA	1.416667	Agregar una lista a una página en SharePoint Server 2016 o SharePoint Server 2013
+q_AMAQnA	1.416667	Minimizar o restaurar una lista o biblioteca en una página de SharePoint Server 2016 o SharePoint Server 2013
+q_AMAQnA	1.416667	How do I embed the QnA Maker service on my website
+q_AMAQnA	1.416667	Is the QnA Maker Service free
+q_AMAQnA	1.416667	Agregar una lista a una página en SharePoint Server 2016 o SharePoint Server 2013
