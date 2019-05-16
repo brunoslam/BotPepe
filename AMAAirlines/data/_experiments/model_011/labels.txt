@@ -1,5 +1,0 @@
-Label	LabelName	Samples
-0	l_AMALuis	36
-1	l_Office365Luis	14
-2	None	12
-3	q_AMAQnA	16

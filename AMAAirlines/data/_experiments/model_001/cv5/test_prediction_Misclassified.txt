@@ -1,3 +1,0 @@
-No	Utterance	Expected Intent	Predicted Intent
-0	gf 219	      l_AMALuis	            None
-1	flight 711	      l_AMALuis	            None

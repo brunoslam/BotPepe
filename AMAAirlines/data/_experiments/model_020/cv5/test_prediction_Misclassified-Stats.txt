@@ -1,9 +1,0 @@
-Misclassified samples (percent of total per category)
-Expected Intent	l_Office365Luis(0)%	None(1)%	q_PepeQnA(2)%	Total%
-l_Office365Luis(0)	  0.00	 20.00	  0.00	 20.00
- None(1)	 10.00	  0.00	  0.00	 10.00
-
-Misclassified samples (absolute counts)
-Expected Intent	l_Office365Luis(0)	None(1)	q_PepeQnA(2)	 Total
-l_Office365Luis(0)	     0	     1	     0	     1
- None(1)	     1	     0	     0	     1

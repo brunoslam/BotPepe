@@ -1,4 +1,0 @@
-﻿Intent ID	Intent Name (linked to charts)	Prevalence	AUC ROC	AUC ROC Weighted	AUC PRC	AUC PRC Weighted
-0	<A HREF="C:\Users\bpalma\BOT\airlines\CognitiveRocket\BFv4\AMAAirlines\AMAAirlines\data\_experiments\model_001\cv5\test_prediction_metrics_000.html">l_AMALuis</A>	0.353	0.96	0.96	0.945	0.945
-1	<A HREF="C:\Users\bpalma\BOT\airlines\CognitiveRocket\BFv4\AMAAirlines\AMAAirlines\data\_experiments\model_001\cv5\test_prediction_metrics_000.html">None</A>	0.353	0.978	0.978	0.947	0.947
-2	<A HREF="C:\Users\bpalma\BOT\airlines\CognitiveRocket\BFv4\AMAAirlines\AMAAirlines\data\_experiments\model_001\cv5\test_prediction_metrics_000.html">q_AMAQnA</A>	0.294	0.932	0.932	0.894	0.894

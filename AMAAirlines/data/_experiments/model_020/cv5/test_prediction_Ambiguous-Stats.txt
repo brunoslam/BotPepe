@@ -1,5 +1,0 @@
-Ambiguous samples (percent of total per category)
-Expected and Predicted Intent	l_Office365Luis(0)%	None(1)%	q_PepeQnA(2)%	Total%
-
-Ambiguous samples (absolute counts)
-Expected and Predicted Intent	l_Office365Luis(0)	None(1)	q_PepeQnA(2)	 Total

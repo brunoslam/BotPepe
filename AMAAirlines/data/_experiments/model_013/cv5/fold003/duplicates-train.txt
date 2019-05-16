@@ -1,2 +1,0 @@
-Utterance	Intents
-crear sitio	l_AMALuis, l_Office365Luis

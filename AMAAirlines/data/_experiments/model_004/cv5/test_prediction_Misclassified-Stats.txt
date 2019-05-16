@@ -1,9 +1,0 @@
-Misclassified samples (percent of total per category)
-Expected Intent	l_AMALuis(0)%	None(1)%	q_AMAQnA(2)%	Total%
- None(1)	100.00	  0.00	  0.00	100.00
-q_AMAQnA(2)	 25.00	  0.00	  0.00	 25.00
-
-Misclassified samples (absolute counts)
-Expected Intent	l_AMALuis(0)	None(1)	q_AMAQnA(2)	 Total
- None(1)	     4	     0	     0	     4
-q_AMAQnA(2)	     2	     0	     0	     2

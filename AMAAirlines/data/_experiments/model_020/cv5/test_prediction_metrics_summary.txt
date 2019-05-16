@@ -1,4 +1,0 @@
-﻿Intent ID	Intent Name (linked to charts)	Prevalence	AUC ROC	AUC ROC Weighted	AUC PRC	AUC PRC Weighted
-0	<A HREF="C:\Users\bpalma\Desktop\BotPepe\AMAAirlines\data\_experiments\model_020\cv5\test_prediction_metrics_000.html">l_Office365Luis</A>	0.312	0.973	0.973	0.928	0.928
-1	<A HREF="C:\Users\bpalma\Desktop\BotPepe\AMAAirlines\data\_experiments\model_020\cv5\test_prediction_metrics_000.html">None</A>	0.312	0.955	0.955	0.939	0.939
-2	<A HREF="C:\Users\bpalma\Desktop\BotPepe\AMAAirlines\data\_experiments\model_020\cv5\test_prediction_metrics_000.html">q_PepeQnA</A>	0.375	0.992	0.992	0.981	0.981

@@ -1,4 +1,0 @@
-No	Intent	Utterance Count	Utterance Average Length	Utterance Maximum Length	Utterance Minimum Length	Utterance Length StdDev
-0	l_Office365Luis	6	18.667	22	11	3.933
-1	q_AMAQnA	8	48.75	73	29	13.424
-2	None	12	22.667	32	11	6.387
