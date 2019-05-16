@@ -1,0 +1,35 @@
+Label	Weight	Text
+l_AMALuis	1.928571	set lights to bright
+l_AMALuis	1.928571	fish pond on please
+l_AMALuis	1.928571	turn off venice lamp
+l_AMALuis	1.928571	turn the fan to high
+l_AMALuis	1.928571	shut down my work computer
+l_AMALuis	1.928571	turn thermostat on 70.
+l_AMALuis	1.928571	turn dimmer off
+l_AMALuis	1.928571	set lights to bright
+l_AMALuis	1.928571	fish pond on please
+l_AMALuis	1.928571	turn off venice lamp
+l_AMALuis	1.928571	turn the fan to high
+l_AMALuis	1.928571	shut down my work computer
+l_AMALuis	1.928571	turn thermostat on 70.
+l_AMALuis	1.928571	turn dimmer off
+None	2.7	turn on the internet in my bedroom please
+None	2.7	turn on the internet in my bedroom please
+None	2.7	turn on the internet in my bedroom please
+None	2.7	turn on the internet in my bedroom please
+None	2.7	turn on the internet in my bedroom please
+None	2.7	turn on the internet in my bedroom please
+None	2.7	turn on the internet in my bedroom please
+None	2.7	turn on the internet in my bedroom please
+None	2.7	turn on the internet in my bedroom please
+None	2.7	turn on the internet in my bedroom please
+q_AMAQnA	2.7	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	2.7	What format does the tool expect the file content to be
+q_AMAQnA	2.7	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	2.7	What format does the tool expect the file content to be
+q_AMAQnA	2.7	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	2.7	What format does the tool expect the file content to be
+q_AMAQnA	2.7	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	2.7	What format does the tool expect the file content to be
+q_AMAQnA	2.7	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	2.7	What format does the tool expect the file content to be

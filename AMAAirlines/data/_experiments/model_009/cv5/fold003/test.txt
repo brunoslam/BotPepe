@@ -1,0 +1,45 @@
+Label	Weight	Text
+l_AMALuis	2.071429	turn the fan to high
+l_AMALuis	2.071429	change temperature to seventy two degrees
+l_AMALuis	2.071429	turn on bathroom heater
+l_AMALuis	2.071429	turn on kitchen faucet
+l_AMALuis	2.071429	coffee bar on please
+l_AMALuis	2.071429	lock the doors for me please
+l_AMALuis	2.071429	snap switch fan fifty percent
+l_AMALuis	2.071429	turn the fan to high
+l_AMALuis	2.071429	change temperature to seventy two degrees
+l_AMALuis	2.071429	turn on bathroom heater
+l_AMALuis	2.071429	turn on kitchen faucet
+l_AMALuis	2.071429	coffee bar on please
+l_AMALuis	2.071429	lock the doors for me please
+l_AMALuis	2.071429	snap switch fan fifty percent
+l_Office365Luis	2.9	enviar correo
+l_Office365Luis	2.9	enviar correo
+l_Office365Luis	2.9	enviar correo
+l_Office365Luis	2.9	enviar correo
+l_Office365Luis	2.9	enviar correo
+l_Office365Luis	2.9	enviar correo
+l_Office365Luis	2.9	enviar correo
+l_Office365Luis	2.9	enviar correo
+l_Office365Luis	2.9	enviar correo
+l_Office365Luis	2.9	enviar correo
+None	2.9	turn on the internet in my bedroom please
+None	2.9	turn on the internet in my bedroom please
+None	2.9	turn on the internet in my bedroom please
+None	2.9	turn on the internet in my bedroom please
+None	2.9	turn on the internet in my bedroom please
+None	2.9	turn on the internet in my bedroom please
+None	2.9	turn on the internet in my bedroom please
+None	2.9	turn on the internet in my bedroom please
+None	2.9	turn on the internet in my bedroom please
+None	2.9	turn on the internet in my bedroom please
+q_AMAQnA	2.9	How do I embed the QnA Maker service on my website
+q_AMAQnA	2.9	Is the QnA Maker Service free
+q_AMAQnA	2.9	How do I embed the QnA Maker service on my website
+q_AMAQnA	2.9	Is the QnA Maker Service free
+q_AMAQnA	2.9	How do I embed the QnA Maker service on my website
+q_AMAQnA	2.9	Is the QnA Maker Service free
+q_AMAQnA	2.9	How do I embed the QnA Maker service on my website
+q_AMAQnA	2.9	Is the QnA Maker Service free
+q_AMAQnA	2.9	How do I embed the QnA Maker service on my website
+q_AMAQnA	2.9	Is the QnA Maker Service free

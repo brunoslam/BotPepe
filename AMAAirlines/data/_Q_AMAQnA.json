@@ -1,0 +1,433 @@
+{
+  "qnaDocuments": [
+    {
+      "id": 1,
+      "answer": "<p>QnA Maker is primarily meant to provide a FAQ data source that you can query from your bot/application. Although developers will find this useful, content owners will especially benefit from this tool. QnA Maker is a completely no-code way of managing the content that powers your bot/application.</p>",
+      "source": "https://github.com/Azure-Samples/cognitive-services-sample-data-files/raw/master/qna-maker/data-source-formats/QnA%20Maker%20Sample%20FAQ.xlsx",
+      "questions": [
+        "Who is the target audience for the QnA Maker tool?"
+      ],
+      "metadata": [],
+      "alternateQuestions": "",
+      "alternateQuestionClusters": [],
+      "changeStatus": "NoChange",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9"
+    },
+    {
+      "id": 2,
+      "answer": "<p>You can log in with your <a href=\"https://account.microsoft.com/account\">Microsoft account</a>.</p>",
+      "source": "https://github.com/Azure-Samples/cognitive-services-sample-data-files/raw/master/qna-maker/data-source-formats/QnA%20Maker%20Sample%20FAQ.xlsx",
+      "questions": [
+        "How do I log in to the QnA Maker Portal?"
+      ],
+      "metadata": [],
+      "alternateQuestions": "",
+      "alternateQuestionClusters": [],
+      "changeStatus": "NoChange",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9"
+    },
+    {
+      "id": 3,
+      "answer": "<p>Yes. The QnA Maker tool is currently free to use. However, we do meter usage per account. See the Subscription Keys section of the documentation for details.</p>",
+      "source": "https://github.com/Azure-Samples/cognitive-services-sample-data-files/raw/master/qna-maker/data-source-formats/QnA%20Maker%20Sample%20FAQ.xlsx",
+      "questions": [
+        "Is the QnA Maker Service free?"
+      ],
+      "metadata": [],
+      "alternateQuestions": "",
+      "alternateQuestionClusters": [],
+      "changeStatus": "NoChange",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9"
+    },
+    {
+      "id": 4,
+      "answer": "<p>It’s possible that the tool is not able to auto-extract QnA from valid FAQ URLs. In such cases, you have the option of copying and pasting the QnA content into a .txt and then trying to ingest it. Alternately, you can always editorially add content to your knowledge base.</p>",
+      "source": "https://github.com/Azure-Samples/cognitive-services-sample-data-files/raw/master/qna-maker/data-source-formats/QnA%20Maker%20Sample%20FAQ.xlsx",
+      "questions": [
+        "My URLs have valid FAQ content, but the tool cannot extract them. Why not?"
+      ],
+      "metadata": [],
+      "alternateQuestions": "",
+      "alternateQuestionClusters": [],
+      "changeStatus": "NoChange",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9"
+    },
+    {
+      "id": 5,
+      "answer": "<p><p>We support two formats of files for ingestion.</p><ol><li>.tsv: QnA contained in the Question-Answer format</li><li>.txt, .docx, .pdf: QnA contained as regular FAQ content, i.e. a sequence of questions and answers.</li></ol></p>",
+      "source": "https://github.com/Azure-Samples/cognitive-services-sample-data-files/raw/master/qna-maker/data-source-formats/QnA%20Maker%20Sample%20FAQ.xlsx",
+      "questions": [
+        "What format does the tool expect the file content to be?"
+      ],
+      "metadata": [],
+      "alternateQuestions": "",
+      "alternateQuestionClusters": [],
+      "changeStatus": "NoChange",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9"
+    },
+    {
+      "id": 6,
+      "answer": "<p>Currently, we have a limit of a 20 MB knowledge base.</p>",
+      "source": "https://github.com/Azure-Samples/cognitive-services-sample-data-files/raw/master/qna-maker/data-source-formats/QnA%20Maker%20Sample%20FAQ.xlsx",
+      "questions": [
+        "How large a knowledge base can I create?"
+      ],
+      "metadata": [],
+      "alternateQuestions": "",
+      "alternateQuestionClusters": [],
+      "changeStatus": "NoChange",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9"
+    },
+    {
+      "id": 7,
+      "answer": "<p>No, you don’t. However, QnA Maker is offered as one of several templates in <a href=\"/en-gb/services/bot-service/\">Azure Bot Service</a> that enables rapid intelligent bot development powered by Microsoft Bot Framework, and runs in a serverless environment. Bots scale based on demand; only pay for the resources you consume.</p>",
+      "source": "https://github.com/Azure-Samples/cognitive-services-sample-data-files/raw/master/qna-maker/data-source-formats/QnA%20Maker%20Sample%20FAQ.xlsx",
+      "questions": [
+        "Do I need to use Bot Framework in order to use QnA Maker?"
+      ],
+      "metadata": [],
+      "alternateQuestions": "",
+      "alternateQuestionClusters": [],
+      "changeStatus": "NoChange",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9"
+    },
+    {
+      "id": 9,
+      "answer": "<p><p>Follow the below steps to embed the QnA Maker service as a web-chat control on your website:</p><ul><li>Create your knowledge base at <a href=\"https://qnamaker.ai\">https://qnamaker.ai</a></li><li>Create your Azure service bot: <a href=\"https://docs.botframework.com/en-us/azure-bots/build/first-bot\">https://docs.botframework.com/en-us/azure-bots/build/first-bot</a></li><li>Look for the Question and Answer Bot template. Select the KB ID you created in step 1, then enable it on the web-chat channel. Get the embed keys. </li><li>Embed the web-chat as shown in <a href=\"https://docs.botframework.com/en-us/support/embed-chat-control2\">https://docs.botframework.com/en-us/support/embed-chat-control2</a> </li></ul></p>",
+      "source": "https://github.com/Azure-Samples/cognitive-services-sample-data-files/raw/master/qna-maker/data-source-formats/QnA%20Maker%20Sample%20FAQ.xlsx",
+      "questions": [
+        "How do I embed the QnA Maker service on my website?"
+      ],
+      "metadata": [],
+      "alternateQuestions": "",
+      "alternateQuestionClusters": [],
+      "changeStatus": "NoChange",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9"
+    },
+    {
+      "id": 10,
+      "answer": "<p>QnA Maker is primarily meant to provide a FAQ data source that you can query from your bot/application. Although developers will find this useful, content owners will especially benefit from this tool. QnA Maker is a completely no-code way of managing the content that powers your bot/application.</p>",
+      "source": "QnA Maker Sample FAQ (1).xlsx",
+      "questions": [
+        "Who is the target audience for the QnA Maker tool?"
+      ],
+      "metadata": [],
+      "alternateQuestions": "",
+      "alternateQuestionClusters": [],
+      "changeStatus": "NoChange",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9"
+    },
+    {
+      "id": 11,
+      "answer": "<p>You can log in with your <a href=\"https://account.microsoft.com/account\">Microsoft account</a>.</p>",
+      "source": "QnA Maker Sample FAQ (1).xlsx",
+      "questions": [
+        "How do I log in to the QnA Maker Portal?"
+      ],
+      "metadata": [],
+      "alternateQuestions": "",
+      "alternateQuestionClusters": [],
+      "changeStatus": "NoChange",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9"
+    },
+    {
+      "id": 12,
+      "answer": "<p>Yes. The QnA Maker tool is currently free to use. However, we do meter usage per account. See the Subscription Keys section of the documentation for details.</p>",
+      "source": "QnA Maker Sample FAQ (1).xlsx",
+      "questions": [
+        "Is the QnA Maker Service free?"
+      ],
+      "metadata": [],
+      "alternateQuestions": "",
+      "alternateQuestionClusters": [],
+      "changeStatus": "NoChange",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9"
+    },
+    {
+      "id": 13,
+      "answer": "<p>It’s possible that the tool is not able to auto-extract QnA from valid FAQ URLs. In such cases, you have the option of copying and pasting the QnA content into a .txt and then trying to ingest it. Alternately, you can always editorially add content to your knowledge base.</p>",
+      "source": "QnA Maker Sample FAQ (1).xlsx",
+      "questions": [
+        "My URLs have valid FAQ content, but the tool cannot extract them. Why not?"
+      ],
+      "metadata": [],
+      "alternateQuestions": "",
+      "alternateQuestionClusters": [],
+      "changeStatus": "NoChange",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9"
+    },
+    {
+      "id": 14,
+      "answer": "<p><p>We support two formats of files for ingestion.</p><ol><li>.tsv: QnA contained in the Question-Answer format</li><li>.txt, .docx, .pdf: QnA contained as regular FAQ content, i.e. a sequence of questions and answers.</li></ol></p>",
+      "source": "QnA Maker Sample FAQ (1).xlsx",
+      "questions": [
+        "What format does the tool expect the file content to be?"
+      ],
+      "metadata": [],
+      "alternateQuestions": "",
+      "alternateQuestionClusters": [],
+      "changeStatus": "NoChange",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9"
+    },
+    {
+      "id": 15,
+      "answer": "<p>Currently, we have a limit of a 20 MB knowledge base.</p>",
+      "source": "QnA Maker Sample FAQ (1).xlsx",
+      "questions": [
+        "How large a knowledge base can I create?"
+      ],
+      "metadata": [],
+      "alternateQuestions": "",
+      "alternateQuestionClusters": [],
+      "changeStatus": "NoChange",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9"
+    },
+    {
+      "id": 16,
+      "answer": "<p>No, you don’t. However, QnA Maker is offered as one of several templates in <a href=\"/en-gb/services/bot-service/\">Azure Bot Service</a> that enables rapid intelligent bot development powered by Microsoft Bot Framework, and runs in a serverless environment. Bots scale based on demand; only pay for the resources you consume.</p>",
+      "source": "QnA Maker Sample FAQ (1).xlsx",
+      "questions": [
+        "Do I need to use Bot Framework in order to use QnA Maker?"
+      ],
+      "metadata": [],
+      "alternateQuestions": "",
+      "alternateQuestionClusters": [],
+      "changeStatus": "NoChange",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9"
+    },
+    {
+      "id": 18,
+      "answer": "<p><p>Follow the below steps to embed the QnA Maker service as a web-chat control on your website:</p><ul><li>Create your knowledge base at <a href=\"https://qnamaker.ai\">https://qnamaker.ai</a></li><li>Create your Azure service bot: <a href=\"https://docs.botframework.com/en-us/azure-bots/build/first-bot\">https://docs.botframework.com/en-us/azure-bots/build/first-bot</a></li><li>Look for the Question and Answer Bot template. Select the KB ID you created in step 1, then enable it on the web-chat channel. Get the embed keys. </li><li>Embed the web-chat as shown in <a href=\"https://docs.botframework.com/en-us/support/embed-chat-control2\">https://docs.botframework.com/en-us/support/embed-chat-control2</a> </li></ul></p>",
+      "source": "QnA Maker Sample FAQ (1).xlsx",
+      "questions": [
+        "How do I embed the QnA Maker service on my website?"
+      ],
+      "metadata": [],
+      "alternateQuestions": "",
+      "alternateQuestionClusters": [],
+      "changeStatus": "NoChange",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9"
+    },
+    {
+      "id": 26,
+      "answer": "1.  \n\nHaga clic en configuración** ![Icono de configuración](https://support.content.office.net/es-es/media/d9cd6bbd-62a4-4b1e-8418-7cc0af320ac2.png) y, a continuación, en contenidos del sitio**. \n\n1.  \n\nHaga clic en + nuevo**y, a continuación, en lista**. \n\n![Nuevo vínculo en que se ha hecho clic con lista resaltada](https://support.content.office.net/es-es/media/c85c1aed-6c33-4e2d-b822-2d8e46595054.png)\n\n1.  \n\nEscriba un nombre** para la lista y, opcionalmente, escriba una Descripción**. \n\nEl nombre aparece en la parte superior de la lista y puede mostrarse en la navegación del sitio para ayudar a otros usuarios a encontrarlo.\n\n1.  \n\nHaga clic en Crear**. \n\n1.  \n\nCuando se abra la lista, puede hacer clic en +** o + Agregar columna** para agregar espacio para más tipos de información a la lista. \n\nPara obtener más información sobre cómo agregar columnas, vea [crear una columna en una lista o biblioteca de SharePoint](https://support.office.com/es-es/article/crear-una-columna-en-una-lista-o-una-biblioteca-de-sharepoint-2b0361ae-1bd3-41a3-8329-269e5f81cfa2) .\n\nPuede hacer clic en configuración** ![Icono de configuración](https://support.content.office.net/es-es/media/d9cd6bbd-62a4-4b1e-8418-7cc0af320ac2.png) y, a continuación, en configuración de la lista** para cambiar las propiedades, eliminar la lista, agregar permisos, administrar columnas y muchas otras actualizaciones. Consulte [editar una lista](editar-la-configuración-de-la-lista-de-sharepoint-online-4d35793b-246e-42a3-990c-563a83795b7f) para obtener más información.\n\n![Menú configuración con la configuración de lista resaltada](https://support.content.office.net/es-es/media/e94d271f-5999-44ff-b874-3273ef6a02d4.png)",
+      "source": "https://support.office.com/es-es/article/crear-una-lista-en-sharepoint-0d397414-d95f-41eb-addd-5e6eff41b083",
+      "questions": [
+        "Crear una lista en un sitio de SharePoint Online o SharePoint Server 2019"
+      ],
+      "metadata": [],
+      "alternateQuestions": "[]",
+      "alternateQuestionClusters": [],
+      "changeStatus": "Update",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9",
+      "context": {
+        "isContextOnly": false,
+        "prompts": []
+      }
+    },
+    {
+      "id": 27,
+      "answer": "las listas de SharePoint Online y SharePoint Server 2019 se pueden usar para más de una lista simple. Puede elegir entre plantillas de lista como vínculos, calendario, encuesta, seguimiento de problemas, anuncios y otros. A continuación se explica cómo crear otros tipos de listas.\n\n![Pantalla de aplicaciones para agregar](https://support.content.office.net/es-es/media/7e02bd9b-5e46-4022-9c6b-61b5a70f6151.png)\n\n1.  \n\nHaga clic en configuración** ![Icono de configuración](https://support.content.office.net/es-es/media/d9cd6bbd-62a4-4b1e-8418-7cc0af320ac2.png) y, a continuación, en contenidos del sitio**. \n\n1.  \n\nHaga clic en + nuevo**y, a continuación, haga clic en aplicación**. \n\n![Menú nuevo contenido del sitio con la aplicación resaltada](https://support.content.office.net/es-es/media/a3b35f3f-b8c3-4384-8757-4c9f9a8daf6f.png)\n\n 1. Si no ve el tipo de plantilla de lista o aplicación que desea, escríbala en el cuadro de búsqueda y presione Entrar. Obtendrá una lista de todas las plantillas de lista que coinciden. \n\n![Pantalla de aplicaciones para agregar](https://support.content.office.net/es-es/media/7e02bd9b-5e46-4022-9c6b-61b5a70f6151.png)\n\nEstos son algunos de los tipos de listas que puede buscar\n\n Calendario \n\n Vínculos \n\n Comunicaciones \n\n Contactos \n\n Vínculos promocionados \n\n Tareas \n\n Seguimiento de problemas \n\n Lista personalizada \n\n Encuesta \n\nPara este ejemplo, hemos usado el calendario y elegimos la aplicación de calendario integrada para SharePoint. Es posible que vea otros calendarios creados en su empresa o ofrecidos por terceros.\n\n1.  \n\nEscriba un nombre** para la aplicación que ha elegido, como calendario de eventos, tareas de julio o contactos de la empresa. \n\nEl nombre se muestra en la parte superior de la lista en la mayoría de las vistas, formará parte de la dirección web de la página de lista y aparecerá en la navegación del sitio para ayudar a los usuarios a encontrar la lista. Puede cambiar el nombre de una lista, pero la dirección web seguirá siendo la misma.\n\n1.  \n\nSharePoint le devolverá a la página contenidos del sitio** . Busque la aplicación que creó en la lista Contenidos del sitio** y ábrala. SharePoint crea una versión predeterminada de la aplicación, el calendario, la lista de tareas o cualquier aplicación que haya creado. \n\n![Ejemplo de una aplicación de lista de calendarios.](https://support.content.office.net/es-es/media/f500485d-b328-4743-b7ab-26291cc1a0a8.png)\n\nPuede empezar a introducir datos con + New Task**, editar esta lista**, Agregar**o cualquiera de las formas que ofrece la aplicación específica para agregar datos.\n\n Nota:** Algunas aplicaciones basadas en lista solo se mostrarán en el modo clásico de SharePoint.\n\nSegún el tipo de aplicación que elija, puede cambiar la configuración de la aplicación con la configuración de la lista** o con la pestaña lista** y la cinta en la parte superior de la página. Para obtener más información sobre la configuración, vea [editar la configuración de la lista en SharePoint Online](editar-la-configuración-de-la-lista-de-sharepoint-online-4d35793b-246e-42a3-990c-563a83795b7f) .",
+      "source": "https://support.office.com/es-es/article/crear-una-lista-en-sharepoint-0d397414-d95f-41eb-addd-5e6eff41b083",
+      "questions": [
+        "Crear listas a partir de otros tipos de plantillas de lista"
+      ],
+      "metadata": [],
+      "alternateQuestions": "[]",
+      "alternateQuestionClusters": [],
+      "changeStatus": "Update",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9",
+      "context": {
+        "isContextOnly": false,
+        "prompts": []
+      }
+    },
+    {
+      "id": 28,
+      "answer": "Para crear una biblioteca, vea [crear una biblioteca de documentos en SharePoint](https://support.office.com/es-es/article/crear-una-biblioteca-de-documentos-en-sharepoint-306728fe-0325-4b28-b60d-f902e1d75939)",
+      "source": "https://support.office.com/es-es/article/crear-una-lista-en-sharepoint-0d397414-d95f-41eb-addd-5e6eff41b083",
+      "questions": [
+        "¿Quiere hacer lo mismo con las bibliotecas?"
+      ],
+      "metadata": [],
+      "alternateQuestions": "[]",
+      "alternateQuestionClusters": [],
+      "changeStatus": "Update",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9",
+      "context": {
+        "isContextOnly": false,
+        "prompts": []
+      }
+    },
+    {
+      "id": 29,
+      "answer": "Columnas** Configure el tipo de información que una lista contiene agregando y eliminando columnas. Para obtener más información, vea [crear una columna en una lista o biblioteca de SharePoint](https://support.office.com/es-es/article/crear-una-columna-en-una-lista-o-una-biblioteca-de-sharepoint-2b0361ae-1bd3-41a3-8329-269e5f81cfa2).\n\n Vistas** Cambie cómo se muestra una lista creando vistas. Para obtener más información, vea [crear, cambiar o eliminar una vista de una lista o biblioteca](https://support.office.com/es-es/article/crear-cambiar-o-eliminar-una-vista-de-una-lista-o-biblioteca-27ae65b8-bc5b-4949-b29b-4ee87144a9c9).\n\n Ampliar sus conocimientos de Office",
+      "source": "https://support.office.com/es-es/article/crear-una-lista-en-sharepoint-0d397414-d95f-41eb-addd-5e6eff41b083",
+      "questions": [
+        "Pasos siguientes con listas"
+      ],
+      "metadata": [],
+      "alternateQuestions": "[]",
+      "alternateQuestionClusters": [],
+      "changeStatus": "Update",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9",
+      "context": {
+        "isContextOnly": false,
+        "prompts": []
+      }
+    },
+    {
+      "id": 30,
+      "answer": "1.  \n\nHaga clic en configuración** ![Icono de configuración](https://support.content.office.net/es-es/media/d9cd6bbd-62a4-4b1e-8418-7cc0af320ac2.png) y luego en Agregar una aplicación**. \n\n![Agregar una aplicación (lista, biblioteca)](https://support.content.office.net/es-es/media/d0c7a1fa-e742-481f-b6c5-12f5e87f257c.png)\n\n1.  \n\nEscriba el tipo de plantilla de lista que desee (personalizado, tarea, calendario, etc.) en el cuadro de búsqueda y haga clic en Buscar**en ![Icono de lupa del cuadro de búsqueda](https://support.content.office.net/es-es/media/171b458f-d54d-4a3d-b996-fb4ef4df97bf.png). \n\n![Buscar una lista de calendario con el calendario integrado resaltado](https://support.content.office.net/es-es/media/57c80085-1e4a-413f-9b8f-afa87bc1d08b.png)\n\n1.  \n\nHaga clic en la aplicación de plantilla de lista** que desea usar. \n\n![Pantalla de aplicaciones para agregar](https://support.content.office.net/es-es/media/7e02bd9b-5e46-4022-9c6b-61b5a70f6151.png)\n\n1.  \n\nEscriba un nombre** (obligatorio). \n\nEl nombre se muestra en la parte superior de la lista en la mayoría de las vistas, formará parte de la dirección web de la página de lista y aparecerá en la navegación del sitio para ayudar a los usuarios a encontrar la lista. Puede cambiar el nombre de una lista, pero la dirección web seguirá siendo la misma.\n\nTambién puede hacer clic en Opciones avanzadas**. Opciones avanzadas** le permite incluir una Descripción** opcional e información adicional, en función de la aplicación de lista determinada.\n\n![Pantalla nueva aplicación con campos rellenos](https://support.content.office.net/es-es/media/e0c38582-4bcf-4513-9dc0-d889759672cf.png)\n\n1.  \n\nHaga clic en Aceptar**.",
+      "source": "https://support.office.com/es-es/article/crear-una-lista-en-sharepoint-0d397414-d95f-41eb-addd-5e6eff41b083",
+      "questions": [
+        "Crear una lista en SharePoint Server 2016 o SharePoint Server 2013"
+      ],
+      "metadata": [],
+      "alternateQuestions": "[]",
+      "alternateQuestionClusters": [],
+      "changeStatus": "Update",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9",
+      "context": {
+        "isContextOnly": false,
+        "prompts": []
+      }
+    },
+    {
+      "id": 31,
+      "answer": "1.  \n\nEn la página a la que desea agregar la lista o biblioteca, haga clic en Página** y, a continuación, haga clic en Editar**. Si no ve la pestaña Página** , haga clic en configuración** ![Botón Configuración de Office 365](https://support.content.office.net/es-es/media/a9a59c0f-2e67-4cbf-9438-af273b0d552b.png) y, a continuación, haga clic en Editar Página**. \n\n![Editar la página](https://support.content.office.net/es-es/media/e2a90518-3197-44fb-9338-44c8e30a8c7b.jpg)\n\n Nota:** Si el comando Editar** está deshabilitado o no aparece, es posible que no tenga permiso para editar la página.\n\n2.  \n\nHaga clic en el lugar de la página donde desea mostrar la lista o biblioteca, y haga clic en Insertar** y, a continuación, haga clic en elemento de aplicación**. \n\n3.  \n\nSeleccione el elemento de aplicación** de la lista o biblioteca y, a continuación, haga clic en Agregar**. Debería ver todas las listas que ha creado en agregar aplicaciones**. \n\n4.  \n\nCuando haya terminado de editar la página, haga clic en la pestaña Página** y haga clic en Guardar**. En algunos casos, tiene la opción de Guardar como borrador** o Guardar y publicar**. \n\nImportante:**\n\n Algunas páginas no se pueden editar, como la página contenidos del sitio.\n\nEste es un ejemplo de una lista que se agregó a una página con los pasos anteriores.\n\n![Lista en una página](https://support.content.office.net/es-es/media/ceed60f3-c034-430a-ada0-235cbd31be0e.png)",
+      "source": "https://support.office.com/es-es/article/crear-una-lista-en-sharepoint-0d397414-d95f-41eb-addd-5e6eff41b083",
+      "questions": [
+        "Agregar una lista a una página en SharePoint Server 2016 o SharePoint Server 2013"
+      ],
+      "metadata": [],
+      "alternateQuestions": "[]",
+      "alternateQuestionClusters": [],
+      "changeStatus": "Update",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9",
+      "context": {
+        "isContextOnly": false,
+        "prompts": []
+      }
+    },
+    {
+      "id": 32,
+      "answer": "1.  \n\nEn la página donde desea minimizar o restaurar la lista o biblioteca, haga clic en Página** y, a continuación, haga clic en Editar**. \n\n![Editar la página](https://support.content.office.net/es-es/media/e2a90518-3197-44fb-9338-44c8e30a8c7b.jpg)\n\n1.  \n\nSeleccione la lista o biblioteca, haga clic en la flecha abajo, haga clic en minimizar** o restaurar según la posición actual de la lista o biblioteca y, a continuación, haga clic en Aceptar**. \n\n![Haga clic en la flecha abajo configuración y, a continuación, en minimizar](https://support.content.office.net/es-es/media/030bd23c-37a7-4aaa-951a-5024dac4399d.png)\n\n1.  \n\nCuando haya terminado de editar la página, haga clic en Guardar**. En algunos casos, tiene la opción de Guardar como borrador** o Guardar y publicar**.",
+      "source": "https://support.office.com/es-es/article/crear-una-lista-en-sharepoint-0d397414-d95f-41eb-addd-5e6eff41b083",
+      "questions": [
+        "Minimizar o restaurar una lista o biblioteca en una página de SharePoint Server 2016 o SharePoint Server 2013"
+      ],
+      "metadata": [],
+      "alternateQuestions": "[]",
+      "alternateQuestionClusters": [],
+      "changeStatus": "Update",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9",
+      "context": {
+        "isContextOnly": false,
+        "prompts": []
+      }
+    },
+    {
+      "id": 33,
+      "answer": "Puede crear una lista que pueda usar más adelante en las páginas. SharePoint Server 2010 incluye muchos tipos de plantillas de lista, como calendario, encuesta y tareas.\n\n1.  \n\nHaga clic en acciones del sitio ** ![Menú Acciones del sitio](https://support.content.office.net/es-es/media/eb4ff6c7-77ef-4bb9-a018-d89212ffc90b.jpg), en ver todo el contenido del sitio**y, a continuación, en crear ** ![Botón Crear](https://support.content.office.net/es-es/media/03fc487a-500d-4a61-b096-6e6711253d4e.jpg). \n\n Nota:** Un sitio de SharePoint se puede modificar de forma significativa. Si no encuentra una opción (por ejemplo, un comando, un botón o un vínculo), póngase en contacto con el administrador.\n\n1.  \n\nHaga clic en una de las categorías, como comunicaciones** o seguimiento** , y elija desde allí. \n\n![Haga clic en una categoría y seleccione la aplicación de lista que quiera.](https://support.content.office.net/es-es/media/b0e71d5f-6cdd-44c9-9509-e23f26d89053.png)\n\nTambién puede especificar el tipo de plantilla de lista que desea crear en el cuadro Buscar elementos instalados** , como contactos** o calendario** , y haga clic en buscar en ![Icono de lupa del cuadro de búsqueda](https://support.content.office.net/es-es/media/171b458f-d54d-4a3d-b996-fb4ef4df97bf.png).\n\n1.  \n\nEscriba el Nombre** de la lista. El nombre es obligatorio. \n\nEl nombre se muestra en la parte superior de la lista en la mayoría de las vistas, formará parte de la dirección web de la página de lista y aparecerá en la navegación del sitio para ayudar a los usuarios a encontrar la lista. Puede cambiar el nombre de una lista, pero la dirección web seguirá siendo la misma.\n\n1.  \n\nOpcionalmente, puede hacer clic en opciones avanzadas y escribir la Descripción** de la lista y establecer otras opciones. . \n\nLa descripción aparece debajo del nombre en la mayoría de las vistas. Algunos tipos de listas pueden recibir contenido por correo electrónico. Si tiene previsto habilitar la lista para recibir contenido por correo electrónico, puede Agregar la dirección de correo electrónico de la lista a su descripción para que los usuarios puedan encontrar fácilmente la dirección de correo electrónico. Puede cambiar la descripción de una lista.\n\n1.  \n\nPara agregar un vínculo al panel Inicio rápido, compruebe que está seleccionado sí** en la sección navegación** . \n\n1.  \n\nSi hay una sección correo electrónico** , el administrador ha habilitado las listas en su sitio para recibir contenido por correo electrónico. Para habilitar a las personas a agregar contenido a esta lista mediante el envío de correo electrónico, haga clic en sí** en habilitar esta lista para recibir correo electrónico**. Después, en el cuadro dirección de correo electrónico** , escriba la primera parte de la dirección que desea que los usuarios utilicen para la lista. Esta opción no está disponible para todos los tipos de listas. \n\n1.  \n\nReLlene cualquier otra opción, como especificar si un calendario funciona como un calendario de grupo en la aplicación calendario** . \n\n1.  \n\nHaga clic en Crear**.",
+      "source": "https://support.office.com/es-es/article/crear-una-lista-en-sharepoint-0d397414-d95f-41eb-addd-5e6eff41b083",
+      "questions": [
+        "Crear una lista en SharePoint Server 2010"
+      ],
+      "metadata": [],
+      "alternateQuestions": "[]",
+      "alternateQuestionClusters": [],
+      "changeStatus": "Update",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9",
+      "context": {
+        "isContextOnly": false,
+        "prompts": []
+      }
+    },
+    {
+      "id": 34,
+      "answer": "Con SharePoint Server 2010 puede crear listas a partir de las páginas que está editando. Esto le ayudará a crear de manera más eficaz y eficaz las páginas y las listas que necesita.\n\n1.  \n\nEn una página, haga clic en la pestaña Editar** y, a continuación, haga clic en el comando Editar** . \n\n![Comando Editar de la ficha Editar](https://support.content.office.net/es-es/media/9cf12e50-f458-4077-b1a5-76cd8d22ac45.jpg)\n\n Nota:** Si el comando Editar está deshabilitado, es posible que no tenga permisos para editar la página, póngase en contacto con el administrador.\n\n1.  \n\nHaga clic en la página en la que desea agregar una nueva lista, haga clic en la pestaña Insertar** y, a continuación, haga clic en nueva lista**. \n\n![Insertar una lista nueva en una página](https://support.content.office.net/es-es/media/3ce8e01f-68da-434b-bae8-638f1cd944d7.jpg)\n\n Nota:** Si no ve la pestaña edición o la lista nueva está deshabilitada, es posible que no tenga los permisos necesarios para crear una lista; Póngase en contacto con el administrador.\n\n1.  \n\nEn el cuadro de diálogo crear lista** , escriba el mosaico de la lista**, seleccione el tipo de lista que desea crear y, a continuación, haga clic en Aceptar**. \n\n![Escriba un nombre y seleccione una plantilla para una lista](https://support.content.office.net/es-es/media/d7307976-8039-4ce7-ad23-43d22cde20e1.png)",
+      "source": "https://support.office.com/es-es/article/crear-una-lista-en-sharepoint-0d397414-d95f-41eb-addd-5e6eff41b083",
+      "questions": [
+        "Crear una lista en una página de SharePoint Server 2010"
+      ],
+      "metadata": [],
+      "alternateQuestions": "[]",
+      "alternateQuestionClusters": [],
+      "changeStatus": "Update",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9",
+      "context": {
+        "isContextOnly": false,
+        "prompts": []
+      }
+    },
+    {
+      "id": 35,
+      "answer": "La creación de una lista personalizada se parece a la creación de listas a partir de una plantilla, excepto en que la lista personalizada se crea con tres columnas: título**, creado por**y modificado por**. Después de crear una lista personalizada, puede Agregar columnas y realizar otros cambios en la lista para satisfacer sus necesidades.\n\n1.  \n\nHaga clic en acciones del sitio ** ![Menú Acciones del sitio](https://support.content.office.net/es-es/media/eb4ff6c7-77ef-4bb9-a018-d89212ffc90b.jpg), en ver todo el contenido del sitio**y, a continuación, en crear ** ![Botón Crear](https://support.content.office.net/es-es/media/03fc487a-500d-4a61-b096-6e6711253d4e.jpg). \n\n Nota:** Un sitio de SharePoint se puede modificar de forma significativa. Si no encuentra una opción (por ejemplo, un comando, un botón o un vínculo), póngase en contacto con el administrador.\n\n1.  \n\nEn Listas personalizadas**, haga clic en lista** personalizada o lista personalizada en la vista Hoja de información**. \n\n Notas:** \n\n Use la lista personalizada cuando desee usar un formulario para introducir y ver datos en la lista. \n\n Use lista personalizada en la vista Hoja de datos cuando desee principalmente usar una cuadrícula, similar a una hoja de cálculo, para introducir y ver datos en la lista. Esto es útil cuando tienes varios elementos para actualizar al mismo tiempo. \n\n Puede cambiar la forma de introducir y Mostrar datos en una lista después de crear una lista. \n\n1.  \n\nEscriba el Nombre** de la lista. El nombre es obligatorio. \n\nEl nombre se muestra en la parte superior de la lista en la mayoría de las vistas, formará parte de la dirección web de la página de lista y aparecerá en la navegación del sitio para ayudar a los usuarios a encontrar la lista. Puede cambiar el nombre de una lista, pero la dirección web seguirá siendo la misma.\n\n1.  \n\nEscriba la Descripción** de la lista. La Descripción es opcional. \n\nLa descripción aparece debajo del nombre en la mayoría de las vistas. Algunos tipos de listas pueden recibir contenido por correo electrónico. Si tiene previsto habilitar la lista para recibir contenido por correo electrónico, puede Agregar la dirección de correo electrónico de la lista a su descripción para que los usuarios puedan encontrar fácilmente la dirección de correo electrónico. Puede cambiar la descripción de una lista.\n\n1.  \n\nPara agregar un vínculo a Inicio rápido, compruebe que está seleccionado sí** en la sección navegación** . \n\n1.  \n\nSi hay una sección correo electrónico** , el administrador ha habilitado las listas en su sitio para recibir contenido por correo electrónico. Para habilitar a las personas a agregar contenido a esta lista mediante el envío de correo electrónico, haga clic en sí** en habilitar esta lista para recibir correo electrónico**. Después, en el cuadro dirección de correo electrónico** , escriba la primera parte de la dirección que desea que los usuarios utilicen para la lista. Esta opción no está disponible para todos los tipos de listas. \n\n1.  \n\nHaga clic en Crear**.",
+      "source": "https://support.office.com/es-es/article/crear-una-lista-en-sharepoint-0d397414-d95f-41eb-addd-5e6eff41b083",
+      "questions": [
+        "Crear una lista personalizada en SharePoint Server 2010"
+      ],
+      "metadata": [],
+      "alternateQuestions": "[]",
+      "alternateQuestionClusters": [],
+      "changeStatus": "Update",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9",
+      "context": {
+        "isContextOnly": false,
+        "prompts": []
+      }
+    },
+    {
+      "id": 36,
+      "answer": "1.  \n\nEn la página a la que desea agregar la lista o biblioteca, haga clic en Página** y, a continuación, haga clic en Editar**. Si no ve la pestaña Página** , haga clic en configuración** ![Botón Configuración de Office 365](https://support.content.office.net/es-es/media/a9a59c0f-2e67-4cbf-9438-af273b0d552b.png) y, a continuación, haga clic en Editar Página**. \n\n![Editar la página](https://support.content.office.net/es-es/media/e2a90518-3197-44fb-9338-44c8e30a8c7b.jpg)\n\n Nota:** Si el comando Editar** está deshabilitado o no aparece, es posible que no tenga permiso para editar la página.\n\n1.  \n\nHaga clic en el lugar de la página donde desea mostrar la lista o biblioteca, y haga clic en Insertar** y, a continuación, haga clic en elemento de aplicación**. \n\n1.  \n\nSeleccione el elemento de aplicación** de la lista o biblioteca y, a continuación, haga clic en Agregar**. \n\n1.  \n\nCuando haya terminado de editar la página, haga clic en Guardar**. En algunos casos, tiene la opción de Guardar como borrador** o Guardar y publicar**. \n\nEste es un ejemplo de una lista que se agregó a una página con los pasos anteriores.\n\n![Lista en una página](https://support.content.office.net/es-es/media/ceed60f3-c034-430a-ada0-235cbd31be0e.png)",
+      "source": "https://support.office.com/es-es/article/crear-una-lista-en-sharepoint-0d397414-d95f-41eb-addd-5e6eff41b083",
+      "questions": [
+        "Agregar una lista a una página en SharePoint Server 2010"
+      ],
+      "metadata": [],
+      "alternateQuestions": "[]",
+      "alternateQuestionClusters": [],
+      "changeStatus": "Update",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9",
+      "context": {
+        "isContextOnly": false,
+        "prompts": []
+      }
+    },
+    {
+      "id": 37,
+      "answer": "SharePoint Server 2007 incluye varios tipos diferentes de plantillas de lista, que van desde un calendario a una lista de contactos. Aunque algunas de las opciones de configuración varían según las listas, puede usar el mismo procedimiento básico para crear cualquier tipo de lista.\n\nNota:**\n\n Para crear una lista, debe tener permiso para cambiar el sitio en el que desea crear la lista.\n\n1.  \n\nHaga clic en Ver todo el contenido del sitio** y, después, haga clic en Crear** en la página Todo el contenido del sitio. \n\n Sugerencia:** En la mayoría de los casos, puede usar el menú acciones del sitio** ![Imagen del botón](https://support.content.office.net/es-es/media/8b75c48e-654d-44cc-94d3-e2805f352747.gif) en su lugar para completar este paso.\n\n1.  \n\nEn comunicaciones** o seguimiento**, haga clic en el tipo de lista que desee, por ejemplo, contactos** o calendario**. \n\n Tipos de listas** \n\nEl tipo de lista que use dependerá de la clase de información que desee compartir:\n\n  Comunicaciones** Use una lista de anuncios para compartir noticias y Estados, y para proporcionar avisos. Los anuncios admiten el formato mejorado con imágenes, hipervínculos y texto con formato. \n\n  Contactos** Use una lista de contactos para almacenar información sobre las personas o grupos con los que trabaja. Si está usando un programa de correo electrónico o de administración de contactos compatible con SharePoint, puede ver y actualizar los contactos desde el sitio de SharePoint en el otro programa. Por ejemplo, puede actualizar una lista de todos los proveedores de su organización desde Office. En realidad, una lista de contactos no administra los miembros de su sitio, pero puede usarse para almacenar y compartir contactos de su organización, como una lista de proveedores externos. \n\n  Paneles de discusión** Use un panel de discusión para proporcionar un lugar central para grabar y almacenar discusiones de equipo similares al formato de los grupos de noticias. Si el administrador ha habilitado las listas en su sitio para recibir correo electrónico, los paneles de discusión pueden almacenar discusiones de correo electrónico de los programas de correo electrónico más comunes. Por ejemplo, puede crear un panel de discusión para la nueva versión de producto de su organización. Si está usando un programa de correo electrónico compatible con SharePoint, puede ver y actualizar el panel de discusión mientras trabaja en el otro programa. \n\n  Vínculos** Use una lista de vínculos como ubicación central para los vínculos a la web, la intranet de su empresa y otros recursos. Por ejemplo, puede crear una lista de vínculos a los sitios web de sus clientes. \n\n  Calendario** Use un calendario para todos los eventos de su equipo o para situaciones específicas, como las vacaciones de la empresa. Un calendario proporciona vistas visuales, similares a un calendario de escritorio o de pared, de los eventos de su equipo, como reuniones, eventos sociales y eventos de todo el día. También puede realizar un seguimiento de los hitos del equipo, como fechas límite o fechas de lanzamiento de producto, que no están relacionadas con un intervalo de tiempo específico. Si usa un programa de correo electrónico o calendario compatible con SharePoint, puede ver y actualizar el calendario desde el sitio de SharePoint mientras trabaja en el otro programa. Por ejemplo, puede comparar y actualizar su calendario en el sitio de SharePoint con las fechas de su calendario de Office Outlook, viendo los dos calendarios unos al lado de otros o superpuestos entre sí en Office Outlook. \n\n  Tareas** Use una lista de tareas para realizar un seguimiento de la información sobre proyectos y otros eventos pendientes de su grupo. Puede asignar tareas a personas, así como realizar un seguimiento del estado y el porcentaje completado a medida que la tarea pasa a finalizar. Si está usando un programa de correo electrónico o de administración de tareas compatible con SharePoint, puede ver y actualizar las tareas desde el sitio de SharePoint en el otro programa. Por ejemplo, puede crear una lista de tareas para el proceso de presupuesto de su organización y, a continuación, verla y actualizarla en Office Outlook junto con otras tareas. \n\n  Tareas de proyecto** Para almacenar información similar a una lista de tareas, pero también proporcionar una vista visual o de Gantt con barras de progreso, use una lista de tareas de proyecto. Puede realizar un seguimiento del estado y el porcentaje completado a medida que la tarea avanza hacia su finalización. Si está usando un programa de correo electrónico o de administración de tareas compatible con SharePoint, puede ver y actualizar las tareas del proyecto desde el sitio de SharePoint en el otro programa. Por ejemplo, puede crear una lista de tareas en el sitio de SharePoint para identificar y asignar el trabajo para crear un manual de aprendizaje. Después, puede realizar un seguimiento del progreso de su organización desde Office Outlook. \n\n  Seguimiento de problemas** Use una lista de seguimiento de Asuntos para almacenar información sobre problemas específicos, como problemas de soporte técnico, y realizar un seguimiento de su progreso. Puede asignar problemas, clasificarlos y relacionarlos entre sí. Por ejemplo, puede crear una lista de seguimiento de Asuntos para administrar los problemas y las soluciones del servicio de asistencia al cliente. También puede comentar los problemas cada vez que los edite, creando un historial de comentarios sin modificar la descripción original del problema. Por ejemplo, un representante del servicio de atención al cliente puede registrar cada paso tomado para resolver un problema y los resultados. \n\n  Encuesta** Para recopilar y compilar comentarios, como una encuesta de satisfacción de los empleados o un cuestionario, use una encuesta. Puede diseñar sus preguntas y respuestas de varias formas diferentes y ver una descripción general de sus comentarios. Si tiene instalada una hoja de cálculo o un programa de base de datos compatible con SharePoint como Office Excel, puede exportar los resultados para analizarlos más a la vez. \n\n  Personalizado** : si utiliza esta opción, puede buscar una lista de distribución o un grupo de seguridad ya existentes en su organización. Aunque puede personalizar cualquier lista, puede empezar con una lista personalizada y, a continuación, personalizar solo la configuración que especifique. También puede crear una lista basada en una hoja de cálculo si tiene un programa de hoja de cálculo compatible con SharePoint. Por ejemplo, puede importar una lista de Office Excel que haya creado para almacenar y administrar los contratos con los proveedores. \n\n1.  \n\nTodas las listas requieren un nombre. En el cuadro nombre** , escriba un nombre para la lista. \n\nEl nombre se muestra en la parte superior de la lista en la mayoría de las vistas, formará parte de la dirección web de la página de lista y aparecerá en la navegación del sitio para ayudar a los usuarios a encontrar la lista. Puede cambiar el nombre de una lista, pero la dirección web seguirá siendo la misma.\n\n1.  \n\nEn el cuadro Descripción** , escriba una descripción del propósito de la lista. La descripción es opcional. \n\nLa descripción aparece en la parte superior de la lista en la mayoría de las vistas, debajo del nombre de la lista. Algunos tipos de listas pueden recibir contenido por correo electrónico. Si tiene previsto habilitar la lista para recibir contenido por correo electrónico, puede Agregar la dirección de correo electrónico de la lista a su descripción para que los usuarios puedan encontrar fácilmente la dirección de correo electrónico.\n\n1.  \n\nPara agregar un vínculo a esta lista en Inicio rápido, haga clic en sí** en la sección navegación** . \n\nSi aparece una sección correo entrante** , el administrador ha habilitado las listas en su sitio para recibir contenido por correo electrónico. Para habilitar a las personas a agregar contenido a la lista enviando correo electrónico, haga clic en sí** en habilitar esta lista para recibir correo electrónico**. Después, en el cuadro dirección de correo electrónico** , escriba la primera parte de la dirección que desea que los usuarios utilicen para la lista.\n\nEs posible que esta opción no esté disponible para algunos tipos de listas.\n\n1.  \n\nSi aparece una sección de notificación de correo electrónico** , el administrador ha habilitado las listas en su sitio para enviar notificaciones por correo electrónico cuando se asignen los elementos de la lista. Para habilitar la lista para enviar correo electrónico a los usuarios cuando se les asigne un elemento, haga clic en sí** en Enviar correo electrónico cuando se asigne la propiedad**. \n\nEs posible que esta opción no esté disponible para algunos tipos de listas.\n\n1.  \n\nHaga clic en Crear**. \n\nNota:**\n\n De forma predeterminada, puede agregar contenido enviando correo electrónico a los paneles de discusión, anuncios y listas de calendarios, si el correo electrónico entrante está habilitado en su sitio. Las tareas, las tareas de proyecto y las listas de seguimiento de problemas pueden enviar correo electrónico a los usuarios cuando se les asignan los elementos, si el correo saliente está habilitado para el sitio. El administrador puede habilitar otras listas con una solución personalizada, como un controlador de correo electrónico.",
+      "source": "https://support.office.com/es-es/article/crear-una-lista-en-sharepoint-0d397414-d95f-41eb-addd-5e6eff41b083",
+      "questions": [
+        "Crear una lista a partir de una plantilla de lista en SharePoint Server 2007"
+      ],
+      "metadata": [],
+      "alternateQuestions": "[]",
+      "alternateQuestionClusters": [],
+      "changeStatus": "Update",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9",
+      "context": {
+        "isContextOnly": false,
+        "prompts": []
+      }
+    },
+    {
+      "id": 38,
+      "answer": "La creación de una lista personalizada es similar a la creación de una lista predeterminada, excepto en que la lista personalizada solo se proporciona con unas cuantas columnas, por ejemplo, título**. Después de crear una lista personalizada, puede Agregar columnas que se adapten a la finalidad de la lista.\n\nNota:**\n\n Para crear una lista, debe tener permiso para cambiar el sitio en el que desea crear la lista.\n\n1.  \n\nHaga clic en Ver todo el contenido del sitio** y, después, haga clic en Crear** en la página Todo el contenido del sitio. \n\n Sugerencia:** En la mayoría de los casos, puede usar el menú acciones del sitio** ![Imagen del botón](https://support.content.office.net/es-es/media/8b75c48e-654d-44cc-94d3-e2805f352747.gif) en su lugar para completar este paso.\n\n1.  \n\nEn Listas personalizadas**, haga clic en lista personalizada**. \n\n![En el cuadro de diálogo crear, seleccione un tipo de lista personalizada.](https://support.content.office.net/es-es/media/6b3c50d0-9f5e-4625-bbb1-891a2f50ac7b.png)\n\nEn el cuadro nombre** , escriba un nombre para la lista. El nombre de la lista es obligatorio.\n\nEl nombre se muestra en la parte superior de la lista en la mayoría de las vistas, formará parte de la dirección web de la página de lista y aparecerá en la navegación del sitio para ayudar a los usuarios a encontrar la lista. Puede cambiar el nombre de una lista, pero la dirección web seguirá siendo la misma.\n\n1.  \n\nEn el cuadro Descripción** , escriba una descripción del propósito de la lista. La descripción es opcional. \n\nLa descripción aparece en la parte superior de la lista, debajo del nombre de la lista.\n\n1.  \n\nPara agregar un vínculo a esta lista en Inicio rápido, haga clic en sí** en la sección navegación** . \n\n1.  \n\nHaga clic en Crear**. \n\nPara averiguar qué versión de SharePoint está usando, vea ¿ [qué versión de SharePoint estoy usando?](¿qué-versión-de-sharepoint-estoy-usando-3575ff57-037f-48cf-9398-99080c34b25f).",
+      "source": "https://support.office.com/es-es/article/crear-una-lista-en-sharepoint-0d397414-d95f-41eb-addd-5e6eff41b083",
+      "questions": [
+        "Crear una lista personalizada en SharePoint Server 2007"
+      ],
+      "metadata": [],
+      "alternateQuestions": "[]",
+      "alternateQuestionClusters": [],
+      "changeStatus": "Update",
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9",
+      "context": {
+        "isContextOnly": false,
+        "prompts": []
+      }
+    }
+  ]
+}

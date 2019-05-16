@@ -1,0 +1,63 @@
+{
+    "name": "AMAAirlines",
+    "description": "",
+    "services": [
+        {
+            "type": "endpoint",
+            "appId": "cc8424e0-86bc-4c49-8c6d-b75bce643358",
+            "appPassword": "vgqkZMTU021*!@lyrIWW63!",
+            "endpoint": "http://localhost:3978/api/messages",
+            "id": "1",
+            "name": "development"
+        },
+        {
+            "type": "luis",
+            "appId": "b87d8086-27b4-4916-bf8e-b08f23b56311",
+            "authoringKey": "2095a5bb221a4b4183a2089c85b20e1b",
+            "id": "119",
+            "name": "AMALuis",
+            "region": "westus",
+            "version": "0.1"
+        },
+        {
+            "type": "luis",
+            "appId": "5a118ba7-f742-4d20-b4ec-4fec73b7933f",
+            "authoringKey": "2095a5bb221a4b4183a2089c85b20e1b",
+            "id": "120",
+            "name": "Office365Luis",
+            "region": "westus",
+            "version": "0.1"
+        },
+        {
+            "type": "qna",
+            "endpointKey": "c2d41ccb-06d9-44d1-8f46-586482594d69",
+            "hostname": "https://qnabotpepe.azurewebsites.net/qnamaker",
+            "id": "123",
+            "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9",
+            "name": "AMAQnA",
+            "subscriptionKey": "99f023daa58a46f685b25cf6158d95bf"
+        },
+        {
+            "type": "dispatch",
+            "appId": "8239a440-d231-4cd6-9a2b-624f29084cc2",
+            "authoringKey": "2095a5bb221a4b4183a2089c85b20e1b",
+            "name": "DispatchPepe",
+            "region": "westus",
+            "serviceIds": [],
+            "subscriptionKey": "6c9680d0e7dc4e47abdc68dd5b3fb312",
+            "version": "Dispatch"
+        },
+        {
+            "type": "endpoint",
+            "endpoint": "https://botpepels.azurewebsites.net/api/messages",
+            "name": "production",
+            "id": "59",
+            "appId": "cc8424e0-86bc-4c49-8c6d-b75bce643358",
+            "appPassword": "vgqkZMTU021*!@lyrIWW63!"
+        }
+    ],
+    "padlock": "",
+    "version": "2.0",
+    "path": "C:\\Users\\bpalma\\BOT\\airlines\\CognitiveRocket\\BFv4\\AMAAirlines\\AMAAirlines\\BotConfiguration.bot",
+    "overrides": null
+}

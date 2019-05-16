@@ -1,0 +1,31 @@
+Label	Weight	Text
+l_Office365Luis	1.2	crear sitio
+l_Office365Luis	1.2	crear sitio
+l_Office365Luis	1.2	crear sitio
+l_Office365Luis	1.2	crear sitio
+l_Office365Luis	1.2	crear sitio
+l_Office365Luis	1.2	crear sitio
+l_Office365Luis	1.2	crear sitio
+l_Office365Luis	1.2	crear sitio
+l_Office365Luis	1.2	crear sitio
+l_Office365Luis	1.2	crear sitio
+None	1.2	quiero ver mi foto de perfil
+None	1.2	leer correo
+None	1.2	quiero ver mi foto de perfil
+None	1.2	leer correo
+None	1.2	quiero ver mi foto de perfil
+None	1.2	leer correo
+None	1.2	quiero ver mi foto de perfil
+None	1.2	leer correo
+None	1.2	quiero ver mi foto de perfil
+None	1.2	leer correo
+q_AMAQnA	1.2	How large a knowledge base can I create
+q_AMAQnA	1.2	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	1.2	How large a knowledge base can I create
+q_AMAQnA	1.2	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	1.2	How large a knowledge base can I create
+q_AMAQnA	1.2	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	1.2	How large a knowledge base can I create
+q_AMAQnA	1.2	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	1.2	How large a knowledge base can I create
+q_AMAQnA	1.2	My URLs have valid FAQ content, but the tool cannot extract them. Why not

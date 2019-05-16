@@ -1,0 +1,180 @@
+{
+  "luis_schema_version": "3.2.0",
+  "versionId": "0.1",
+  "name": "Office365",
+  "desc": "",
+  "culture": "en-us",
+  "tokenizerVersion": "1.0.0",
+  "intents": [
+    {
+      "name": "Active Directory"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "Outlook"
+    },
+    {
+      "name": "SharePoint"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Crear",
+      "roles": []
+    },
+    {
+      "name": "Elemento",
+      "roles": []
+    },
+    {
+      "name": "Leer",
+      "roles": [
+        "ver"
+      ]
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "crear item de lista",
+      "intent": "SharePoint",
+      "entities": [
+        {
+          "entity": "Crear",
+          "startPos": 0,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "crear sitio",
+      "intent": "SharePoint",
+      "entities": [
+        {
+          "entity": "Crear",
+          "startPos": 0,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "eliminar documento de biblioteca",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "eliminar grupo de sharepoint",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "eliminar item de lista",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "eliminar sitio de sharepoint",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "enviar correo",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "enviar documento por correo",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "enviar foto por correo",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "leer correo",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "leer foto de perfil",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "leer items de lista",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "leer proximas reuniones",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "leer ultimos correos",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "Leer",
+          "startPos": 0,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "quiero ver mi foto de perfil",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "ver mi foto de perfil",
+      "intent": "Active Directory",
+      "entities": [
+        {
+          "entity": "Leer",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "Elemento",
+          "startPos": 7,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "ver proximas reuniones",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "Leer",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "ver ultimos correos",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "Leer",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    }
+  ],
+  "settings": []
+}

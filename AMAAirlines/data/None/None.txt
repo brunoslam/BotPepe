@@ -1,0 +1,12 @@
+eliminar documento de biblioteca
+eliminar grupo de sharepoint
+eliminar item de lista
+eliminar sitio de sharepoint
+enviar correo
+enviar documento por correo
+enviar foto por correo
+leer correo
+leer foto de perfil
+leer items de lista
+leer proximas reuniones
+quiero ver mi foto de perfil

@@ -1,0 +1,32 @@
+Label	Weight	Text
+l_Office365Luis	1	crear item de lista
+l_Office365Luis	1	ver proximas reuniones
+l_Office365Luis	1	crear sitio
+l_Office365Luis	1	ver mi foto de perfil
+l_Office365Luis	1	ver ultimos correos
+l_Office365Luis	1	crear item de lista
+l_Office365Luis	1	ver proximas reuniones
+l_Office365Luis	1	crear item de lista
+l_Office365Luis	1	ver proximas reuniones
+l_Office365Luis	1	crear item de lista
+l_Office365Luis	1	ver proximas reuniones
+None	1.1	eliminar item de lista
+None	1.1	leer items de lista
+None	1.1	enviar documento por correo
+None	1.1	eliminar grupo de sharepoint
+None	1.1	quiero ver mi foto de perfil
+None	1.1	leer correo
+None	1.1	eliminar documento de biblioteca
+None	1.1	enviar foto por correo
+None	1.1	enviar correo
+None	1.1	leer foto de perfil
+q_AMAQnA	1.1	Who is the target audience for the QnA Maker tool
+q_AMAQnA	1.1	How do I log in to the QnA Maker Portal
+q_AMAQnA	1.1	Do I need to use Bot Framework in order to use QnA Maker
+q_AMAQnA	1.1	How do I embed the QnA Maker service on my website
+q_AMAQnA	1.1	How large a knowledge base can I create
+q_AMAQnA	1.1	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	1.1	Who is the target audience for the QnA Maker tool
+q_AMAQnA	1.1	How do I log in to the QnA Maker Portal
+q_AMAQnA	1.1	Do I need to use Bot Framework in order to use QnA Maker
+q_AMAQnA	1.1	How do I embed the QnA Maker service on my website

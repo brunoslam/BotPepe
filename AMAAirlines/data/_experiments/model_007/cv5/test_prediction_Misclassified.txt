@@ -1,0 +1,6 @@
+No	Utterance	Expected Intent	Predicted Intent
+0	turn on the internet in my bedroom please	           None	       l_AMALuis
+1	dim kitchen lights to 25 .	           None	       l_AMALuis
+2	lower your volume	           None	       l_AMALuis
+3	decrease temperature for me please	           None	       l_AMALuis
+4	how large a knowledge base can i create	       q_AMAQnA	       l_AMALuis

@@ -1,0 +1,47 @@
+Label	Weight	Text
+l_AMALuis	2.071429	theater on please
+l_AMALuis	2.071429	play dvd
+l_AMALuis	2.071429	turn on my bedroom lights.
+l_AMALuis	2.071429	turn off staircase
+l_AMALuis	2.071429	turn off venice lamp
+l_AMALuis	2.071429	make some coffee
+l_AMALuis	2.071429	turn dimmer off
+l_AMALuis	2.071429	theater on please
+l_AMALuis	2.071429	play dvd
+l_AMALuis	2.071429	turn on my bedroom lights.
+l_AMALuis	2.071429	turn off staircase
+l_AMALuis	2.071429	turn off venice lamp
+l_AMALuis	2.071429	make some coffee
+l_AMALuis	2.071429	turn dimmer off
+l_Office365Luis	2.416667	eliminar sitio de sharepoint
+l_Office365Luis	2.416667	crear item lista
+l_Office365Luis	2.416667	leer items de lista
+l_Office365Luis	2.416667	eliminar sitio de sharepoint
+l_Office365Luis	2.416667	crear item lista
+l_Office365Luis	2.416667	leer items de lista
+l_Office365Luis	2.416667	eliminar sitio de sharepoint
+l_Office365Luis	2.416667	crear item lista
+l_Office365Luis	2.416667	leer items de lista
+l_Office365Luis	2.416667	eliminar sitio de sharepoint
+l_Office365Luis	2.416667	crear item lista
+l_Office365Luis	2.416667	leer items de lista
+None	2.9	lower your volume
+None	2.9	lower your volume
+None	2.9	lower your volume
+None	2.9	lower your volume
+None	2.9	lower your volume
+None	2.9	lower your volume
+None	2.9	lower your volume
+None	2.9	lower your volume
+None	2.9	lower your volume
+None	2.9	lower your volume
+q_AMAQnA	2.9	How large a knowledge base can I create
+q_AMAQnA	2.9	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	2.9	How large a knowledge base can I create
+q_AMAQnA	2.9	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	2.9	How large a knowledge base can I create
+q_AMAQnA	2.9	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	2.9	How large a knowledge base can I create
+q_AMAQnA	2.9	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	2.9	How large a knowledge base can I create
+q_AMAQnA	2.9	My URLs have valid FAQ content, but the tool cannot extract them. Why not

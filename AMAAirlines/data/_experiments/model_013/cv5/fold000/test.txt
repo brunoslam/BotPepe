@@ -1,0 +1,47 @@
+Label	Weight	Text
+l_AMALuis	2.071429	turn on the furnace room lights
+l_AMALuis	2.071429	start master bedroom light.
+l_AMALuis	2.071429	change temperature to seventy two degrees
+l_AMALuis	2.071429	living room lamp on please
+l_AMALuis	2.071429	turn dimmer off
+l_AMALuis	2.071429	snap switch fan fifty percent
+l_AMALuis	2.071429	make camera 1 off please
+l_AMALuis	2.071429	turn on the furnace room lights
+l_AMALuis	2.071429	start master bedroom light.
+l_AMALuis	2.071429	change temperature to seventy two degrees
+l_AMALuis	2.071429	living room lamp on please
+l_AMALuis	2.071429	turn dimmer off
+l_AMALuis	2.071429	snap switch fan fifty percent
+l_AMALuis	2.071429	make camera 1 off please
+l_Office365Luis	2.9	leer ultimos correos
+l_Office365Luis	2.9	leer ultimos correos
+l_Office365Luis	2.9	leer ultimos correos
+l_Office365Luis	2.9	leer ultimos correos
+l_Office365Luis	2.9	leer ultimos correos
+l_Office365Luis	2.9	leer ultimos correos
+l_Office365Luis	2.9	leer ultimos correos
+l_Office365Luis	2.9	leer ultimos correos
+l_Office365Luis	2.9	leer ultimos correos
+l_Office365Luis	2.9	leer ultimos correos
+None	2.416667	leer foto de perfil
+None	2.416667	leer proximas reuniones
+None	2.416667	eliminar documento de biblioteca
+None	2.416667	leer foto de perfil
+None	2.416667	leer proximas reuniones
+None	2.416667	eliminar documento de biblioteca
+None	2.416667	leer foto de perfil
+None	2.416667	leer proximas reuniones
+None	2.416667	eliminar documento de biblioteca
+None	2.416667	leer foto de perfil
+None	2.416667	leer proximas reuniones
+None	2.416667	eliminar documento de biblioteca
+q_AMAQnA	2.9	How large a knowledge base can I create
+q_AMAQnA	2.9	Is the QnA Maker Service free
+q_AMAQnA	2.9	How large a knowledge base can I create
+q_AMAQnA	2.9	Is the QnA Maker Service free
+q_AMAQnA	2.9	How large a knowledge base can I create
+q_AMAQnA	2.9	Is the QnA Maker Service free
+q_AMAQnA	2.9	How large a knowledge base can I create
+q_AMAQnA	2.9	Is the QnA Maker Service free
+q_AMAQnA	2.9	How large a knowledge base can I create
+q_AMAQnA	2.9	Is the QnA Maker Service free

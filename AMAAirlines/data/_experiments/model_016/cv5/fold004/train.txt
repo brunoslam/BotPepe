@@ -1,0 +1,36 @@
+Label	Weight	Text
+l_Office365Luis	1	crear item de lista
+l_Office365Luis	1	ver proximas reuniones
+l_Office365Luis	1	leer ultimos correos
+l_Office365Luis	1	crear sitio
+l_Office365Luis	1	ver ultimos correos
+l_Office365Luis	1	crear item de lista
+l_Office365Luis	1	ver proximas reuniones
+l_Office365Luis	1	leer ultimos correos
+l_Office365Luis	1	crear sitio
+l_Office365Luis	1	crear item de lista
+l_Office365Luis	1	ver proximas reuniones
+l_Office365Luis	1	leer ultimos correos
+l_Office365Luis	1	crear sitio
+None	1.3	eliminar item de lista
+None	1.3	leer items de lista
+None	1.3	enviar documento por correo
+None	1.3	eliminar grupo de sharepoint
+None	1.3	eliminar sitio de sharepoint
+None	1.3	leer proximas reuniones
+None	1.3	quiero ver mi foto de perfil
+None	1.3	leer correo
+None	1.3	enviar correo
+None	1.3	leer foto de perfil
+q_AMAQnA	1.083333	Who is the target audience for the QnA Maker tool
+q_AMAQnA	1.083333	How do I log in to the QnA Maker Portal
+q_AMAQnA	1.083333	Do I need to use Bot Framework in order to use QnA Maker
+q_AMAQnA	1.083333	How do I embed the QnA Maker service on my website
+q_AMAQnA	1.083333	What format does the tool expect the file content to be
+q_AMAQnA	1.083333	Is the QnA Maker Service free
+q_AMAQnA	1.083333	Who is the target audience for the QnA Maker tool
+q_AMAQnA	1.083333	How do I log in to the QnA Maker Portal
+q_AMAQnA	1.083333	Do I need to use Bot Framework in order to use QnA Maker
+q_AMAQnA	1.083333	How do I embed the QnA Maker service on my website
+q_AMAQnA	1.083333	What format does the tool expect the file content to be
+q_AMAQnA	1.083333	Is the QnA Maker Service free

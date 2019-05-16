@@ -1,0 +1,49 @@
+Label	Weight	Text
+l_AMALuis	1	turn off foyer lights
+l_AMALuis	1	turn on external speaker
+l_AMALuis	1	turn on my bedroom lights.
+l_AMALuis	1	breezeway on please
+l_AMALuis	1	turn dimmer off
+l_AMALuis	1	set lights to concentrate
+l_AMALuis	1	turn on bathroom heater
+l_AMALuis	1	turn on kitchen faucet
+l_AMALuis	1	play dvd
+l_AMALuis	1	turn on thermostat please
+l_AMALuis	1	set lights out in bedroom
+l_AMALuis	1	set lights to bright
+l_AMALuis	1	turn thermostat on 70.
+l_AMALuis	1	shut down my work computer
+l_AMALuis	1	coffee bar on please
+l_AMALuis	1	turn off venice lamp
+l_AMALuis	1	turn the fan to high
+l_AMALuis	1	turn off staircase
+l_AMALuis	1	snap switch fan fifty percent
+l_AMALuis	1	lock the doors for me please
+l_AMALuis	1	fish pond off please
+l_AMALuis	1	make some coffee
+l_AMALuis	1	change temperature to seventy two degrees
+l_AMALuis	1	start master bedroom light.
+l_AMALuis	1	fish pond on please
+l_AMALuis	1	turn off ac please
+l_AMALuis	1	turn on the furnace room lights
+None	2.454545	dim kitchen lights to 25 .
+None	2.454545	turn on the internet in my bedroom please
+None	2.454545	lower your volume
+None	2.454545	dim kitchen lights to 25 .
+None	2.454545	turn on the internet in my bedroom please
+None	2.454545	dim kitchen lights to 25 .
+None	2.454545	turn on the internet in my bedroom please
+None	2.454545	dim kitchen lights to 25 .
+None	2.454545	turn on the internet in my bedroom please
+None	2.454545	dim kitchen lights to 25 .
+None	2.454545	turn on the internet in my bedroom please
+q_AMAQnA	2.7	Who is the target audience for the QnA Maker tool
+q_AMAQnA	2.7	How do I embed the QnA Maker service on my website
+q_AMAQnA	2.7	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	2.7	What format does the tool expect the file content to be
+q_AMAQnA	2.7	Is the QnA Maker Service free
+q_AMAQnA	2.7	How large a knowledge base can I create
+q_AMAQnA	2.7	Who is the target audience for the QnA Maker tool
+q_AMAQnA	2.7	How do I embed the QnA Maker service on my website
+q_AMAQnA	2.7	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	2.7	What format does the tool expect the file content to be

@@ -1,0 +1,47 @@
+Label	Weight	Text
+l_AMALuis	1.928571	turn on light in bedroom
+l_AMALuis	1.928571	turn off venice lamp
+l_AMALuis	1.928571	turn dimmer off
+l_AMALuis	1.928571	turn on bathroom heater
+l_AMALuis	1.928571	set lights to concentrate
+l_AMALuis	1.928571	snap switch fan fifty percent
+l_AMALuis	1.928571	make some coffee
+l_AMALuis	1.928571	turn on light in bedroom
+l_AMALuis	1.928571	turn off venice lamp
+l_AMALuis	1.928571	turn dimmer off
+l_AMALuis	1.928571	turn on bathroom heater
+l_AMALuis	1.928571	set lights to concentrate
+l_AMALuis	1.928571	snap switch fan fifty percent
+l_AMALuis	1.928571	make some coffee
+l_Office365Luis	2.7	crear sitio
+l_Office365Luis	2.7	crear sitio
+l_Office365Luis	2.7	crear sitio
+l_Office365Luis	2.7	crear sitio
+l_Office365Luis	2.7	crear sitio
+l_Office365Luis	2.7	crear sitio
+l_Office365Luis	2.7	crear sitio
+l_Office365Luis	2.7	crear sitio
+l_Office365Luis	2.7	crear sitio
+l_Office365Luis	2.7	crear sitio
+None	2.25	eliminar documento de biblioteca
+None	2.25	leer correo
+None	2.25	leer foto de perfil
+None	2.25	leer items de lista
+None	2.25	eliminar documento de biblioteca
+None	2.25	leer correo
+None	2.25	leer foto de perfil
+None	2.25	leer items de lista
+None	2.25	eliminar documento de biblioteca
+None	2.25	leer correo
+None	2.25	leer foto de perfil
+None	2.25	leer items de lista
+q_AMAQnA	2.7	What format does the tool expect the file content to be
+q_AMAQnA	2.7	Do I need to use Bot Framework in order to use QnA Maker
+q_AMAQnA	2.7	What format does the tool expect the file content to be
+q_AMAQnA	2.7	Do I need to use Bot Framework in order to use QnA Maker
+q_AMAQnA	2.7	What format does the tool expect the file content to be
+q_AMAQnA	2.7	Do I need to use Bot Framework in order to use QnA Maker
+q_AMAQnA	2.7	What format does the tool expect the file content to be
+q_AMAQnA	2.7	Do I need to use Bot Framework in order to use QnA Maker
+q_AMAQnA	2.7	What format does the tool expect the file content to be
+q_AMAQnA	2.7	Do I need to use Bot Framework in order to use QnA Maker

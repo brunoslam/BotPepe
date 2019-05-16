@@ -1,0 +1,69 @@
+Label	Weight	Text
+l_AMALuis	1	book an economy tickets for 2 adults next month
+l_AMALuis	1	book me a flight from cairo to redmond next thursday
+l_AMALuis	1	flight 711
+l_AMALuis	1	when will the flight from dubai to istanbul land
+l_AMALuis	1	i want to book economy class tickets for 2 adults 1 child from khi to dxb on 21st november, 2018
+l_AMALuis	1	gf 219
+l_AMALuis	1	i want to track flight gf571
+l_AMALuis	1	i want to book a flight from islamabad to tblisi
+l_AMALuis	1	tell me about gf 810
+l_AMALuis	1	book 2 tickets to paris
+l_AMALuis	1	please book a flight from london to paris
+l_AMALuis	1	ok kindly book the business class tickets to bahrain this week
+l_AMALuis	1	where is gf 999[?]
+l_AMALuis	1	has the flight gf 372 from bahrain to sydney landed yet
+l_AMALuis	1	from where can i book the flight
+l_AMALuis	1	let me know if i can go next thursday from tokyo to belgium in economy class with 3 people
+l_AMALuis	1	whats the status of flight from karachi
+l_AMALuis	1	i want to track ek 234
+l_AMALuis	1	is flight from london to bahrain on time
+l_AMALuis	1	i am interested in booking
+l_AMALuis	1	tell me about gf 124 to karachi
+l_AMALuis	1	please reserve one way flight to georgia from baku for may 12, 2019 for 3 adults of business class
+l_AMALuis	1	can you please update me about the status of gf-840
+l_AMALuis	1	when is the flight number 288 from hyderabad to manama landing[?]
+l_AMALuis	1	buy a ticket from new york to london on march 5
+l_AMALuis	1	book me 2 adult business oneway tickets to paris tomorrow
+l_AMALuis	1	we need 3 return tickets from thailand to qatar
+l_AMALuis	1	hi, i need 2 economy class return tickets from new york to london
+l_AMALuis	1	buy a business class ticket to kaula lampur for 3 adults
+l_AMALuis	1	flight to bahrain gf-123, has it taken off[?]
+l_AMALuis	1	get me 4 tickets for adult, 1 for child on 24th november, 2018 for bahrain in economy class
+l_AMALuis	1	can i reserve the flight from here[?]
+None	1.6	find my taxi .
+None	1.6	how late is the uber black going to be
+None	1.6	decrease temperature for me please
+None	1.6	dim kitchen lights to 25 .
+None	1.6	how far away is an uber
+None	1.6	i want to find out the location of my taxi .
+None	1.6	please track taxi
+None	1.6	how much going to take before the driver arrive
+None	1.6	when is your birthday
+None	1.6	how long wait for taxi
+None	1.6	lower your volume
+None	1.6	how far away is my uber
+None	1.6	turn on the internet in my bedroom please
+None	1.6	what is the color of my car
+None	1.6	when will my taxi arrive
+None	1.6	let's meet this saturday afternoon for dinner
+None	1.6	how long till pick up
+None	1.6	how dark is the web
+None	1.6	whats your favorite tourist place
+None	1.6	please check my blood pressure right now
+q_AMAQnA	2	How large a knowledge base can I create
+q_AMAQnA	2	How do I embed the QnA Maker service on my website
+q_AMAQnA	2	Do I need to use Bot Framework in order to use QnA Maker
+q_AMAQnA	2	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	2	Who is the target audience for the QnA Maker tool
+q_AMAQnA	2	Is the QnA Maker Service free
+q_AMAQnA	2	What format does the tool expect the file content to be
+q_AMAQnA	2	How do I log in to the QnA Maker Portal
+q_AMAQnA	2	How large a knowledge base can I create
+q_AMAQnA	2	How do I embed the QnA Maker service on my website
+q_AMAQnA	2	Do I need to use Bot Framework in order to use QnA Maker
+q_AMAQnA	2	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	2	Who is the target audience for the QnA Maker tool
+q_AMAQnA	2	Is the QnA Maker Service free
+q_AMAQnA	2	What format does the tool expect the file content to be
+q_AMAQnA	2	How do I log in to the QnA Maker Portal

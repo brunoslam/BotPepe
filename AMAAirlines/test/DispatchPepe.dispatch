@@ -1,0 +1,38 @@
+{
+  "authoringRegion": "westus",
+  "subscriptionRegion": "westus",
+  "hierarchical": true,
+  "useAllTrainingData": false,
+  "dontReviseUtterance": false,
+  "services": [
+    {
+      "appId": "b87d8086-27b4-4916-bf8e-b08f23b56311",
+      "authoringKey": "2095a5bb221a4b4183a2089c85b20e1b",
+      "version": "0.1",
+      "region": "westus",
+      "type": "luis",
+      "name": "AMALuis",
+      "id": "119"
+    },
+    {
+      "kbId": "5fb5e750-692a-467b-8faa-26362b58ddc9",
+      "subscriptionKey": "99f023daa58a46f685b25cf6158d95bf",
+      "hostname": "https://qnabotpepe.azurewebsites.net/qnamaker",
+      "endpointKey": "c2d41ccb-06d9-44d1-8f46-586482594d69",
+      "type": "qna",
+      "name": "AMAQnA",
+      "id": "123"
+    }
+  ],
+  "serviceIds": [
+    "119",
+    "123"
+  ],
+  "appId": "8239a440-d231-4cd6-9a2b-624f29084cc2",
+  "authoringKey": "2095a5bb221a4b4183a2089c85b20e1b",
+  "subscriptionKey": "6c9680d0e7dc4e47abdc68dd5b3fb312",
+  "version": "Dispatch",
+  "region": "westus",
+  "type": "dispatch",
+  "name": "DispatchPepe"
+}

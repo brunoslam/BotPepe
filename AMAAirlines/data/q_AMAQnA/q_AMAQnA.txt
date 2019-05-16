@@ -1,0 +1,21 @@
+Who is the target audience for the QnA Maker tool
+How do I log in to the QnA Maker Portal
+Is the QnA Maker Service free
+My URLs have valid FAQ content, but the tool cannot extract them. Why not
+What format does the tool expect the file content to be
+How large a knowledge base can I create
+Do I need to use Bot Framework in order to use QnA Maker
+How do I embed the QnA Maker service on my website
+Crear una lista en un sitio de SharePoint Online o SharePoint Server 2019
+Crear listas a partir de otros tipos de plantillas de lista
+¿Quiere hacer lo mismo con las bibliotecas
+Pasos siguientes con listas
+Crear una lista en SharePoint Server 2016 o SharePoint Server 2013
+Agregar una lista a una página en SharePoint Server 2016 o SharePoint Server 2013
+Minimizar o restaurar una lista o biblioteca en una página de SharePoint Server 2016 o SharePoint Server 2013
+Crear una lista en SharePoint Server 2010
+Crear una lista en una página de SharePoint Server 2010
+Crear una lista personalizada en SharePoint Server 2010
+Agregar una lista a una página en SharePoint Server 2010
+Crear una lista a partir de una plantilla de lista en SharePoint Server 2007
+Crear una lista personalizada en SharePoint Server 2007

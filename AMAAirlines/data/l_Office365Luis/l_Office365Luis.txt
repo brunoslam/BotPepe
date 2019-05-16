@@ -1,0 +1,6 @@
+crear item de lista
+crear sitio
+leer ultimos correos
+ver mi foto de perfil
+ver proximas reuniones
+ver ultimos correos

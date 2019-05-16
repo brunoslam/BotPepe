@@ -1,0 +1,4 @@
+Label	LabelName	Samples
+0	l_AMALuis	32
+1	None	20
+2	q_AMAQnA	16

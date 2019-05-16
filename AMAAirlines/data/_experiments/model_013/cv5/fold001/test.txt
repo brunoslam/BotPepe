@@ -1,0 +1,47 @@
+Label	Weight	Text
+l_AMALuis	2.071429	shut down my work computer
+l_AMALuis	2.071429	turn on bathroom heater
+l_AMALuis	2.071429	play dvd
+l_AMALuis	2.071429	set lights out in bedroom
+l_AMALuis	2.071429	turn on my bedroom lights.
+l_AMALuis	2.071429	set lights to concentrate
+l_AMALuis	2.071429	turn on thermostat please
+l_AMALuis	2.071429	shut down my work computer
+l_AMALuis	2.071429	turn on bathroom heater
+l_AMALuis	2.071429	play dvd
+l_AMALuis	2.071429	set lights out in bedroom
+l_AMALuis	2.071429	turn on my bedroom lights.
+l_AMALuis	2.071429	set lights to concentrate
+l_AMALuis	2.071429	turn on thermostat please
+l_Office365Luis	2.9	crear sitio
+l_Office365Luis	2.9	crear sitio
+l_Office365Luis	2.9	crear sitio
+l_Office365Luis	2.9	crear sitio
+l_Office365Luis	2.9	crear sitio
+l_Office365Luis	2.9	crear sitio
+l_Office365Luis	2.9	crear sitio
+l_Office365Luis	2.9	crear sitio
+l_Office365Luis	2.9	crear sitio
+l_Office365Luis	2.9	crear sitio
+None	2.416667	leer items de lista
+None	2.416667	enviar foto por correo
+None	2.416667	leer correo
+None	2.416667	leer items de lista
+None	2.416667	enviar foto por correo
+None	2.416667	leer correo
+None	2.416667	leer items de lista
+None	2.416667	enviar foto por correo
+None	2.416667	leer correo
+None	2.416667	leer items de lista
+None	2.416667	enviar foto por correo
+None	2.416667	leer correo
+q_AMAQnA	2.9	How do I embed the QnA Maker service on my website
+q_AMAQnA	2.9	What format does the tool expect the file content to be
+q_AMAQnA	2.9	How do I embed the QnA Maker service on my website
+q_AMAQnA	2.9	What format does the tool expect the file content to be
+q_AMAQnA	2.9	How do I embed the QnA Maker service on my website
+q_AMAQnA	2.9	What format does the tool expect the file content to be
+q_AMAQnA	2.9	How do I embed the QnA Maker service on my website
+q_AMAQnA	2.9	What format does the tool expect the file content to be
+q_AMAQnA	2.9	How do I embed the QnA Maker service on my website
+q_AMAQnA	2.9	What format does the tool expect the file content to be

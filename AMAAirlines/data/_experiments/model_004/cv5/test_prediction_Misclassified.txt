@@ -1,0 +1,7 @@
+No	Utterance	Expected Intent	Predicted Intent
+0	lower your volume	           None	       l_AMALuis
+1	turn on the internet in my bedroom please	           None	       l_AMALuis
+2	dim kitchen lights to 25 .	           None	       l_AMALuis
+3	decrease temperature for me please	           None	       l_AMALuis
+4	what format does the tool expect the file content to be	       q_AMAQnA	       l_AMALuis
+5	how large a knowledge base can i create	       q_AMAQnA	       l_AMALuis

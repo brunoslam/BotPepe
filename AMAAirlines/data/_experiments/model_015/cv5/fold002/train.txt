@@ -1,0 +1,62 @@
+Label	Weight	Text
+l_AMALuis	1	make some coffee
+l_AMALuis	1	turn thermostat on 70.
+l_AMALuis	1	lock the doors for me please
+l_AMALuis	1	start master bedroom light.
+l_AMALuis	1	coffee bar on please
+l_AMALuis	1	breezeway on please
+l_AMALuis	1	turn off ac please
+l_AMALuis	1	turn on light in bedroom
+l_AMALuis	1	turn the fan to high
+l_AMALuis	1	turn on the furnace room lights
+l_AMALuis	1	set lights to concentrate
+l_AMALuis	1	turn off living room light
+l_AMALuis	1	turn off venice lamp
+l_AMALuis	1	play dvd
+l_AMALuis	1	set lights to bright
+l_AMALuis	1	fish pond off please
+l_AMALuis	1	living room lamps off please
+l_AMALuis	1	turn on kitchen faucet
+l_AMALuis	1	fish pond on please
+l_AMALuis	1	shut down my work computer
+l_AMALuis	1	turn off staircase
+l_AMALuis	1	make camera 1 off please
+l_AMALuis	1	turn on bathroom heater
+l_AMALuis	1	turn on thermostat please
+l_AMALuis	1	living room lamp on please
+l_AMALuis	1	turn dimmer off
+l_AMALuis	1	turn on my bedroom lights.
+l_Office365Luis	2.7	crear sitio
+l_Office365Luis	2.7	leer ultimos correos
+l_Office365Luis	2.7	ver proximas reuniones
+l_Office365Luis	2.7	crear item de lista
+l_Office365Luis	2.7	crear sitio
+l_Office365Luis	2.7	leer ultimos correos
+l_Office365Luis	2.7	crear sitio
+l_Office365Luis	2.7	leer ultimos correos
+l_Office365Luis	2.7	crear sitio
+l_Office365Luis	2.7	leer ultimos correos
+None	1.928571	leer foto de perfil
+None	1.928571	eliminar grupo de sharepoint
+None	1.928571	eliminar item de lista
+None	1.928571	dim kitchen lights to 25 .
+None	1.928571	eliminar documento de biblioteca
+None	1.928571	turn on the internet in my bedroom please
+None	1.928571	leer proximas reuniones
+None	1.928571	crear sitio
+None	1.928571	eliminar sitio de sharepoint
+None	1.928571	quiero ver mi foto de perfil
+None	1.928571	enviar documento por correo
+None	1.928571	leer items de lista
+None	1.928571	lower your volume
+None	1.928571	enviar correo
+q_AMAQnA	2.7	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	2.7	Do I need to use Bot Framework in order to use QnA Maker
+q_AMAQnA	2.7	How do I embed the QnA Maker service on my website
+q_AMAQnA	2.7	Is the QnA Maker Service free
+q_AMAQnA	2.7	How do I log in to the QnA Maker Portal
+q_AMAQnA	2.7	Who is the target audience for the QnA Maker tool
+q_AMAQnA	2.7	My URLs have valid FAQ content, but the tool cannot extract them. Why not
+q_AMAQnA	2.7	Do I need to use Bot Framework in order to use QnA Maker
+q_AMAQnA	2.7	How do I embed the QnA Maker service on my website
+q_AMAQnA	2.7	Is the QnA Maker Service free

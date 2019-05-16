@@ -1,0 +1,31 @@
+Label	Weight	Text
+l_Office365Luis	1.2	crear item de lista
+l_Office365Luis	1.2	crear item de lista
+l_Office365Luis	1.2	crear item de lista
+l_Office365Luis	1.2	crear item de lista
+l_Office365Luis	1.2	crear item de lista
+l_Office365Luis	1.2	crear item de lista
+l_Office365Luis	1.2	crear item de lista
+l_Office365Luis	1.2	crear item de lista
+l_Office365Luis	1.2	crear item de lista
+l_Office365Luis	1.2	crear item de lista
+None	1.2	eliminar item de lista
+None	1.2	leer items de lista
+None	1.2	eliminar item de lista
+None	1.2	leer items de lista
+None	1.2	eliminar item de lista
+None	1.2	leer items de lista
+None	1.2	eliminar item de lista
+None	1.2	leer items de lista
+None	1.2	eliminar item de lista
+None	1.2	leer items de lista
+q_AMAQnA	1.2	Who is the target audience for the QnA Maker tool
+q_AMAQnA	1.2	How do I log in to the QnA Maker Portal
+q_AMAQnA	1.2	Who is the target audience for the QnA Maker tool
+q_AMAQnA	1.2	How do I log in to the QnA Maker Portal
+q_AMAQnA	1.2	Who is the target audience for the QnA Maker tool
+q_AMAQnA	1.2	How do I log in to the QnA Maker Portal
+q_AMAQnA	1.2	Who is the target audience for the QnA Maker tool
+q_AMAQnA	1.2	How do I log in to the QnA Maker Portal
+q_AMAQnA	1.2	Who is the target audience for the QnA Maker tool
+q_AMAQnA	1.2	How do I log in to the QnA Maker Portal
