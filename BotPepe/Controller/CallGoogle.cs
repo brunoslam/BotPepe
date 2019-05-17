@@ -71,8 +71,12 @@ namespace BotPepe.Controller
             try
             {
 
+                //Related_Questions xdd = GetJsonData(query)["related_questions"].ToObject<Related_Questions>();
+                //Rootobject xd = GetJsonData(query).ToObject<Rootobject>();
 
-                var asd = GetJsonData(query)["answer_box"].ToObject<Answer_Box>();
+                Answer_Box asd = GetJsonData(query)["answer_box"].ToObject<Answer_Box>();
+
+
                 return asd.answers;
             }
             catch (Exception ex)

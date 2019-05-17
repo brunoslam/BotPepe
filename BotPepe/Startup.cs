@@ -111,7 +111,7 @@ namespace BotPepe
                 {
 
                     logger.LogError($"Exception caught : {exception}");
-                    await context.SendActivityAsync("Sorry, it looks like something went wrong. " + exception.Message);
+                    await context.SendActivityAsync("Sorry 😞, it looks like something went wrong. " + exception.Message);
                     throw new InvalidOperationException(exception.Message);
                 };
                 

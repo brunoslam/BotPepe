@@ -28,8 +28,10 @@ namespace BotPepe.Dialogs
             WaterfallStep[] waterfallSteps = new WaterfallStep[]
             {
                 EnviarAccionesOutlook,
-                PromptStepAsync
-                //CorreosStepAsync
+                ReemplazarDialog,
+                PromptStepAsync,
+                
+                CorreosStepAsync
                 //EnviarAccionesOutlook
             };
             WaterfallStep[] waterfallStepsOtro = new WaterfallStep[]
@@ -43,7 +45,8 @@ namespace BotPepe.Dialogs
             AddDialog(new WaterfallDialog(Id, waterfallSteps));
             AddDialog(new WaterfallDialog("waterfallStepsOtro", waterfallStepsOtro));
             AddDialog(Prompt(ConnectionSettingName));
-            AddDialog(new TextPrompt("name"));
+            AddDialog(new ChoicePrompt("EnviarAccionesOutlook"));
+            AddDialog(new TextPrompt("ReemplazarDialog"));
             AddDialog(new TextPrompt("OtroOutlook"));
             AddDialog(new ConfirmPrompt("ConfirmacionOtroOutlook"));
 
@@ -75,7 +78,22 @@ namespace BotPepe.Dialogs
 
             //stepContext.Values["transport"] = ((FoundChoice)dc.).Value;
 
-            return await stepContext.PromptAsync("OtroOutlook", new PromptOptions { Prompt = MessageFactory.Text("Qué desea?...") }, cancellationToken);
+            return await stepContext.PromptAsync("OtroOutlook", new PromptOptions { Prompt = MessageFactory.Text("Qué desea saber? 😊") }, cancellationToken);
+        }
+        private static async Task<DialogTurnResult> ReemplazarDialog(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        {
+            //var reply = stepContext.Context.Activity.CreateReply();
+            //reply.Attachments = new List<Attachment> { CreateHeroCard().ToAttachment() };
+            //await stepContext.Context.SendActivityAsync(reply, cancellationToken);
+
+
+            //stepContext.Values["transport"] = ((FoundChoice)dc.).Value;
+            if (((FoundChoice)stepContext.Result).Value == "Otro")
+            {
+                return await stepContext.ReplaceDialogAsync("waterfallStepsOtro", null, cancellationToken);
+            }
+
+            return await stepContext.ContinueDialogAsync(cancellationToken);
         }
         private static async Task<DialogTurnResult> ConfirmacionOtroOutlook(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
@@ -85,22 +103,29 @@ namespace BotPepe.Dialogs
             Answer[] answers = await google.SerpWow(stepContext.Result.ToString().Replace(" ", "+"));
 
 
-
-            foreach (Answer answer in answers)
+            if (answers != null)
             {
-                if (answer.steps != null)
+                foreach (Answer answer in answers)
                 {
-                    int contador = 0;
-                    foreach (string steps in answer.steps)
+                    if (answer.steps != null)
                     {
-                        contador++;
-                        respuestaGoogle += $"{contador}. {steps}\n";
+                        int contador = 0;
+                        foreach (string steps in answer.steps)
+                        {
+                            contador++;
+                            respuestaGoogle += $"{contador}. {steps}\n";
 
+                        }
+                        break;
                     }
-                    break;
+                    respuestaGoogle += answer.answer;
                 }
-                respuestaGoogle += answer.answer;
             }
+            else
+            {
+                respuestaGoogle = "No se encontró respuesta en Google Answers. Crear método para mostrar preguntas relacionadas. 😞";
+            }
+
 
             //var reply = stepContext.Context.Activity.CreateReply();
             //reply.Attachments = new List<Attachment> { CreateHeroCard().ToAttachment() };
@@ -108,27 +133,32 @@ namespace BotPepe.Dialogs
 
 
             //stepContext.Values["transport"] = ((FoundChoice)dc.).Value;
+            await stepContext.Context.SendActivityAsync(MessageFactory.Text(respuestaGoogle), cancellationToken);
 
-            return await stepContext.PromptAsync("OtroOutlook", new PromptOptions { Prompt = MessageFactory.Text(respuestaGoogle) }, cancellationToken);
+
+            return await stepContext.EndDialogAsync(cancellationToken: cancellationToken);
         }
 
         private static async Task<DialogTurnResult> EnviarAccionesOutlook(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
-            var reply = stepContext.Context.Activity.CreateReply();
-            reply.Attachments = new List<Attachment> { CreateHeroCard().ToAttachment() };
-            await stepContext.Context.SendActivityAsync(reply, cancellationToken);
+            //var reply = stepContext.Context.Activity.CreateReply();
+            //reply.Attachments = new List<Attachment> { CreateHeroCard().ToAttachment() };
+            //await stepContext.Context.SendActivityAsync(reply, cancellationToken);
 
-            var choices = new List<Choice>();
-            choices.Add(new Choice { Value = "Plain Pizza", Synonyms = new List<string> { "plain" } });
-            choices.Add(new Choice { Value = "Pizza with Pepperoni", Synonyms = new List<string> { "4 Day", "workshop", "full" } });
-            choices.Add(new Choice { Value = "Pizza with Mushrooms", Synonyms = new List<string> { "mushroom", "mushrooms", "shrooms" } });
-            choices.Add(new Choice { Value = "Pizza with Peppers, Mushrooms and Brocolli", Synonyms = new List<string> { "vegtable", "veggie" } });
-            choices.Add(new Choice { Value = "Pizza with Anchovies" });
+            var options = new PromptOptions()
+            {
+                Prompt = stepContext.Context.Activity.CreateReply("Qué tiene duda sobre Outlook?"),
+                Choices = new List<Choice>(),
+            };
+
+            // Add the choices for the prompt.
+            //ERROR: se cae cuando se ocupa "(", "[". options.Choices.Add(new Choice() { Value = "Ver últimos correos (ejem)" });
+            options.Choices.Add(new Choice() { Value = "Ver últimos correos" });
+            options.Choices.Add(new Choice() { Value = "Otro" }); ;
 
 
-            //stepContext.Values["transport"] = ((FoundChoice)dc.).Value;
-
-            return await stepContext.PromptAsync("name", new PromptOptions { Prompt = MessageFactory.Text("Please enter your name."), Choices = choices }, cancellationToken);
+            //return await stepContext.
+            return await stepContext.PromptAsync("EnviarAccionesOutlook", options, cancellationToken);
             //foreach (var member in turnContext.Activity.MembersAdded)
             //{
             //    if (member.Id != turnContext.Activity.Recipient.Id)

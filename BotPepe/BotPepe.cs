@@ -262,7 +262,7 @@ namespace BotPepe
                     dc = await _dialogs.CreateContextAsync(turnContext, cancellationToken);
 
                     //await dc.BeginDialogAsync("SendWelcomeMessageAsync");
-                    await SendWelcomeMessageAsync(turnContext, cancellationToken);
+                    await SendWelcomeMessageAsync(turnContext, cancellationToken, true);
                     //await dc.PromptAsync("name", GenerateOptions(dc.Context.Activity), cancellationToken);
                 }
             }
@@ -296,10 +296,10 @@ namespace BotPepe
         /// <param name="cancellationToken" >(Optional) A <see cref="CancellationToken"/> that can be used by other objects
         /// or threads to receive notice of cancellation.</param>
         /// <returns>>A <see cref="Task"/> representing the operation result of the Turn operation.</returns>
-        private static async Task SendWelcomeMessageAsync(ITurnContext turnContext, CancellationToken cancellationToken)
+        private static async Task SendWelcomeMessageAsync(ITurnContext turnContext, CancellationToken cancellationToken, bool saludar)
         {
 
-            
+
             //IList<Result> asd = await google.GoogleIt(stepContext.Result.ToString());
 
             //foreach (var result in asd)
@@ -307,31 +307,58 @@ namespace BotPepe
             //    var xd = result.Title;
             //}
 
-
-            foreach (var member in turnContext.Activity.MembersAdded)
+            if(turnContext.Activity.MembersAdded != null)
             {
-                if (member.Id != turnContext.Activity.Recipient.Id)
+                foreach (var member in turnContext.Activity.MembersAdded)
                 {
-                    
-                    var reply = turnContext.Activity.CreateReply();
-                    reply.Text = WelcomeText;
-                    reply.Attachments = new List<Attachment> { CreateHeroCard(member.Id).ToAttachment() };
-                    reply.SuggestedActions = new SuggestedActions()
+                    if (member.Id != turnContext.Activity.Recipient.Id)
                     {
-                        Actions = new List<CardAction>()
+
+                        var reply = turnContext.Activity.CreateReply();
+                        reply.Text = WelcomeText;
+                        reply.Attachments = new List<Attachment> { CreateHeroCard(member.Id, saludar).ToAttachment() };
+                        reply.SuggestedActions = new SuggestedActions()
+                        {
+                            Actions = new List<CardAction>()
                         {
 
 
 
+                            new CardAction(){ Title = "VER ÚLTIMOS CORREOS", Type=ActionTypes.ImBack, Value="Ver últimos correos" },
+                            
+                            new CardAction(){ Title = "CONSULTAR ESTADO DE SERVICIO O365", Type=ActionTypes.ImBack, Value="Blue" },
+                            new CardAction(){ Title = "CHAT LIBRE CON BOT", Type=ActionTypes.ImBack, Value="Red" },
+                            new CardAction(){ Title = "PREGUNTA ACERCA DE SERVICIO", Type=ActionTypes.ImBack, Value="Green" },
+                            new CardAction(){ Title = "AYUDA", Type=ActionTypes.ImBack, Value="Ayuda" },
+                        }
+                        };
+                        await turnContext.SendActivityAsync(reply, cancellationToken);
+
+                    }
+                }
+            }
+            else
+            {
+                var reply = turnContext.Activity.CreateReply();
+                reply.Text = WelcomeText;
+                reply.Attachments = new List<Attachment> { CreateHeroCard(null, saludar).ToAttachment() };
+                reply.SuggestedActions = new SuggestedActions()
+                {
+                    Actions = new List<CardAction>()
+                        {
+
+
+
+                            new CardAction(){ Title = "VER ÚLTIMOS CORREOS", Type=ActionTypes.ImBack, Value="Ver últimos correos" },
                             new CardAction(){ Title = "CONSULTAR ESTADO DE SERVICIO O365", Type=ActionTypes.ImBack, Value="Blue" },
                             new CardAction(){ Title = "CHAT LIBRE CON BOT", Type=ActionTypes.ImBack, Value="Red" },
                             new CardAction(){ Title = "PREGUNTA ACERCA DE SERVICIO", Type=ActionTypes.ImBack, Value="Green" }
                         }
-                    };
-                    await turnContext.SendActivityAsync(reply, cancellationToken);
-
-                }
+                };
+                await turnContext.SendActivityAsync(reply, cancellationToken);
             }
+
+            
         }
 
         /// <summary>
@@ -350,6 +377,7 @@ namespace BotPepe
                 case "logout":
                 case "signoff":
                 case "logoff":
+                case "cerrar sesión":
                     // The bot adapter encapsulates the authentication processes and sends
                     // activities to from the Bot Connector Service.
                     var botAdapter = (BotFrameworkAdapter)turnContext.Adapter;
@@ -380,10 +408,14 @@ namespace BotPepe
         /// </summary>
         /// <param name="newUserName"> The name of the user.</param>
         /// <returns>A <see cref="HeroCard"/> the user can interact with.</returns>
-        private static HeroCard CreateHeroCard(string newUserName)
+        private static HeroCard CreateHeroCard(string newUserName, bool saludar)
         {
-            var heroCard = new HeroCard($"Welcome {newUserName}", "OAuthBot")
+            var titulo = saludar ? $"Bienvenido {newUserName}" : "";
+            var heroCard = new HeroCard(titulo)
             {
+                Text = saludar ? $"Bienvenido {newUserName}": "",
+                Subtitle = "🐶",
+
                 Images = new List<CardImage>
                 {
                     new CardImage(
@@ -395,7 +427,7 @@ namespace BotPepe
                 },
                 Buttons = new List<CardAction>
                 {
-                    new CardAction(ActionTypes.ImBack, "Me", text: "Me", displayText: "Me", value: "Me"),
+                    new CardAction(ActionTypes.ImBack, "Mi información", text: "Yo", displayText: "Yo", value: "Yo"),
                     //new CardAction(ActionTypes.ImBack, "Recent", text: "Recent", displayText: "Recent", value: "Recent"),
                     //new CardAction(ActionTypes.ImBack, "View Token", text: "View Token", displayText: "View Token", value: "View Token"),
                     //new CardAction(ActionTypes.ImBack, "obtenernoticias", text: "Obtener Noticias", displayText: "Obtener Noticias", value: "obtenernoticias"),
@@ -406,7 +438,8 @@ namespace BotPepe
                     new CardAction(ActionTypes.ImBack, "Outlook", text: "Outlook", displayText: "Outlook", value: "Outlook"),
                     new CardAction(ActionTypes.ImBack, "SharePoint", text: "SharePoint", displayText: "SharePoint", value: "Duda con SharePoint"),
                     new CardAction(ActionTypes.ImBack, "Word", text: "Word", displayText: "Word", value: "Word"),
-                    new CardAction(ActionTypes.Signin, "Cerrar Sesión", text: "Signout", displayText: "Signout", value: "Cerrar Sesión"),
+                    new CardAction(ActionTypes.ImBack, "Cerrar Sesión", text: "Signout", displayText: "Signout", value: "Cerrar Sesión"),
+                    new CardAction(ActionTypes.ImBack, "Ayuda", text: "Ayuda", displayText: "Ayuda", value: "Ayuda"),
                 },
             };
             return heroCard;
@@ -454,7 +487,8 @@ namespace BotPepe
             if (context.Activity.Text.ToLowerInvariant() == "signout" ||
                 context.Activity.Text.ToLowerInvariant() == "logout" ||
                 context.Activity.Text.ToLowerInvariant() == "signoff" ||
-                context.Activity.Text.ToLowerInvariant() == "logoff")
+                context.Activity.Text.ToLowerInvariant() == "logoff" || 
+                context.Activity.Text.ToLowerInvariant() == "cerrar sesión")
             {
 
                 // The bot adapter encapsulates the authentication processes and sends
@@ -463,14 +497,26 @@ namespace BotPepe
                 await botAdapter.SignOutUserAsync(context, ConnectionSettingName, cancellationToken: cancellationToken);
 
                 // Let the user know they are signed out.
-                await context.SendActivityAsync("You are now signed out.", cancellationToken: cancellationToken);
+                await context.SendActivityAsync("Has cerrado sesión correctamente.", cancellationToken: cancellationToken);
 
+            }
+            else if (context.Activity.Text.ToLowerInvariant() == "yo")
+            {
+                //await OAuthHelpers.ListMeAsync(context, cancellationToken);
+                await context.SendActivityAsync("Crear conversación yo...", cancellationToken: cancellationToken);
+            }
+            else if (context.Activity.Text.ToLowerInvariant() == "ayuda")
+            {
+                //await OAuthHelpers.ListMeAsync(context, cancellationToken);
+                await SendWelcomeMessageAsync(context, cancellationToken, false);
             }
             else
             {
                 switch (topIntent.Value.intent)
                 {
                     case noneDispatchKey:
+                        await context.SendActivityAsync($"None intent: {topIntent.Value.intent} ({topIntent.Value.score}).");
+                        break;
                     // You can provide logic here to handle the known None intent (none of the above).
                     // In this example we fall through to the QnA intent.
                     case qnaDispatchKey:
@@ -631,11 +677,7 @@ namespace BotPepe
                     var parts = _accessors.CommandState.GetAsync(step.Context, () => string.Empty, cancellationToken: cancellationToken).Result.Split(' ');
                     string command = parts[0].ToLowerInvariant();
 
-                    if (command == "me")
-                    {
-                        await OAuthHelpers.ListMeAsync(step.Context, tokenResponse);
-                    }
-                    else if (command.StartsWith("send"))
+                    if (command.StartsWith("send"))
                     {
                         await OAuthHelpers.SendMailAsync(step.Context, tokenResponse, parts[1]);
                     }

@@ -78,6 +78,7 @@ namespace BotPepe.Models
         public string link { get; set; }
         public string displayed_link { get; set; }
         public string title { get; set; }
+
     }
 
     public class Pagination
@@ -125,6 +126,7 @@ namespace BotPepe.Models
         public string link { get; set; }
     }
 
+
     public class Organic_Results
     {
         public int position { get; set; }
@@ -152,10 +154,10 @@ namespace BotPepe.Models
 
 
 
-    
-    
 
-    
+
+
+
 
     public class Inline_Videos
     {
@@ -167,14 +169,19 @@ namespace BotPepe.Models
         public int block_position { get; set; }
     }
 
-    public class Related_Questions
+    public class Related_Question
     {
         public string question { get; set; }
         public string answer { get; set; }
-        public Source1 source { get; set; }
+        public Source source { get; set; }
         public Search search { get; set; }
-    }
 
+    }
+    public class Related_Questions
+    {
+        public Related_Question[] related_Question { get; set; }
+
+    }
     public class Source1
     {
         public string link { get; set; }
@@ -187,6 +194,8 @@ namespace BotPepe.Models
         public string link { get; set; }
         public string title { get; set; }
     }
-    
+
+
+
 
 }
