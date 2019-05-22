@@ -262,6 +262,9 @@ namespace BotPepe
                     dc = await _dialogs.CreateContextAsync(turnContext, cancellationToken);
 
                     //await dc.BeginDialogAsync("SendWelcomeMessageAsync");
+                    var reply = turnContext.Activity.CreateReply();
+                    reply.Type = ActivityTypes.Typing;
+                    await dc.Context.SendActivityAsync(reply);
                     await SendWelcomeMessageAsync(turnContext, cancellationToken, true);
                     //await dc.PromptAsync("name", GenerateOptions(dc.Context.Activity), cancellationToken);
                 }
