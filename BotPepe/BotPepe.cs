@@ -40,6 +40,7 @@ namespace BotPepe
 
         private const string SharePointDialogID = "sharepointDialog";
         private const string OutlookDialogID = "outlookDialog";
+        private const string Office365DialogID = "office365Dialog";
 
         // The connection name here must match the the one from
         // your Bot Channels Registration on the settings blade in Azure.
@@ -54,6 +55,8 @@ namespace BotPepe
         private readonly BotAccessors _accessors;
         private readonly ILogger _logger;
         private readonly BotServices botServices;
+
+        private bool nuevaConversacion;
 
 
         /// <summary>
@@ -91,93 +94,15 @@ namespace BotPepe
                 //.Add(new SoporteDialog(SoporteDialogID))
                 .Add(new SharePointDialog(SharePointDialogID))
                 .Add(new OutlookDialog(OutlookDialogID, _accessors))
+                .Add(new Office365Dialog(Office365DialogID, _accessors))
                 //.Add(OAuthHelpers.Prompt(ConnectionSettingName))
                 .Add(new ChoicePrompt("choicePrompt"))
-                .Add(new WaterfallDialog("SendWelcomeMessage", new WaterfallStep[] { ConsultarTecnologiaAsync, DerivarTecnologiaAsync, SummaryStepAsync }))
+                .Add(new WaterfallDialog("SendWelcomeMessage", new WaterfallStep[] { ConsultarTecnologiaAsync, DerivarTecnologiaAsync }))
                 .Add(new ChoicePrompt("name"))
 
                 .Add(new ConfirmPrompt("confirm"));
 
 
-        }
-
-        private async Task<DialogTurnResult> ConsultarTecnologiaAsync(WaterfallStepContext step, CancellationToken cancellationToken)
-        {
-            bool flag = false;
-            foreach (var member in step.Context.Activity.MembersAdded)
-            {
-                if (member.Id != step.Context.Activity.Recipient.Id)
-                {
-                    flag = true;
-                }
-            }
-
-            if (flag)
-            {
-
-            }
-            return await step.PromptAsync("name", GenerateOptions(step.Context.Activity), cancellationToken);
-
-
-            // WaterfallStep always finishes with the end of the Waterfall or with another dialog; here it is a Prompt Dialog.
-            // Running a prompt here means the next WaterfallStep will be run when the users response is received.
-
-        }
-
-        private static PromptOptions GenerateOptions(Activity activity)
-        {
-            // Create options for the prompt
-            var options = new PromptOptions()
-            {
-                Prompt = activity.CreateReply("En qué tecnología tienes duda?"),
-                Choices = new List<Choice>(),
-            };
-            options.Choices.Add(new Choice() { Value = "SharePoint" });
-            options.Choices.Add(new Choice() { Value = "Outlook" });
-            options.Choices.Add(new Choice() { Value = "Estado" });
-
-            return options;
-
-        }
-
-        private async Task<DialogTurnResult> DerivarTecnologiaAsync(WaterfallStepContext step, CancellationToken cancellationToken)
-        {
-            FoundChoice respuesta = step.Result as FoundChoice;
-            string resultado = (string)respuesta.Value;
-            // Get the current profile object from user state.
-            var userProfile = await _accessors.UserProfile.GetAsync(step.Context, () => new Usuario(), cancellationToken);
-
-            // Update the profile.
-            userProfile.Nombre = resultado;
-            userProfile.ErrorName = "";
-
-            // We can send messages to the user at any point in the WaterfallStep.
-            await step.Context.SendActivityAsync(MessageFactory.Text($"Thanks {resultado}."), cancellationToken);
-
-            // WaterfallStep always finishes with the end of the Waterfall or with another dialog; here it is a Prompt Dialog.
-            return await step.PromptAsync("confirm", new PromptOptions { Prompt = MessageFactory.Text("Would you like to give your age?") }, cancellationToken);
-
-            //return await step.EndDialogAsync(cancellationToken: cancellationToken);
-        }
-        private async Task<DialogTurnResult> SummaryStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
-        {
-            if ((bool)stepContext.Result)
-            {
-                // Get the current profile object from user state.
-                var userProfile = await _accessors.UserProfile.GetAsync(stepContext.Context, () => new Usuario(), cancellationToken);
-
-                // We can send messages to the user at any point in the WaterfallStep.
-                await stepContext.Context.SendActivityAsync(MessageFactory.Text($"I have your name as {userProfile.Nombre}."), cancellationToken);
-
-            }
-            else
-            {
-                // We can send messages to the user at any point in the WaterfallStep.
-                await stepContext.Context.SendActivityAsync(MessageFactory.Text("Thanks. Your profile will not be kept."), cancellationToken);
-            }
-
-            // WaterfallStep always finishes with the end of the Waterfall or with another dialog, here it is the end.
-            return await stepContext.EndDialogAsync(cancellationToken: cancellationToken);
         }
         /// <summary>
         /// Every conversation turn for our Echo Bot will call this method.
@@ -207,7 +132,7 @@ namespace BotPepe
                 // Continue any current dialog.
                 DialogTurnResult dialogTurnResult = await dc.ContinueDialogAsync();
 
-                if (dialogTurnResult.Status == DialogTurnStatus.Empty)
+                if (dialogTurnResult.Status == DialogTurnStatus.Empty || dialogTurnResult.Status == DialogTurnStatus.Complete)
                 //if (dialogTurnResult.Result is null)
                 {
                     // Get the intent recognition result
@@ -217,7 +142,6 @@ namespace BotPepe
                     if (topIntent == null)
                     {
                         await turnContext.SendActivityAsync("Unable to get the top intent.");
-
                     }
                     else
                     {
@@ -265,8 +189,19 @@ namespace BotPepe
                     var reply = turnContext.Activity.CreateReply();
                     reply.Type = ActivityTypes.Typing;
                     await dc.Context.SendActivityAsync(reply);
-                    await SendWelcomeMessageAsync(turnContext, cancellationToken, true);
-                    //await dc.PromptAsync("name", GenerateOptions(dc.Context.Activity), cancellationToken);
+
+                    if (turnContext.Activity.MembersAdded != null)
+                    {
+                        foreach (var member in turnContext.Activity.MembersAdded)
+                        {
+                            if (member.Id != turnContext.Activity.Recipient.Id)
+                            {
+                                this.nuevaConversacion = true;
+                                //await SendWelcomeMessageAsync(turnContext, cancellationToken, true);
+                                await dc.BeginDialogAsync("SendWelcomeMessage");
+                            }
+                        }
+                    }
                 }
             }
             else if (turnContext.Activity.Type == ActivityTypes.DeleteUserData)
@@ -282,6 +217,27 @@ namespace BotPepe
                 //context.PrivateConversationData.Clear();
                 //await context.FlushAsync(CancellationToken.None);
             }
+            else if (turnContext.Activity.Type == ActivityTypes.Typing)
+            {
+
+            }
+            else if (turnContext.Activity.Type == ActivityTypes.Handoff)
+            {
+
+            }
+            else if (turnContext.Activity.Type == ActivityTypes.Trace)
+            {
+
+            }
+            else if (turnContext.Activity.Type == ActivityTypes.Suggestion)
+            {
+
+            }
+            else if (turnContext.Activity.Type == ActivityTypes.MessageReaction)
+            {
+
+            }
+
             //else if (turnContext.Activity.Type == ActivityTypes.)
             //{
 
@@ -289,191 +245,6 @@ namespace BotPepe
             // Save the new turn count into the conversation state.
             await _accessors.UserState.SaveChangesAsync(turnContext, false, cancellationToken);
             await _accessors.ConversationState.SaveChangesAsync(turnContext, false, cancellationToken);
-        }
-
-        /// <summary>
-        /// On a conversation update activity sent to the bot, the bot will
-        /// send a message to the any new user(s) that were added.
-        /// </summary>
-        /// <param name="turnContext">Provides the <see cref="ITurnContext"/> for the turn of the bot.</param>
-        /// <param name="cancellationToken" >(Optional) A <see cref="CancellationToken"/> that can be used by other objects
-        /// or threads to receive notice of cancellation.</param>
-        /// <returns>>A <see cref="Task"/> representing the operation result of the Turn operation.</returns>
-        private static async Task SendWelcomeMessageAsync(ITurnContext turnContext, CancellationToken cancellationToken, bool saludar)
-        {
-
-
-            //IList<Result> asd = await google.GoogleIt(stepContext.Result.ToString());
-
-            //foreach (var result in asd)
-            //{
-            //    var xd = result.Title;
-            //}
-
-            if(turnContext.Activity.MembersAdded != null)
-            {
-                foreach (var member in turnContext.Activity.MembersAdded)
-                {
-                    if (member.Id != turnContext.Activity.Recipient.Id)
-                    {
-
-                        var reply = turnContext.Activity.CreateReply();
-                        reply.Text = WelcomeText;
-                        reply.Attachments = new List<Attachment> { CreateHeroCard(member.Id, saludar).ToAttachment() };
-                        reply.SuggestedActions = new SuggestedActions()
-                        {
-                            Actions = new List<CardAction>()
-                        {
-
-
-
-                            new CardAction(){ Title = "VER ÚLTIMOS CORREOS", Type=ActionTypes.ImBack, Value="Ver últimos correos" },
-                            
-                            new CardAction(){ Title = "CONSULTAR ESTADO DE SERVICIO O365", Type=ActionTypes.ImBack, Value="Blue" },
-                            new CardAction(){ Title = "CHAT LIBRE CON BOT", Type=ActionTypes.ImBack, Value="Red" },
-                            new CardAction(){ Title = "PREGUNTA ACERCA DE SERVICIO", Type=ActionTypes.ImBack, Value="Green" },
-                            new CardAction(){ Title = "AYUDA", Type=ActionTypes.ImBack, Value="Ayuda" },
-                        }
-                        };
-                        await turnContext.SendActivityAsync(reply, cancellationToken);
-
-                    }
-                }
-            }
-            else
-            {
-                var reply = turnContext.Activity.CreateReply();
-                reply.Text = WelcomeText;
-                reply.Attachments = new List<Attachment> { CreateHeroCard(null, saludar).ToAttachment() };
-                reply.SuggestedActions = new SuggestedActions()
-                {
-                    Actions = new List<CardAction>()
-                        {
-
-
-
-                            new CardAction(){ Title = "VER ÚLTIMOS CORREOS", Type=ActionTypes.ImBack, Value="Ver últimos correos" },
-                            new CardAction(){ Title = "CONSULTAR ESTADO DE SERVICIO O365", Type=ActionTypes.ImBack, Value="Blue" },
-                            new CardAction(){ Title = "CHAT LIBRE CON BOT", Type=ActionTypes.ImBack, Value="Red" },
-                            new CardAction(){ Title = "PREGUNTA ACERCA DE SERVICIO", Type=ActionTypes.ImBack, Value="Green" }
-                        }
-                };
-                await turnContext.SendActivityAsync(reply, cancellationToken);
-            }
-
-            
-        }
-
-        /// <summary>
-        /// Processes input and route to the appropriate step.
-        /// </summary>
-        /// <param name="turnContext">Provides the <see cref="ITurnContext"/> for the turn of the bot.</param>
-        /// <param name="cancellationToken" >(Optional) A <see cref="CancellationToken"/> that can be used by other objects
-        /// or threads to receive notice of cancellation.</param>
-        /// <returns>A <see cref="Task"/> representing the operation result of the operation.</returns>
-        private async Task<DialogContext> ProcessInputAsync(ITurnContext turnContext, CancellationToken cancellationToken)
-        {
-            var dc = await _dialogs.CreateContextAsync(turnContext, cancellationToken);
-            switch (turnContext.Activity.Text.ToLowerInvariant())
-            {
-                case "signout":
-                case "logout":
-                case "signoff":
-                case "logoff":
-                case "cerrar sesión":
-                    // The bot adapter encapsulates the authentication processes and sends
-                    // activities to from the Bot Connector Service.
-                    var botAdapter = (BotFrameworkAdapter)turnContext.Adapter;
-                    await botAdapter.SignOutUserAsync(turnContext, ConnectionSettingName, cancellationToken: cancellationToken);
-
-                    // Let the user know they are signed out.
-                    await turnContext.SendActivityAsync("You are now signed out.", cancellationToken: cancellationToken);
-                    break;
-                case "help":
-                    await turnContext.SendActivityAsync(WelcomeText, cancellationToken: cancellationToken);
-                    break;
-                default:
-                    // The user has input a command that has not been handled yet,
-                    // begin the waterfall dialog to handle the input.
-                    await dc.ContinueDialogAsync(cancellationToken);
-                    if (!turnContext.Responded)
-                    {
-                        //await dc.BeginDialogAsync("graphDialog", cancellationToken: cancellationToken);
-                    }
-
-                    break;
-            }
-
-            return dc;
-        }
-        /// <summary>
-        /// Creates a <see cref="HeroCard"/> that is sent as a welcome message to the user.
-        /// </summary>
-        /// <param name="newUserName"> The name of the user.</param>
-        /// <returns>A <see cref="HeroCard"/> the user can interact with.</returns>
-        private static HeroCard CreateHeroCard(string newUserName, bool saludar)
-        {
-            var titulo = saludar ? $"Bienvenido {newUserName}" : "";
-            var heroCard = new HeroCard(titulo)
-            {
-                Text = saludar ? $"Bienvenido {newUserName}": "",
-                Subtitle = "🐶",
-
-                Images = new List<CardImage>
-                {
-                    new CardImage(
-                        "https://botframeworksamples.blob.core.windows.net/samples/aadlogo.png",
-                        "AAD Logo",
-                        new CardAction(
-                            ActionTypes.OpenUrl,
-                            value: "https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview")),
-                },
-                Buttons = new List<CardAction>
-                {
-                    new CardAction(ActionTypes.ImBack, "Mi información", text: "Yo", displayText: "Yo", value: "Yo"),
-                    //new CardAction(ActionTypes.ImBack, "Recent", text: "Recent", displayText: "Recent", value: "Recent"),
-                    //new CardAction(ActionTypes.ImBack, "View Token", text: "View Token", displayText: "View Token", value: "View Token"),
-                    //new CardAction(ActionTypes.ImBack, "obtenernoticias", text: "Obtener Noticias", displayText: "Obtener Noticias", value: "obtenernoticias"),
-                    //new CardAction(ActionTypes.ImBack, "ver ultimos correos", text: "ver ultimos correos", displayText: "ver ultimos correos", value: "ver ultimos correos"),
-                    //new CardAction(ActionTypes.ImBack, "Help", text: "Help", displayText: "Help", value: "Help"),
-                    new CardAction(ActionTypes.ImBack, "Active Directory", text: "Active Directory", displayText: "Active Directory", value: "Active Directory"),
-                    new CardAction(ActionTypes.ImBack, "Office 365", text: "Office 365", displayText: "Office 365", value: "Office 365"),
-                    new CardAction(ActionTypes.ImBack, "Outlook", text: "Outlook", displayText: "Outlook", value: "Outlook"),
-                    new CardAction(ActionTypes.ImBack, "SharePoint", text: "SharePoint", displayText: "SharePoint", value: "Duda con SharePoint"),
-                    new CardAction(ActionTypes.ImBack, "Word", text: "Word", displayText: "Word", value: "Word"),
-                    new CardAction(ActionTypes.ImBack, "Cerrar Sesión", text: "Signout", displayText: "Signout", value: "Cerrar Sesión"),
-                    new CardAction(ActionTypes.ImBack, "Ayuda", text: "Ayuda", displayText: "Ayuda", value: "Ayuda"),
-                },
-            };
-            return heroCard;
-        }
-
-
-        private static HeroCard CreateHeroOutlook(string newUserName)
-        {
-            var heroCard = new HeroCard($"Welcome {newUserName}", "OAuthBot")
-            {
-                Images = new List<CardImage>
-                {
-                    new CardImage(
-                        "https://botframeworksamples.blob.core.windows.net/samples/aadlogo.png",
-                        "AAD Logo",
-                        new CardAction(
-                            ActionTypes.OpenUrl,
-                            value: "https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview")),
-                },
-                Buttons = new List<CardAction>
-                {
-                    new CardAction(ActionTypes.ImBack, "Me", text: "Me", displayText: "Me", value: "Me"),
-                    new CardAction(ActionTypes.ImBack, "Recent", text: "Recent", displayText: "Recent", value: "Recent"),
-                    new CardAction(ActionTypes.ImBack, "View Token", text: "View Token", displayText: "View Token", value: "View Token"),
-                    new CardAction(ActionTypes.ImBack, "obtenernoticias", text: "Obtener Noticias", displayText: "Obtener Noticias", value: "obtenernoticias"),
-                    new CardAction(ActionTypes.ImBack, "ver ultimos correos", text: "ver ultimos correos", displayText: "ver ultimos correos", value: "ver ultimos correos"),
-                    new CardAction(ActionTypes.ImBack, "Help", text: "Help", displayText: "Help", value: "Help"),
-                    new CardAction(ActionTypes.ImBack, "Signout", text: "Signout", displayText: "Signout", value: "Signout"),
-                },
-            };
-            return heroCard;
         }
         /// <summary>
         /// Depending on the intent from Dispatch, routes to the right LUIS model or QnA service.
@@ -490,7 +261,7 @@ namespace BotPepe
             if (context.Activity.Text.ToLowerInvariant() == "signout" ||
                 context.Activity.Text.ToLowerInvariant() == "logout" ||
                 context.Activity.Text.ToLowerInvariant() == "signoff" ||
-                context.Activity.Text.ToLowerInvariant() == "logoff" || 
+                context.Activity.Text.ToLowerInvariant() == "logoff" ||
                 context.Activity.Text.ToLowerInvariant() == "cerrar sesión")
             {
 
@@ -635,6 +406,283 @@ namespace BotPepe
             }
             return dc;
         }
+        /// <summary>
+        /// On a conversation update activity sent to the bot, the bot will
+        /// send a message to the any new user(s) that were added.
+        /// </summary>
+        /// <param name="turnContext">Provides the <see cref="ITurnContext"/> for the turn of the bot.</param>
+        /// <param name="cancellationToken" >(Optional) A <see cref="CancellationToken"/> that can be used by other objects
+        /// or threads to receive notice of cancellation.</param>
+        /// <returns>>A <see cref="Task"/> representing the operation result of the Turn operation.</returns>
+        private static async Task SendWelcomeMessageAsync(ITurnContext turnContext, CancellationToken cancellationToken, bool saludar)
+        {
+
+
+            //IList<Result> asd = await google.GoogleIt(stepContext.Result.ToString());
+
+            //foreach (var result in asd)
+            //{
+            //    var xd = result.Title;
+            //}
+
+            if (turnContext.Activity.MembersAdded != null)
+            {
+                foreach (var member in turnContext.Activity.MembersAdded)
+                {
+                    if (member.Id != turnContext.Activity.Recipient.Id)
+                    {
+
+                        var reply = turnContext.Activity.CreateReply();
+                        reply.Text = WelcomeText;
+                        reply.Attachments = new List<Attachment> { CreateHeroCard(member.Id, saludar).ToAttachment() };
+                        reply.SuggestedActions = new SuggestedActions()
+                        {
+                            Actions = new List<CardAction>()
+                        {
+
+
+
+                            new CardAction(){ Title = "Consulta Office 365", Type=ActionTypes.ImBack, Value="Consulta Office 365" },
+
+                            /*new CardAction(){ Title = "VER ÚLTIMOS CORREOS", Type=ActionTypes.ImBack, Value="Ver últimos correos" },
+                            
+                            new CardAction(){ Title = "CONSULTAR ESTADO DE SERVICIO O365", Type=ActionTypes.ImBack, Value="Blue" },
+                            new CardAction(){ Title = "CHAT LIBRE CON BOT", Type=ActionTypes.ImBack, Value="Red" },
+                            new CardAction(){ Title = "PREGUNTA ACERCA DE SERVICIO", Type=ActionTypes.ImBack, Value="Green" },
+                            new CardAction(){ Title = "AYUDA", Type=ActionTypes.ImBack, Value="Ayuda" },*/
+                        }
+                        };
+                        await turnContext.SendActivityAsync(reply, cancellationToken);
+
+                    }
+                }
+            }
+
+
+        }
+        private async Task<DialogTurnResult> ConsultarTecnologiaAsync(WaterfallStepContext step, CancellationToken cancellationToken)
+        {
+            if (this.nuevaConversacion)
+            {
+                await step.Context.SendActivityAsync(WelcomeText);
+            }
+
+            PromptOptions options = new PromptOptions()
+            {
+                Prompt = step.Context.Activity.CreateReply("En qué tecnología tienes duda?"),
+                Choices = new List<Choice>()
+
+            };
+            options.Choices.Add(new Choice() { Value = "Office 365" });
+            return await step.PromptAsync("name", options, cancellationToken);
+
+
+            // WaterfallStep always finishes with the end of the Waterfall or with another dialog; here it is a Prompt Dialog.
+            // Running a prompt here means the next WaterfallStep will be run when the users response is received.
+
+        }
+
+        private static PromptOptions GenerateOptions(Activity activity)
+        {
+            // Create options for the prompt
+            var options = new PromptOptions()
+            {
+                Prompt = activity.CreateReply("Question?"),
+                Choices = new List<Choice>(),
+            };
+            options.Choices.Add(new Choice() { Value = "Example answer" });
+
+            return options;
+
+        }
+
+        private async Task<DialogTurnResult> DerivarTecnologiaAsync(WaterfallStepContext step, CancellationToken cancellationToken)
+        {
+            FoundChoice respuesta = step.Result as FoundChoice;
+            string resultado = (string)respuesta.Value;
+            // Get the current profile object from user state.
+            var userProfile = await _accessors.UserProfile.GetAsync(step.Context, () => new Usuario(), cancellationToken);
+
+            // Update the profile.
+            userProfile.Nombre = resultado;
+            userProfile.ErrorName = "";
+
+
+            var dialogSiguiente = "";
+            switch (resultado)
+            {
+                case ("Office 365"):
+                    dialogSiguiente = Office365DialogID;
+                    //await step.BeginDialogAsync(Office365DialogID, cancellationToken: cancellationToken);
+                    //await step.ReplaceDialogAsync(Office365DialogID, cancellationToken: cancellationToken);
+
+                    break;
+                default:
+                    break;
+            }
+
+
+
+
+
+
+
+
+
+            // We can send messages to the user at any point in the WaterfallStep.
+            //await step.Context.SendActivityAsync(MessageFactory.Text($"Thanks {resultado}."), cancellationToken);
+
+            // WaterfallStep always finishes with the end of the Waterfall or with another dialog; here it is a Prompt Dialog.
+            //return await step.PromptAsync("confirm", new PromptOptions { Prompt = MessageFactory.Text("Would you like to give your age?") }, cancellationToken);
+
+            return await step.ReplaceDialogAsync(dialogSiguiente, cancellationToken: cancellationToken);
+
+            //return await step.EndDialogAsync(cancellationToken: cancellationToken);
+        }
+        private async Task<DialogTurnResult> SummaryStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        {
+            if ((bool)stepContext.Result)
+            {
+                // Get the current profile object from user state.
+                var userProfile = await _accessors.UserProfile.GetAsync(stepContext.Context, () => new Usuario(), cancellationToken);
+
+
+
+
+
+
+
+
+
+
+                // We can send messages to the user at any point in the WaterfallStep.
+                await stepContext.Context.SendActivityAsync(MessageFactory.Text($"I have your name as {userProfile.Nombre}."), cancellationToken);
+
+            }
+            else
+            {
+                // We can send messages to the user at any point in the WaterfallStep.
+                await stepContext.Context.SendActivityAsync(MessageFactory.Text("Thanks. Your profile will not be kept."), cancellationToken);
+            }
+
+            // WaterfallStep always finishes with the end of the Waterfall or with another dialog, here it is the end.
+            return await stepContext.EndDialogAsync(cancellationToken: cancellationToken);
+        }
+
+
+
+        /// <summary>
+        /// Processes input and route to the appropriate step.
+        /// </summary>
+        /// <param name="turnContext">Provides the <see cref="ITurnContext"/> for the turn of the bot.</param>
+        /// <param name="cancellationToken" >(Optional) A <see cref="CancellationToken"/> that can be used by other objects
+        /// or threads to receive notice of cancellation.</param>
+        /// <returns>A <see cref="Task"/> representing the operation result of the operation.</returns>
+        private async Task<DialogContext> ProcessInputAsync(ITurnContext turnContext, CancellationToken cancellationToken)
+        {
+            var dc = await _dialogs.CreateContextAsync(turnContext, cancellationToken);
+            switch (turnContext.Activity.Text.ToLowerInvariant())
+            {
+                case "signout":
+                case "logout":
+                case "signoff":
+                case "logoff":
+                case "cerrar sesión":
+                    // The bot adapter encapsulates the authentication processes and sends
+                    // activities to from the Bot Connector Service.
+                    var botAdapter = (BotFrameworkAdapter)turnContext.Adapter;
+                    await botAdapter.SignOutUserAsync(turnContext, ConnectionSettingName, cancellationToken: cancellationToken);
+
+                    // Let the user know they are signed out.
+                    await turnContext.SendActivityAsync("You are now signed out.", cancellationToken: cancellationToken);
+                    break;
+                case "help":
+                    await turnContext.SendActivityAsync(WelcomeText, cancellationToken: cancellationToken);
+                    break;
+                default:
+                    // The user has input a command that has not been handled yet,
+                    // begin the waterfall dialog to handle the input.
+                    await dc.ContinueDialogAsync(cancellationToken);
+                    if (!turnContext.Responded)
+                    {
+                        //await dc.BeginDialogAsync("graphDialog", cancellationToken: cancellationToken);
+                    }
+
+                    break;
+            }
+
+            return dc;
+        }
+        /// <summary>
+        /// Creates a <see cref="HeroCard"/> that is sent as a welcome message to the user.
+        /// </summary>
+        /// <param name="newUserName"> The name of the user.</param>
+        /// <returns>A <see cref="HeroCard"/> the user can interact with.</returns>
+        private static HeroCard CreateHeroCard(string newUserName, bool saludar)
+        {
+            var titulo = saludar ? $"Bienvenido {newUserName}" : "";
+            var heroCard = new HeroCard(titulo)
+            {
+                Text = saludar ? $"Bienvenido {newUserName}" : "",
+                Subtitle = "🐶",
+
+                Images = new List<CardImage>
+                {
+                    new CardImage(
+                        "https://botframeworksamples.blob.core.windows.net/samples/aadlogo.png",
+                        "AAD Logo",
+                        new CardAction(
+                            ActionTypes.OpenUrl,
+                            value: "https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview")),
+                },
+                Buttons = new List<CardAction>
+                {
+                    new CardAction(ActionTypes.ImBack, "Mi información", text: "Yo", displayText: "Yo", value: "Yo"),
+                    //new CardAction(ActionTypes.ImBack, "Recent", text: "Recent", displayText: "Recent", value: "Recent"),
+                    //new CardAction(ActionTypes.ImBack, "View Token", text: "View Token", displayText: "View Token", value: "View Token"),
+                    //new CardAction(ActionTypes.ImBack, "obtenernoticias", text: "Obtener Noticias", displayText: "Obtener Noticias", value: "obtenernoticias"),
+                    //new CardAction(ActionTypes.ImBack, "ver ultimos correos", text: "ver ultimos correos", displayText: "ver ultimos correos", value: "ver ultimos correos"),
+                    //new CardAction(ActionTypes.ImBack, "Help", text: "Help", displayText: "Help", value: "Help"),
+                    new CardAction(ActionTypes.ImBack, "Active Directory", text: "Active Directory", displayText: "Active Directory", value: "Active Directory"),
+                    new CardAction(ActionTypes.ImBack, "Office 365", text: "Office 365", displayText: "Office 365", value: "Office 365"),
+                    new CardAction(ActionTypes.ImBack, "Outlook", text: "Outlook", displayText: "Outlook", value: "Outlook"),
+                    new CardAction(ActionTypes.ImBack, "SharePoint", text: "SharePoint", displayText: "SharePoint", value: "Duda con SharePoint"),
+                    new CardAction(ActionTypes.ImBack, "Word", text: "Word", displayText: "Word", value: "Word"),
+                    new CardAction(ActionTypes.ImBack, "Cerrar Sesión", text: "Signout", displayText: "Signout", value: "Cerrar Sesión"),
+                    new CardAction(ActionTypes.ImBack, "Ayuda", text: "Ayuda", displayText: "Ayuda", value: "Ayuda"),
+                },
+            };
+            return heroCard;
+        }
+
+
+        private static HeroCard CreateHeroOutlook(string newUserName)
+        {
+            var heroCard = new HeroCard($"Welcome {newUserName}", "OAuthBot")
+            {
+                Images = new List<CardImage>
+                {
+                    new CardImage(
+                        "https://botframeworksamples.blob.core.windows.net/samples/aadlogo.png",
+                        "AAD Logo",
+                        new CardAction(
+                            ActionTypes.OpenUrl,
+                            value: "https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview")),
+                },
+                Buttons = new List<CardAction>
+                {
+                    new CardAction(ActionTypes.ImBack, "Me", text: "Me", displayText: "Me", value: "Me"),
+                    new CardAction(ActionTypes.ImBack, "Recent", text: "Recent", displayText: "Recent", value: "Recent"),
+                    new CardAction(ActionTypes.ImBack, "View Token", text: "View Token", displayText: "View Token", value: "View Token"),
+                    new CardAction(ActionTypes.ImBack, "obtenernoticias", text: "Obtener Noticias", displayText: "Obtener Noticias", value: "obtenernoticias"),
+                    new CardAction(ActionTypes.ImBack, "ver ultimos correos", text: "ver ultimos correos", displayText: "ver ultimos correos", value: "ver ultimos correos"),
+                    new CardAction(ActionTypes.ImBack, "Help", text: "Help", displayText: "Help", value: "Help"),
+                    new CardAction(ActionTypes.ImBack, "Signout", text: "Signout", displayText: "Signout", value: "Signout"),
+                },
+            };
+            return heroCard;
+        }
+
 
         /// <summary>
         /// Waterfall step that will prompt the user to log in if they are not already.
