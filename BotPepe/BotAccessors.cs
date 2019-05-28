@@ -5,6 +5,7 @@ using System;
 using BotPepe.Models;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Builder.Teams.StateStorage;
 
 namespace BotPepe
 {
@@ -25,7 +26,7 @@ namespace BotPepe
         /// Contains the <see cref="ConversationState"/> and associated <see cref="IStatePropertyAccessor{T}"/>.
         /// </summary>
         /// <param name="conversationState">The state object that stores the counter.</param>
-        public BotAccessors(ConversationState conversationState, UserState userState)
+        public BotAccessors(TeamSpecificConversationState conversationState, UserState userState)
         {
             ConversationState = conversationState ?? throw new ArgumentNullException(nameof(conversationState));
             UserState = userState ?? throw new ArgumentNullException(nameof(userState));
@@ -47,7 +48,7 @@ namespace BotPepe
 
         /// <summary>Gets the conversation state for the bot.</summary>
         /// <value>The conversation state for the bot.</value>
-        public ConversationState ConversationState { get; }
+        public TeamSpecificConversationState ConversationState { get; }
         public IStatePropertyAccessor<string> CommandState { get; set; }
 
         /// <summary>Gets the user state for the bot.</summary>
