@@ -39,7 +39,8 @@ namespace BotPepe.Dialogs
             PromptOptions options = new PromptOptions()
             {
                 Prompt = step.Context.Activity.CreateReply("En qué servicio tienes duda?"),
-                Choices = new List<Choice>()
+                Choices = new List<Choice>(),
+                Style = ListStyle.HeroCard
 
             };
             options.Choices.Add(new Choice() { Value = "PowerApps" });

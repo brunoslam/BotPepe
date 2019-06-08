@@ -10,5 +10,6 @@ namespace BotPepe.Models
         public bool NuevaConversacion { get; set; }
         public string Nombre { get; set; }
         public string ErrorName { get; set; }
+        public bool EsperaRespuestaQNA { get; set; }
     }
 }

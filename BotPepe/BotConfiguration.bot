@@ -38,6 +38,15 @@
             "subscriptionKey": "99f023daa58a46f685b25cf6158d95bf"
         },
         {
+            "type": "qna",
+            "endpointKey": "a8cbf89f-8802-4ea7-a355-5a3be4211608",
+            "hostname": "https://qnabotls.azurewebsites.net/qnamaker",
+            "id": "124",
+            "kbId": "3be48280-a6c8-4a94-94e9-118c3bf9bf39",
+            "name": "QnALS",
+            "subscriptionKey": "9b950cf7c667428ebd41e84e352ca06a"
+        },
+        {
             "type": "dispatch",
             "appId": "8239a440-d231-4cd6-9a2b-624f29084cc2",
             "authoringKey": "2095a5bb221a4b4183a2089c85b20e1b",
@@ -51,7 +60,7 @@
             "type": "endpoint",
             "appId": "cc8424e0-86bc-4c49-8c6d-b75bce643358",
             "appPassword": "vgqkZMTU021*!@lyrIWW63!",
-            "endpoint": "https://c656c0cf.ngrok.io/api/messages",
+            "endpoint": "https://botpepels.azurewebsites.net/api/messages",
             "id": "59",
             "name": "production"
         },

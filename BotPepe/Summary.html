@@ -10,11 +10,11 @@
         td, th {
             padding-bottom: 0px !important;
             padding-top: 0px !important;
-            padding-right: 15px !important;
+            padding-right: 15 !important;
             margin: 0 !important;
         }
         .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
-            border-top: none;
+            border-top:none;
             border-bottom: 1px solid #ddd;
         }
         .navbar {
@@ -70,12 +70,12 @@
             </div>
         </div>
     </nav>
-    <div style="clear:both"></div>
-    <div class="container body-content" style="margin-top:60px">
-        <span class="ms-fontSize-xl ms-fontWeight-semibold">Dispatch Evaluation Summary</span>
+    <br /><br /><br />
+    <div class="container body-content">
+        <span class="ms-fontSize-xl ms-fontWeight-semibold">Dispatch Summary</span>
         <span style="float:right"><a href="https://www.luis.ai/applications/8239a440-d231-4cd6-9a2b-624f29084cc2/versions/Dispatch/dashboard" target="_blank">View in LUIS portal</a></span>
         <div>
-            <p><p>Please check below for duplicate, ambiguous, misclassified utterances as well as statistics and a series of evaluation charts and metrics.</p><p><strong>Suggestions for model improvement</strong>:</p><ul style = "list-style-type:square"><li>Consider adding more utterances to the intents <strong>l_Office365Luis, q_PepeQnA</strong>, as their utterance count is low.</li><li>Consider revising the utterances and making them more distinct in the intents <strong>leer ultimos correos, quiero ver mi foto de perfil</strong>, as they have the most misclassified utterances.</li></ul></p>
+            <p><p>Please check below for intent statistics and duplicate utterances.</p><p><strong>Suggestions for model improvement</strong>:</p><ul style = "list-style-type:square"><li>Consider removing duplicate utterances from the intents <strong>q_PepeQnA, q_QnALS, l_Office365Luis</strong>. Please check the Duplicates tab for more details.</li><li>Consider adding more utterances to the intents <strong>l_Office365Luis, q_PepeQnA, l_PepeLuis</strong>, as their utterance count is low.</li><li>Consider adding more utterances to the intents <strong>l_Office365Luis, q_PepeQnA, l_PepeLuis</strong>, as their number of utterances is considerably lower than the other intents.</li></ul></p>
             <p>To improve dispatch, please update the source models and retrain the dispatch model by running the command "dispatch refresh".</p>
         </div>
         <br />
@@ -86,51 +86,18 @@
             <li class="nav-item">
                 <a class="nav-link active" id="duplicates-tab" data-toggle="tab" href="#duplicates" role="tab" aria-controls="duplicates" aria-selected="true"><strong>Duplicates</strong></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" id="ambiguous-tab" data-toggle="tab" href="#ambiguous" role="tab" aria-controls="ambiguous" aria-selected="false"><strong>Ambiguous</strong></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="misclassified-tab" data-toggle="tab" href="#misclassified" role="tab" aria-controls="misclassified" aria-selected="false"><strong>Misclassified</strong></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="modelevaluation-tab" data-toggle="tab" href="#modelevaluation" role="tab" aria-controls="modelevaluation" aria-selected="false"><strong>Cross Validation</strong></a>
-            </li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="intentutterancestatistics" role="tabpanel" aria-labelledby="intentutterancestatistics-tab">
                 <p>Intents and utterances statistics</p>
                 <p>
-                    <table class="table"><tr><th>No</th><th>Intent</th><th>Utterance Count</th><th>Utterance Average Length</th><th>Utterance Maximum Length</th><th>Utterance Minimum Length</th><th>Utterance Length StdDev</th></tr><tr><td>0</td><td>l_Office365Luis</td><td>6</td><td>18.667</td><td>22</td><td>11</td><td>3.933</td></tr><tr><td>1</td><td>q_PepeQnA</td><td>20</td><td>56.5</td><td>109</td><td>27</td><td>19.43</td></tr><tr><td>2</td><td>None</td><td>12</td><td>22.667</td><td>32</td><td>11</td><td>6.387</td></tr></table>
+                    <table class="table"><tr><th>No</th><th>Intent</th><th>Utterance Count</th><th>Utterance Average Length</th><th>Utterance Maximum Length</th><th>Utterance Minimum Length</th><th>Utterance Length StdDev</th></tr><tr><td>0</td><td>l_Office365Luis</td><td>6</td><td>18.667</td><td>22</td><td>11</td><td>3.933</td></tr><tr><td>1</td><td>l_PepeLuis</td><td>34</td><td>22.647</td><td>41</td><td>8</td><td>5.72</td></tr><tr><td>2</td><td>q_PepeQnA</td><td>20</td><td>56.5</td><td>109</td><td>27</td><td>19.43</td></tr><tr><td>3</td><td>q_QnALS</td><td>348</td><td>63.152</td><td>172</td><td>6</td><td>32.059</td></tr><tr><td>4</td><td>None</td><td>16</td><td>24.375</td><td>41</td><td>11</td><td>7.788</td></tr></table>
                 </p>
             </div>
             <div class="tab-pane" id="duplicates" role="tabpanel" aria-labelledby="duplicates-tab">
-                <p>Utterance(s) in multiple intents</p>
+                <p>Utterances in multiple intents</p>
                 <p>
-                    There are no utterances in multiple intents.
-                </p>
-            </div>
-            <div class="tab-pane" id="ambiguous" role="tabpanel" aria-labelledby="ambiguous-tab">
-                <p>Utterance(s) whose intents was correctly predicted, but there are also other intents predicted with high scores</p>
-                <p>
-                    There are no utterances with ambiguous intents.
-                </p>
-            </div>
-            <div class="tab-pane" id="misclassified" role="tabpanel" aria-labelledby="misclassified-tab">
-                <p>Utterance(s) yielding predicted intent that is not originally labeled with</p>
-                <p>
-                    <table class="table"><tr><th>No</th><th>Utterance</th><th>Expected Intent</th><th>Predicted Intent</th></tr><tr><td>0</td><td>leer ultimos correos</td><td>l_Office365Luis</td><td>            None</td></tr><tr><td>1</td><td>quiero ver mi foto de perfil</td><td>           None</td><td> l_Office365Luis</td></tr></table><br /><p><strong>Misclassified samples (percent of total per category)</strong></p><table class="table"><tr><th>Expected Intent</th><th>l_Office365Luis(0)%</th><th>None(1)%</th><th>q_PepeQnA(2)%</th><th>Total%</th></tr><tr><td>l_Office365Luis(0)</td><td>  0.00</td><td> 20.00</td><td>  0.00</td><td> 20.00</td></tr><tr><td> None(1)</td><td> 10.00</td><td>  0.00</td><td>  0.00</td><td> 10.00</td></tr></table><p><strong></strong></p><p><strong>Misclassified samples (absolute counts)</strong></p><table class="table"><tr><th>Expected Intent</th><th>l_Office365Luis(0)</th><th>None(1)</th><th>q_PepeQnA(2)</th><th> Total</th></tr><tr><td>l_Office365Luis(0)</td><td>     0</td><td>     1</td><td>     0</td><td>     1</td></tr><tr><td> None(1)</td><td>     1</td><td>     0</td><td>     0</td><td>     1</td></tr></table>
-                </p>
-            </div>
-            <div class="tab-pane" id="modelevaluation" role="tabpanel" aria-labelledby="modelevaluation-tab">
-                <p>Overall model performance and links to machine learning model evaluation charts and metrics</p>
-                <p>
-                    <p><strong>Overall Model Evaluation Loss and Score Metrics</strong></p><table class="table"><tr><th>Log Loss</th><th>Brier Score</th><th>Quadratic Score</th><th>Spherical Score</th><th>Log Loss Weighted</th><th>Brier Score Weighted</th><th>Quadratic Score Weighted</th><th>Spherical Score Weighted</th></tr><tr><td>0.431</td><td>0.288</td><td>0.712</td><td>0.841</td><td>0.431</td><td>0.288</td><td>0.712</td><td>0.841</td></tr></table>
-                </p>
-                <p>
-                    <p><strong>Model Evaluation Charts and Confusion Matrix</strong></p><table class="table"><tr><th>Intent ID</th><th>Intent Name (linked to charts)</th><th>Prevalence</th><th>AUC ROC</th><th>AUC ROC Weighted</th><th>AUC PRC</th><th>AUC PRC Weighted</th></tr><tr><td>0</td><td><A HREF="./data/_experiments/model_020/cv5/test_prediction_metrics_000.html">l_Office365Luis</A></td><td>0.312</td><td>0.973</td><td>0.973</td><td>0.928</td><td>0.928</td></tr><tr><td>1</td><td><A HREF="./data/_experiments/model_020/cv5/test_prediction_metrics_000.html">None</A></td><td>0.312</td><td>0.955</td><td>0.955</td><td>0.939</td><td>0.939</td></tr><tr><td>2</td><td><A HREF="./data/_experiments/model_020/cv5/test_prediction_metrics_000.html">q_PepeQnA</A></td><td>0.375</td><td>0.992</td><td>0.992</td><td>0.981</td><td>0.981</td></tr></table>
-                </p>
-                <p>
-                    
+                    <table class="table"><tr><th>Utterance</th><th>Intents</th></tr><tr><td>crear sitio</td><td>l_Office365Luis, None</td></tr><tr><td>agregar una lista a una página en sharepoint server 2016 o sharepoint server 2013</td><td>q_PepeQnA, q_QnALS</td></tr><tr><td>crear listas a partir de otros tipos de plantillas de lista</td><td>q_PepeQnA, q_QnALS</td></tr><tr><td>crear una lista en sharepoint server 2016 o sharepoint server 2013</td><td>q_PepeQnA, q_QnALS</td></tr><tr><td>crear una lista en una página de sharepoint server 2010</td><td>q_PepeQnA, q_QnALS</td></tr><tr><td>crear una lista en sharepoint server 2010</td><td>q_PepeQnA, q_QnALS</td></tr><tr><td>crear una lista a partir de una plantilla de lista en sharepoint server 2007</td><td>q_PepeQnA, q_QnALS</td></tr><tr><td>¿quiere hacer lo mismo con las bibliotecas</td><td>q_PepeQnA, q_QnALS</td></tr><tr><td>agregar una lista a una página en sharepoint server 2010</td><td>q_PepeQnA, q_QnALS</td></tr><tr><td>crear una lista personalizada en sharepoint server 2010</td><td>q_PepeQnA, q_QnALS</td></tr><tr><td>pasos siguientes con listas</td><td>q_PepeQnA, q_QnALS</td></tr><tr><td>minimizar o restaurar una lista o biblioteca en una página de sharepoint server 2016 o sharepoint server 2013</td><td>q_PepeQnA, q_QnALS</td></tr><tr><td>crear una lista en un sitio de sharepoint online o sharepoint server 2019</td><td>q_PepeQnA, q_QnALS</td></tr></table>
                 </p>
             </div>
         </div>

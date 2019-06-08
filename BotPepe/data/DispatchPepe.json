@@ -8,12 +8,52 @@
   "entities": [],
   "composites": [],
   "closedLists": [],
-  "patternAnyEntities": [],
+  "patternAnyEntities": [
+    {
+      "name": "Device_PatternAny",
+      "explicitList": [],
+      "roles": []
+    },
+    {
+      "name": "Room_PatternAny",
+      "explicitList": [],
+      "roles": []
+    }
+  ],
   "regex_entities": [],
   "prebuiltEntities": [],
   "model_features": [],
   "regex_features": [],
-  "patterns": [],
+  "patterns": [
+    {
+      "pattern": "turn off {Device_PatternAny} in {Room_PatternAny}",
+      "intent": "l_PepeLuis"
+    },
+    {
+      "pattern": "{Device_PatternAny} in {Room_PatternAny} off [please]",
+      "intent": "l_PepeLuis"
+    },
+    {
+      "pattern": "turn on {Device_PatternAny}",
+      "intent": "l_PepeLuis"
+    },
+    {
+      "pattern": "turn on {Device_PatternAny} in {Room_PatternAny}",
+      "intent": "l_PepeLuis"
+    },
+    {
+      "pattern": "{Device_PatternAny} off [please]",
+      "intent": "l_PepeLuis"
+    },
+    {
+      "pattern": "{Device_PatternAny} in {Room_PatternAny} on [please]",
+      "intent": "l_PepeLuis"
+    },
+    {
+      "pattern": "{Device_PatternAny} on [please]",
+      "intent": "l_PepeLuis"
+    }
+  ],
   "utterances": [],
   "settings": []
 }

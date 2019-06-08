@@ -9,7 +9,13 @@
       "name": "l_Office365Luis"
     },
     {
+      "name": "l_PepeLuis"
+    },
+    {
       "name": "q_PepeQnA"
+    },
+    {
+      "name": "q_QnALS"
     },
     {
       "name": "None"
@@ -18,30 +24,55 @@
   "entities": [],
   "composites": [],
   "closedLists": [],
-  "patternAnyEntities": [],
+  "patternAnyEntities": [
+    {
+      "name": "Device_PatternAny",
+      "explicitList": [],
+      "roles": []
+    },
+    {
+      "name": "Room_PatternAny",
+      "explicitList": [],
+      "roles": []
+    }
+  ],
   "regex_entities": [],
   "prebuiltEntities": [],
   "model_features": [],
   "regex_features": [],
-  "patterns": [],
+  "patterns": [
+    {
+      "pattern": "turn off {Device_PatternAny} in {Room_PatternAny}",
+      "intent": "l_PepeLuis"
+    },
+    {
+      "pattern": "{Device_PatternAny} in {Room_PatternAny} off [please]",
+      "intent": "l_PepeLuis"
+    },
+    {
+      "pattern": "turn on {Device_PatternAny}",
+      "intent": "l_PepeLuis"
+    },
+    {
+      "pattern": "turn on {Device_PatternAny} in {Room_PatternAny}",
+      "intent": "l_PepeLuis"
+    },
+    {
+      "pattern": "{Device_PatternAny} off [please]",
+      "intent": "l_PepeLuis"
+    },
+    {
+      "pattern": "{Device_PatternAny} in {Room_PatternAny} on [please]",
+      "intent": "l_PepeLuis"
+    },
+    {
+      "pattern": "{Device_PatternAny} on [please]",
+      "intent": "l_PepeLuis"
+    }
+  ],
   "utterances": [
     {
       "text": "ver proximas reuniones",
-      "intent": "l_Office365Luis",
-      "entities": []
-    },
-    {
-      "text": "crear item de lista",
-      "intent": "l_Office365Luis",
-      "entities": []
-    },
-    {
-      "text": "crear sitio",
-      "intent": "l_Office365Luis",
-      "entities": []
-    },
-    {
-      "text": "ver ultimos correos",
       "intent": "l_Office365Luis",
       "entities": []
     },
@@ -51,17 +82,197 @@
       "entities": []
     },
     {
+      "text": "crear sitio",
+      "intent": "l_Office365Luis",
+      "entities": []
+    },
+    {
       "text": "ver mi foto de perfil",
       "intent": "l_Office365Luis",
       "entities": []
     },
     {
-      "text": "my urls have valid faq content, but the tool cannot extract them. why not",
-      "intent": "q_PepeQnA",
+      "text": "crear item de lista",
+      "intent": "l_Office365Luis",
       "entities": []
     },
     {
-      "text": "crear una lista en sharepoint server 2010",
+      "text": "ver ultimos correos",
+      "intent": "l_Office365Luis",
+      "entities": []
+    },
+    {
+      "text": "turn the fan to high",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "living room lamp on please",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "set lights to bright",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "set lights to concentrate",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "turn on thermostat please",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "play dvd",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "turn on external speaker",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "turn off foyer lights",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "set lights out in bedroom",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "turn on bathroom heater",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "illuminate please",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "start master bedroom light.",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "lock the doors for me please",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "turn on my bedroom lights.",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "turn off staircase",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "turn off venice lamp",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "turn off living room light",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "turn off ac please",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "coffee bar on please",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "make camera 1 off please",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "turn on kitchen faucet",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "fish pond off please",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "turn on the furnace room lights",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "living room lamps off please",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "theater on please",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "turn dimmer off",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "snap switch fan fifty percent",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "breezeway on please",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "turn on light in bedroom",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "make some coffee",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "turn thermostat on 70.",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "change temperature to seventy two degrees",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "fish pond on please",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "shut down my work computer",
+      "intent": "l_PepeLuis",
+      "entities": []
+    },
+    {
+      "text": "crear listas a partir de otros tipos de plantillas de lista",
       "intent": "q_PepeQnA",
       "entities": []
     },
@@ -71,32 +282,7 @@
       "entities": []
     },
     {
-      "text": "pasos siguientes con listas",
-      "intent": "q_PepeQnA",
-      "entities": []
-    },
-    {
-      "text": "minimizar o restaurar una lista o biblioteca en una página de sharepoint server 2016 o sharepoint server 2013",
-      "intent": "q_PepeQnA",
-      "entities": []
-    },
-    {
-      "text": "crear listas a partir de otros tipos de plantillas de lista",
-      "intent": "q_PepeQnA",
-      "entities": []
-    },
-    {
-      "text": "crear una lista en un sitio de sharepoint online o sharepoint server 2019",
-      "intent": "q_PepeQnA",
-      "entities": []
-    },
-    {
-      "text": "what format does the tool expect the file content to be",
-      "intent": "q_PepeQnA",
-      "entities": []
-    },
-    {
-      "text": "crear una lista en una página de sharepoint server 2010",
+      "text": "is the qna maker service free",
       "intent": "q_PepeQnA",
       "entities": []
     },
@@ -106,42 +292,7 @@
       "entities": []
     },
     {
-      "text": "who is the target audience for the qna maker tool",
-      "intent": "q_PepeQnA",
-      "entities": []
-    },
-    {
-      "text": "is the qna maker service free",
-      "intent": "q_PepeQnA",
-      "entities": []
-    },
-    {
-      "text": "agregar una lista a una página en sharepoint server 2016 o sharepoint server 2013",
-      "intent": "q_PepeQnA",
-      "entities": []
-    },
-    {
-      "text": "¿quiere hacer lo mismo con las bibliotecas",
-      "intent": "q_PepeQnA",
-      "entities": []
-    },
-    {
-      "text": "crear una lista personalizada en sharepoint server 2010",
-      "intent": "q_PepeQnA",
-      "entities": []
-    },
-    {
       "text": "crear una lista en sharepoint server 2016 o sharepoint server 2013",
-      "intent": "q_PepeQnA",
-      "entities": []
-    },
-    {
-      "text": "how large a knowledge base can i create",
-      "intent": "q_PepeQnA",
-      "entities": []
-    },
-    {
-      "text": "crear una lista a partir de una plantilla de lista en sharepoint server 2007",
       "intent": "q_PepeQnA",
       "entities": []
     },
@@ -151,38 +302,1813 @@
       "entities": []
     },
     {
+      "text": "crear una lista en un sitio de sharepoint online o sharepoint server 2019",
+      "intent": "q_PepeQnA",
+      "entities": []
+    },
+    {
+      "text": "minimizar o restaurar una lista o biblioteca en una página de sharepoint server 2016 o sharepoint server 2013",
+      "intent": "q_PepeQnA",
+      "entities": []
+    },
+    {
+      "text": "crear una lista a partir de una plantilla de lista en sharepoint server 2007",
+      "intent": "q_PepeQnA",
+      "entities": []
+    },
+    {
+      "text": "pasos siguientes con listas",
+      "intent": "q_PepeQnA",
+      "entities": []
+    },
+    {
+      "text": "how large a knowledge base can i create",
+      "intent": "q_PepeQnA",
+      "entities": []
+    },
+    {
+      "text": "who is the target audience for the qna maker tool",
+      "intent": "q_PepeQnA",
+      "entities": []
+    },
+    {
+      "text": "agregar una lista a una página en sharepoint server 2016 o sharepoint server 2013",
+      "intent": "q_PepeQnA",
+      "entities": []
+    },
+    {
+      "text": "my urls have valid faq content, but the tool cannot extract them. why not",
+      "intent": "q_PepeQnA",
+      "entities": []
+    },
+    {
+      "text": "crear una lista en una página de sharepoint server 2010",
+      "intent": "q_PepeQnA",
+      "entities": []
+    },
+    {
+      "text": "crear una lista en sharepoint server 2010",
+      "intent": "q_PepeQnA",
+      "entities": []
+    },
+    {
+      "text": "crear una lista personalizada en sharepoint server 2010",
+      "intent": "q_PepeQnA",
+      "entities": []
+    },
+    {
       "text": "how do i log in to the qna maker portal",
       "intent": "q_PepeQnA",
       "entities": []
     },
     {
-      "text": "quiero ver mi foto de perfil",
-      "intent": "None",
+      "text": "what format does the tool expect the file content to be",
+      "intent": "q_PepeQnA",
       "entities": []
     },
     {
-      "text": "leer items de lista",
-      "intent": "None",
+      "text": "¿quiere hacer lo mismo con las bibliotecas",
+      "intent": "q_PepeQnA",
       "entities": []
     },
     {
-      "text": "eliminar item de lista",
-      "intent": "None",
+      "text": "edición en masa de propiedades de elemento de lista",
+      "intent": "q_QnALS",
       "entities": []
     },
     {
-      "text": "leer foto de perfil",
-      "intent": "None",
+      "text": "multiplicar números - fórmulas matemáticas",
+      "intent": "q_QnALS",
       "entities": []
     },
     {
-      "text": "leer correo",
-      "intent": "None",
+      "text": "restaurar elementos eliminados de la papelera de reciclaje de la colección de sitios",
+      "intent": "q_QnALS",
       "entities": []
     },
     {
-      "text": "eliminar documento de biblioteca",
-      "intent": "None",
+      "text": "ejemplo 1: aumentar o disminuir un número según un porcentaje",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear etiquetas para sitios de origen y destino",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "editar uno o varios elementos y agregar datos adjuntos",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "una vez que se ejecuta el flujo de trabajo (revisar, informar, cambiar)",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "nueva duración - finalizar una tarea de flujo de trabajo de aprobación - todo sobre los flujos de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "obtener un vínculo a un archivo o carpeta que se pueda copiar",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar un vínculo al menú superior en un sitio de comunicación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar fechas - fórmulas de fecha y hora",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar una nueva fase - iniciar un flujo de trabajo de aprobación - todo sobre los flujos de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar usuarios a una lista o biblioteca en sharepoint 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "en la columna apariencia , haga clic en barra de vínculos superior.",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar un sitio a la zona sitios de confianza",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "solicitar cambio - finalizar una tarea de flujo de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "habilitar aprobación de contenido - controlar la aprobación de contenido con un flujo de trabajo de aprobación - todo sobre los flujos de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "calcular el número menor o mayor en un rango",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "copiar un archivo a un destino especificado en sharepoint server 2010 o sharepoint server 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "para sharepoint server o sharepoint foundation",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "editar vínculos en sharepoint server 2016 o sharepoint server 2013",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "completar tareas de flujo",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "haga lo siguiente:",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "tres estados (realizar un seguimiento de un problema, proyecto o tarea a través de tres estados o fases)",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "ejemplo 5: calcular la diferencia entre dos números y mostrarla como porcentaje",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "¿quién puede agregar e iniciar un flujo de trabajo de sharepoint",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "ejemplos de fórmulas comunes en listas de sharepoint",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "fórmulas matemáticas - ejemplos de fórmulas comunes en listas de sharepoint",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "configuración regional - cambiar la configuración regional de un sitio",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "mostrar u ocultar los subsitios y las páginas en la barra de vínculos superior",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "cambiar la configuración regional de un sitio",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "cambiar la configuración de una copia para que le pregunten las actualizaciones en sharepoint server 2016 o sharepoint server 2013",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "quitar permisos de usuario de una lista o biblioteca en sharepoint 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar un elemento web",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "comprobar si un valor de la columna o una parte del mismo coincide con un texto específico",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "¿qué es un flujo de trabajo de sharepoint",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "conceder acceso al sitio a un grupogrant site access to a group",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "pasos en el uso de flujos de trabajo",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar más tipos de columnas en sharepoint online o sharepoint server 2019",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "profundizar para obtener más detalles",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "barra de vínculos superior",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "activar la publicación en la colección de sitios",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "quitar un vínculo del menú",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "moverse",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "¿qué son los flujos de trabajo",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "inicio manual de un flujo de trabajo en un documento o elemento",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "restaurar un elemento de la página de la papelera de reciclaje de la colección de sitios de sharepoint server 2013",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar, editar o quitar un vínculo de la barra de vínculos superior",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear una columna de sitio en sharepoint server 2010",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "opciones de inicio - controlar la aprobación de contenido con un flujo de trabajo de aprobación - todo sobre los flujos de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "asignar a - controlar la aprobación de contenido con un flujo de trabajo de aprobación - todo sobre los flujos de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "algunas características de la vista",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "navegación del sitio de experiencia sharepoint clásica",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "para mostrar esto",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "recopilar comentarios (redirigir un documento o elemento para comentarios)",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear etiquetas de variantes de destino",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "usar el comando enviar a en sharepoint server 2010 o sharepoint server 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar un flujo de trabajo a una lista, biblioteca o tipo de contenido",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "convertir horas - fórmulas de fecha y hora",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "¿le ha sido útil esta información",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "fecha de vencimiento de todas las tareas, duración por tarea, unidades de duración",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "restaurar la biblioteca",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "fórmulas condicionales - ejemplos de fórmulas comunes en listas de sharepoint",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "configurar las opciones de variantes",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "consultar las noticias",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "combinar nombres y apellidos",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "usar columnas para organizar la información",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar una columna de sitio existente a una sharepoint server 2016, o sharepoint server 2013 lista o biblioteca",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "descripción (resultado posible) - fórmulas de fecha y hora",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "cambiar entre mayúsculas y minúsculas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "eliminar una columna de una lista o biblioteca de sharepoint 2016 o 2013",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "sugerencia: - planear un nuevo flujo de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "personalizaciones - características que hacen que la nueva experiencia cambie automáticamente a la experiencia clásica",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "¿dónde puedo obtener más información",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "más información sobre las barras de navegación y la navegación del sitio",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "conceder acceso a grupos o individuos en sharepoint 2010",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "ver los datos de uso de su sitio de sharepoint",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "eliminar los espacios del principio y el final de una columna",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "fórmulas de texto",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "eliminar una columna de sitio de sharepoint 2016 o 2013",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar texto y tablas a la página con el elemento web de texto",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "para una encuesta - ver la página de permisos en sharepoint 2010",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "calcular la diferencia entre dos horas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "usar el elemento web biblioteca de documentos",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar un vínculo al menú de la izquierda en un sitio de grupo",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "comparar el contenido de las columnas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "especificar qué destinos deberían recibir actualizaciones de listas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "desvincular una copia de su origen y eliminarla en sharepoint server 2016 o sharepoint server 2013",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "diferencias entre las experiencias nuevas y clásicas de las listas y bibliotecas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "restaurar elementos de las papeleras de reciclaje del sitio de sharepoint online y sharepoint server",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "especificar qué destinos deberían recibir actualizaciones",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "determinar cómo se despliegan las páginas en los sitios",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "¿cuáles son los límites de tamaño de archivo actuales para los libros",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "establecer la alineación de tabla",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "descripción (resultado posible) - fórmulas condicionales - ejemplos de fórmulas comunes en listas de sharepoint",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar una columna de sitio a una sharepoint server 2010 lista o biblioteca",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar una lista a una página",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "finalizar una tarea de flujo de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "combinar texto con una fecha u hora",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "control de publicación de versiones principales",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "compartir un archivo o carpeta",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "restaurar una biblioteca de documentos",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear un sitio web multilingüe",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "mover un subvínculo hasta un vínculo principal en el menú",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar una página",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "contar valores - fórmulas matemáticas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "mostrar los subsitios en menús desplegables en la barra de vínculos superior",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "estado de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar o eliminar una columna de una lista",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "copiar un archivo a una biblioteca diferente en sharepoint server 2016 o sharepoint server 2013",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar usuarios a un grupoadd users to a group",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "¿cómo puedo agregar y ejecutar un flujo de trabajo de sharepoint",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "abrir un documento desde una biblioteca de documentos",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "calcular el promedio de números",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar un vínculo arrastrando una aplicación desde contenidos del sitio hasta el inicio rápido o la barra de vínculos superior",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "configurar la herencia para la barra de vínculos superior en un sitio de no publicación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "fechas de vencimiento y duración de las tareas - iniciar un flujo de trabajo de aprobación - todo sobre los flujos de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar una nueva fase - controlar la aprobación de contenido con un flujo de trabajo de aprobación - todo sobre los flujos de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "para una encuesta - ver la página de permisos en el servidor de sharepoint online, 2019, 2016 o 2013",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "ver cambios del origen",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar una biblioteca de documentos a una página - usar el elemento web biblioteca de documentos",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "ocultar valores de error en columnas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "revisar los resultados del flujo de trabajo de aprobación y crear informes",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "elevar un número a una potencia",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "cambiar la configuración de una columna en una sharepoint server 2010 lista o biblioteca",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "editar asignaciones de permisos en niveles de permisos de una carpeta, documento o elemento de una lista en sharepoint 2010",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar, editar o quitar vínculos de la barra de vínculos superior de un sitio de no publicación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "tengo otra pregunta",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "descripción (resultado) - fórmulas de texto - ejemplos de fórmulas comunes en listas de sharepoint",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "desvincular y eliminar una copia en sharepoint server 2010 o sharepoint server 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "descripción (resultado posible) - fórmulas de texto - ejemplos de fórmulas comunes en listas de sharepoint",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "características que hacen que la nueva experiencia cambie automáticamente a la experiencia clásica",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "¿cuánto tiempo se conservan los elementos eliminados en la papelera de reciclaje? - restaurar elementos eliminados de la papelera de reciclaje de la colección de sitios",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "buscar campos en blanco",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar o modificar vínculos o etiquetas en un pie de página del sitio",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar nuevos elementos",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "ordenar, filtrar y agrupar la lista en el elemento web",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "iniciar un flujo de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "quitar el requisito de aprobación de una lista o biblioteca de sitio",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "especificar que los elementos o archivos de una lista o biblioteca requieren aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "ruta de navegación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "eliminar uno o varios elementos de una lista",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear una lista basada en una hoja de cálculo en sharepoint online, 2016 y 2013",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "¿tiene los permisos necesarios para configurar la navegación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "antes de que se ejecute el flujo de trabajo (planear, agregar, iniciar)",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "cambiar manualmente el orden de los vínculos en la barra de vínculos superior de un sitio de publicación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "para quitar el requisito de aprobación de los elementos o archivos de una lista o biblioteca:",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "eliminar un grupodelete a group",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "actualizar copias desde el archivo de origen",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "limitaciones y solución de problemas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "duración por tarea, unidades de duración",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "asistencia técnica para flujos de trabajo personalizados",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "interrumpir la herencia de permisos en una carpeta, documento o elemento de una lista en sharepoint 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar un nuevo sitio de variantes a una jerarquía de sitios existente",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "creación y publicación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "quitar permisos de usuario en sharepoint online, 2019, 2016 o 2013 server",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "especificar que los elementos de una biblioteca requieren aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "visores más únicos",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear subvínculos en el menú",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "restaurar un elemento de la papelera de reciclaje de la colección de sitios de sharepoint online",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar datos adjuntos a un elemento existente",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "uno. - copiar un archivo a un destino especificado en sharepoint server 2010 o sharepoint server 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "para qué usar powerapps",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "restaurar una colección de sitios completa - restaurar elementos eliminados de la papelera de reciclaje de la colección de sitios",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "mostrar las fechas con el día de la semana",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "eliminar una columna de sitio de sharepoint online",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "insertar fechas julianas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "cambiar, deshabilitar o eliminar un flujo de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "aceptar cambios del origen",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "interrumpir la herencia de permisos en una lista o biblioteca en sharepoint 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "conectarse directamente al sitio de sharepoint de su organización",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "restaurar la herencia para eliminar todos los permisos únicos en los servidores de sharepoint online, 2019, 2016 o 2013",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "terminología - crear un sitio web multilingüe",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "cambiar la configuración regional de un sitio. - cambiar la configuración regional de un sitio",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "sugerencia: - crear una lista a partir de una plantilla de lista en sharepoint server 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "restaurar un elemento de servidores de sharepoint 2019 y de la página de la papelera de reciclaje de la colección de sitios de 2016",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "cambiar la configuración de una columna en sharepoint server 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear una jerarquía de sitios de variantes",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "uno. - copiar un archivo a una biblioteca diferente en sharepoint server 2016 o sharepoint server 2013",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "insertar una tabla",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "quitar grupos o usuarios que no desea en sharepoint 2010",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "visitas al sitio",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "¿agregar este flujo de trabajo a tipos de contenido secundarios",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "volver a configurar una lista o biblioteca para heredar permisos en sharepoint 2010",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear la jerarquía",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "cambiar el orden de los vínculos de menú",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "comprobar estados en el registro de variantes",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear un nuevo grupo de sharepoint a partir de una lista o biblioteca en sharepoint 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "buscar algo - descubrir en sharepoint online",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "mientras se ejecuta el flujo de trabajo (completar, supervisar, ajustar)",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar una columna de sitio existente a una lista de sharepoint online o sharepoint server 2019 o biblioteca",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "algunos tipos de columnas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "descripción (resultado) - fórmulas de fecha y hora - ejemplos de fórmulas comunes en listas de sharepoint",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "algunas nociones básicas sobre cómo restaurar desde la papelera de reciclaje",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "controlar la aprobación de contenido con un flujo de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "devolver un valor lógico después de comparar el contenido de las columnas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "¿qué procesos puedo automatizar con un flujo de trabajo de sharepoint",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "opciones de cinta del sitio de origen",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "finalización del flujo de trabajo - controlar la aprobación de contenido con un flujo de trabajo de aprobación - todo sobre los flujos de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "quitar usuarios de un gruporemove users from a group",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "heredar permisos de una lista o biblioteca en sharepoint 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "asignar permisos únicos en el servidor de sharepoint online, 2019, 2016 o 2013",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "reasignar tarea - finalizar una tarea de flujo de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "su opinión nos importa.",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "comprobar si un número es mayor o menor que otro",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar una columna a una lista de sharepoint online o sharepoint server 2019 o biblioteca",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "configurar la herencia para la barra de vínculos superior",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "acerca de los flujos de trabajo que se incluyen con sharepoint",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar varios elementos en la vista de edición rápida",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear un grupocreate a group",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear un sitio",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "sugerencia: - especificar que los elementos de una biblioteca requieren aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "modificar el nombre para mostrar o la dirección de un vínculo de menú",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "sugerencia: - especificar que los elementos de una lista requieren aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "más vistos - contenido de la página uso del sitio",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "ver usuarios y grupos de sharepoint 2007 asociados a una carpeta, documento o elemento de una lista",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "sugerencias de uso de este artículo",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "descargar, cambiar el nombre, eliminar y anclar al principio",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "para sharepoint online",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "plantilla - controlar la aprobación de contenido con un flujo de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "quitar permisos de usuario de una carpeta, documento o elemento de una lista en sharepoint 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "calcular la mediana de números",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "configurar la herencia para la barra de vínculos superior en un sitio de publicación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "insertar un hipervínculo",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "restaurar un sitio eliminado - restaurar elementos eliminados de la papelera de reciclaje de la colección de sitios",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar, editar o quitar vínculos de la barra de vínculos superior de un sitio de publicación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "unidades de nueva duración - finalizar una tarea de flujo de trabajo de aprobación - todo sobre los flujos de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "rechazar - finalizar una tarea de flujo de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "acerca de los permisos únicos para elementos individuales - ver la página de permisos en sharepoint 2010",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "aprobación (redirigir un documento o elemento para que se apruebe o rechace)",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "visores únicos - contenido de la página uso del sitio",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "personalizado - crear una lista a partir de una plantilla de lista en sharepoint server 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "supervisar, ajustar o detener un flujo de trabajo de aprobación en ejecución",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "definición - terminología",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "para una lista o biblioteca - ver la página de permisos en el servidor de sharepoint online, 2019, 2016 o 2013",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear una columna en una lista o una biblioteca de sharepoint",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "calcular la diferencia entre dos fechas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "seguimiento del estado de los flujos de trabajo",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "buscar su sitio",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "ordenar, filtrar o agrupar elementos dentro del elemento web de biblioteca de documentos",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "editar asignaciones de permisos en niveles de permisos de una lista o biblioteca en sharepoint 2010",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear una columna de sitio en sharepoint server 2016 o sharepoint server 2013",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear una lista basada en una hoja de cálculo en sharepoint 2010 o sharepoint 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "heredar permisos de una carpeta, documento o elemento de una lista en sharepoint 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "cambiar el orden de los vínculos en la barra de vínculos superior de un sitio de no publicación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "repetir un carácter en una columna",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "nueva solicitud - finalizar una tarea de flujo de trabajo de aprobación - todo sobre los flujos de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "iniciar sesión en sharepoint online",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "aprobación de publicación (enrutamiento de contenido para su revisión y aprobación automatizado)",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "variantes de listas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "usar la función de arrastrar y colocar para cambiar el orden de los vínculos",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "recopilar firmas (redirigir un documento, libro o formulario para firmas digitales)",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar usuarios a una carpeta, documento o elemento de una lista en sharepoint 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "aprobar un documento o elemento de una lista",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "ordenar automáticamente los elementos de la barra de vínculos superior en un sitio de publicación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "mostrar ceros como espacios en blanco o guiones",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "asignar a - iniciar un flujo de trabajo de aprobación - todo sobre los flujos de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "compartir un documento",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "esta tarea del flujo de trabajo se aplica a                                           título del elemento",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "permisos - características que hacen que la nueva experiencia cambie automáticamente a la experiencia clásica",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "flujos de trabajo integrados",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar un vínculo escribiendo la dirección url en la barra de inicio rápido o en la barra de vínculos superior",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "¿la publicación está habilitada para su sitio",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "editar varios elementos a la vez",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "combinar texto y números de distintas columnas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "seleccionar un estilo de tabla",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "inicio rápido - más información sobre las barras de navegación y la navegación del sitio",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "planear un nuevo flujo de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "cambiar los niveles de permisos en un servidor de sharepoint online, 2019, 2016 o 2013",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "quitar caracteres de un texto",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar un vínculo o una etiqueta al menú superior de un sitio de comunicación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear una lista basada en una hoja de cálculo",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "trabajar desde cualquier lugar",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar una lista o biblioteca de documentos",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "no puedo eliminar una columna que creé",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "compartido con usuarios externos",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "acerca de los permisos únicos para elementos individuales - ver la página de permisos en el servidor de sharepoint online, 2019, 2016 o 2013",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "restar números - fórmulas matemáticas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "editar un solo elemento en una vista de lista",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "cómo funcionan los sitios de variantes",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "restaurar elementos eliminados de la papelera de reciclaje",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "participantes, orden, expandir grupos",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "las barras de herramientas de la cinta",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "¿qué es powerapps",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "requerir la aprobación de elementos en una lista o biblioteca de sitio",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "más información sobre los flujos de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "activar o desactivar el menú de la izquierda en un sitio de grupo de sharepoint online",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "para agregar un vínculo en una biblioteca de documentos",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear una columna en una sharepoint server 2010 lista o biblioteca",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "insertar y eliminar filas y columnas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "expandir grupos - controlar la aprobación de contenido con un flujo de trabajo de aprobación - todo sobre los flujos de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "sincronizar archivos con su pc",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "actualización de copias de un archivo en sharepoint server 2010 o sharepoint server 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "dividir números - fórmulas matemáticas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "ver documentos en una lista o en mosaico",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "eliminar una columna de una lista o biblioteca de sharepoint 2010",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear una columna en una lista de sharepoint server 2013 o sharepoint server 2016 o biblioteca",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "editar varios elementos en la vista de edición rápida",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "fórmulas de fecha y hora",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "descripción (resultado) - fórmulas matemáticas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "trabajar con otras personas en el mismo documento y al mismo tiempo",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "asignar un nuevo nivel de permisos a un grupoassign a new permission level to a group",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "descripción - opciones de cinta del sitio de origen",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "explicación - opciones de cinta del sitio de destino",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "para configurar la aprobación que los elementos o archivos requieren:",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "modificar un flujo de trabajo en curso",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "contar columnas no vacías",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "todo sobre los flujos de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "interrumpir la herencia de permisos en un servidor de sharepoint online, 2019, 2016 o 2013",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "interrumpir la herencia del elemento primario en sharepoint 2010",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "redondear un número",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "especificar que los elementos de una lista requieren aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear una columna de sitio en sharepoint online o sharepoint server 2019",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear el sitio de variantes de origen",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "¿qué sucede si el tamaño de archivo del libro es demasiado grande",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "restaurar elementos de un sitio de sharepoint en la papelera de reciclaje",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "¿puedo crear flujos de trabajo de sharepoint personalizados",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "fechas de vencimiento y duración de las tareas - controlar la aprobación de contenido con un flujo de trabajo de aprobación - todo sobre los flujos de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "nos deja un comentario",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "estado, solicitado por, comentarios consolidados, vencimiento",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "algunos tipos de personalizaciones",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "eliminar una columna de sitio de sharepoint 2010",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "mostrar los subsitios o heredar la navegación de sitio principal (disponible para los sitios con características de publicación)",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "otros recursos",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "permisos - ver los datos de uso de su sitio de sharepoint",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar un vínculo a la barra de navegación del sitio concentrador",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "cambiar el orden de los vínculos en la barra de vínculos superior",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "expandir grupos - iniciar un flujo de trabajo de aprobación - todo sobre los flujos de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "opciones de cinta del sitio de destino",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "¿qué es la interfaz de usuario de un sitio",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "eliminar una columna de una lista o biblioteca en línea de sharepoint",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "agregar nuevo o cargar documentos",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "sugerencia: - crear una lista personalizada en sharepoint server 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "ver usuarios y grupos de sharepoint 2007 asociados a una lista o biblioteca",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "cambiar el nombre de un vínculo o quitarlo de la barra de inicio rápido o de la barra de vínculos superior",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "para una lista o biblioteca - ver la página de permisos en sharepoint 2010",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "¿cómo funciona powerapps",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "las dos plataformas de flujo de trabajo de sharepoint",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "algunas características de navegación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "actualice las copias de la página manage copies en sharepoint server 2016 o sharepoint server 2013",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "copiar un archivo a un destino predefinido en sharepoint server 2010 o sharepoint server 2007",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "copiar",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "personalizar permisos del sitio de sharepointcustomize sharepoint site permissions",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "lista de tareas - controlar la aprobación de contenido con un flujo de trabajo de aprobación - todo sobre los flujos de trabajo de aprobación",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "algunas otras características",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "actualizar todos los destinos",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "sumar números - fórmulas matemáticas",
+      "intent": "q_QnALS",
+      "entities": []
+    },
+    {
+      "text": "crear un nuevo grupo de sharepoint 2007 a partir de una carpeta, documento o elemento de una lista",
+      "intent": "q_QnALS",
       "entities": []
     },
     {
@@ -191,7 +2117,12 @@
       "entities": []
     },
     {
-      "text": "enviar documento por correo",
+      "text": "dim kitchen lights to 25 .",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "quiero ver mi foto de perfil",
       "intent": "None",
       "entities": []
     },
@@ -201,7 +2132,42 @@
       "entities": []
     },
     {
-      "text": "eliminar grupo de sharepoint",
+      "text": "lower your volume",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "eliminar sitio de sharepoint",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "enviar documento por correo",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "leer correo",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "decrease temperature for me please",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "leer items de lista",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "turn on the internet in my bedroom please",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "eliminar item de lista",
       "intent": "None",
       "entities": []
     },
@@ -211,7 +2177,17 @@
       "entities": []
     },
     {
-      "text": "eliminar sitio de sharepoint",
+      "text": "leer foto de perfil",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "eliminar grupo de sharepoint",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "eliminar documento de biblioteca",
       "intent": "None",
       "entities": []
     }

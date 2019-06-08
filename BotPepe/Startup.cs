@@ -11,12 +11,9 @@ using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.AI.Luis;
 using Microsoft.Bot.Builder.AI.QnA;
 using Microsoft.Bot.Builder.Azure;
-using Microsoft.Bot.Builder.BotFramework;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Integration;
 using Microsoft.Bot.Builder.Integration.AspNet.Core;
-using Microsoft.Bot.Builder.Teams.Middlewares;
-using Microsoft.Bot.Builder.Teams.StateStorage;
 using Microsoft.Bot.Configuration;
 using Microsoft.Bot.Connector.Authentication;
 using Microsoft.Extensions.Configuration;
@@ -97,7 +94,28 @@ namespace BotPepe
                 throw new InvalidOperationException($"The .bot file does not contain an endpoint with name '{environment}'.");
             }
 
+            var connectedServices = InitBotServices(botConfig);
 
+            services.AddSingleton(sp => connectedServices);
+
+            services.AddBot<BotPepe>(options =>
+            {
+
+                options.CredentialProvider = new SimpleCredentialProvider(endpointService.AppId, endpointService.AppPassword);
+
+                // Creates a logger for the application to use.
+                ILogger logger = _loggerFactory.CreateLogger<BotPepe>();
+
+                // Catches any errors that occur during a conversation turn and logs them.
+                options.OnTurnError = async (context, exception) =>
+                {
+
+                    logger.LogError($"Exception caught : {exception}");
+                    await context.SendActivityAsync("Sorry 😞, it looks like something went wrong. " + exception.Message);
+                    throw new InvalidOperationException(exception.Message);
+                };
+
+            });
             // For production bots use the Azure Blob or
             // Azure CosmosDB storage providers. For the Azure
             // based storage providers, add the Microsoft.Bot.Builder.Azure
@@ -116,58 +134,15 @@ namespace BotPepe
             var storageContainer = string.IsNullOrWhiteSpace(blobStorageConfig.Container) ? DefaultBotContainer : blobStorageConfig.Container;
             IStorage storage = new Microsoft.Bot.Builder.Azure.AzureBlobStorage(blobStorageConfig.ConnectionString, storageContainer);
 
-            var connectedServices = InitBotServices(botConfig);
-
-            services.AddSingleton(sp => connectedServices);
-
-            services.AddBot<BotPepe>(options =>
-            {
-                options.State.Add(new TeamSpecificConversationState(storage));
-                options.Middleware.Add(new TeamsMiddleware(new ConfigurationCredentialProvider(this.Configuration)));
-                options.Middleware.Add(new DropNonTeamsActivitiesMiddleware());
-                options.Middleware.Add(new DropChatActivitiesMiddleware());
-
-                options.CredentialProvider = new SimpleCredentialProvider(endpointService.AppId, endpointService.AppPassword);
-
-                // Creates a logger for the application to use.
-                ILogger logger = _loggerFactory.CreateLogger<BotPepe>();
-
-                // Catches any errors that occur during a conversation turn and logs them.
-                options.OnTurnError = async (context, exception) =>
-                {
-
-                    logger.LogError($"Exception caught : {exception}");
-                    await context.SendActivityAsync("Sorry 😞, it looks like something went wrong. " + exception.Message);
-                    throw new InvalidOperationException(exception.Message);
-                };
-
-            });
-            
-
             // Create conversation and user state with in-memory storage provider.
             //IStorage storage = new MemoryStorage();
-            //ConversationState conversationState = new ConversationState(storage);
+            ConversationState conversationState = new ConversationState(storage);
             UserState userState = new UserState(storage);
-
-
-            
 
             // Create and register state accesssors.
             // Acessors created here are passed into the IBot-derived class on every turn.
             services.AddSingleton<BotAccessors>(sp =>
             {
-                var options = sp.GetRequiredService<IOptions<BotFrameworkOptions>>().Value;
-                if (options == null)
-                {
-                    throw new InvalidOperationException("BotFrameworkOptions must be configured prior to setting up the state accessors");
-                }
-                TeamSpecificConversationState conversationState = options.State.OfType<TeamSpecificConversationState>().FirstOrDefault();
-                if (conversationState == null)
-                {
-                    throw new InvalidOperationException("ConversationState must be defined and added before adding conversation-scoped state accessors.");
-                }
-                
-
                 // Create the custom state accessor.
                 // State accessors enable other components to read and write individual properties of state.
                 var accessors = new BotAccessors(conversationState, userState)
@@ -182,6 +157,8 @@ namespace BotPepe
 
                 return accessors;
             });
+
+            services.AddMvc();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -190,6 +167,7 @@ namespace BotPepe
 
             app.UseDefaultFiles()
                 .UseStaticFiles()
+                .UseMvc()
                 .UseBotFramework();
         }
 

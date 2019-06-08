@@ -19,6 +19,8 @@ using Microsoft.Bot.Schema.Teams;
 using Microsoft.Extensions.Logging;
 using BotPepe.Controller;
 using Microsoft.Bot.Builder.Teams;
+using System.Net.Http;
+using Microsoft.IdentityModel.Clients.ActiveDirectory;
 
 namespace BotPepe
 {
@@ -83,6 +85,10 @@ namespace BotPepe
             {
                 throw new System.ArgumentException($"Invalid configuration. Please check your '.bot' file for a QnA service named PepeQnA'. holamundo " + botServices.QnAServices);
             }
+            if (!botServices.QnAServices.ContainsKey("QnALS"))
+            {
+                throw new System.ArgumentException($"Invalid configuration. Please check your '.bot' file for a QnA service named PepeQnA'. holamundo " + botServices.QnAServices);
+            }
 
             if (!botServices.LuisServices.ContainsKey("PepeLuis"))
             {
@@ -123,13 +129,16 @@ namespace BotPepe
             DialogContext dc = null;
             ITeamsContext teamsContext = turnContext.TurnState.Get<ITeamsContext>();
 
-            
+            var asdd = turnContext.Activity.ChannelData;
+
             if (teamsContext != null)
             {
                 // Now fetch the Team ID, Channel ID, and Tenant ID off of the incoming activity
                 var incomingTeamId = teamsContext.Team.Id;
                 var incomingChannelid = teamsContext.Channel.Id;
                 var incomingTenantId = teamsContext.Tenant.Id;
+
+                SigninStateVerificationQuery asd = teamsContext.GetSigninStateVerificationQueryData();
 
                 // Make an operation call to fetch the list of channels in the team, and print count of channels.
                 var channels = await teamsContext.Operations.FetchChannelListAsync(incomingTeamId, cancellationToken: cancellationToken);
@@ -139,7 +148,7 @@ namespace BotPepe
                 var teamInfo = await teamsContext.Operations.FetchTeamDetailsAsync(incomingTeamId);
                 await turnContext.SendActivityAsync($"Name of this team is {teamInfo.Name} and group-id is {teamInfo.AadGroupId}");
             }
-            
+
 
 
             if (turnContext.Activity.Type == ActivityTypes.Message)
@@ -150,10 +159,18 @@ namespace BotPepe
                 Usuario userProfile =
                     await _accessors.UserProfile.GetAsync(turnContext, () => new Usuario());
 
+                if (userProfile.EsperaRespuestaQNA || turnContext.Activity.Text.ToLower() == "ayuda")
+                {
+                    var recognizerResult = await botServices.LuisServices["DispatchPepe"].RecognizeAsync(turnContext, cancellationToken);
+                    var topIntent = recognizerResult?.GetTopScoringIntent();
+                    await DispatchToTopIntentAsync(turnContext, dc, topIntent, cancellationToken);
+                }
                 // Continue any current dialog.
                 DialogTurnResult dialogTurnResult = await dc.ContinueDialogAsync();
 
-                if (dialogTurnResult.Status == DialogTurnStatus.Empty || dialogTurnResult.Status == DialogTurnStatus.Complete)
+                
+
+                if (dialogTurnResult.Status == DialogTurnStatus.Empty)
                 //if (dialogTurnResult.Result is null)
                 {
                     // Get the intent recognition result
@@ -168,6 +185,9 @@ namespace BotPepe
                     {
                         await DispatchToTopIntentAsync(turnContext, dc, topIntent, cancellationToken);
                     }
+                }else if (dialogTurnResult.Status == DialogTurnStatus.Complete)
+                {
+                    await dc.BeginDialogAsync("SendWelcomeMessage", cancellationToken);
                 }
                 //COMBINAR CON ESTO
                 //
@@ -271,6 +291,7 @@ namespace BotPepe
             const string luisO365DispatchKey = "l_Office365Luis";
             const string noneDispatchKey = "None";
             const string qnaDispatchKey = "q_PepeQnA";
+            const string qnaLSDispatchKey = "q_QnALS";
 
             //var dc = await _dialogs.CreateContextAsync(context, cancellationToken);
 
@@ -299,7 +320,8 @@ namespace BotPepe
             else if (context.Activity.Text.ToLowerInvariant() == "ayuda")
             {
                 //await OAuthHelpers.ListMeAsync(context, cancellationToken);
-                await SendWelcomeMessageAsync(context, cancellationToken, false);
+                //await SendWelcomeMessageAsync(context, cancellationToken, false);
+                await dc.BeginDialogAsync("SendWelcomeMessage");
             }
             else
             {
@@ -312,6 +334,9 @@ namespace BotPepe
                     // In this example we fall through to the QnA intent.
                     case qnaDispatchKey:
                         await DispatchToQnAMakerAsync(context, "PepeQnA", dc);
+                        break;
+                    case qnaLSDispatchKey:
+                        await DispatchToQnAMakerAsync(context, "QnALS", dc);
                         break;
                     case luisO365DispatchKey:
                         await DispatchToLuisO365ModelAsync(context, "Office365Luis", dc);
@@ -449,34 +474,46 @@ namespace BotPepe
                     if (member.Id != turnContext.Activity.Recipient.Id)
                     {
 
-                        var reply = turnContext.Activity.CreateReply();
-                        reply.Text = WelcomeText;
-                        reply.Attachments = new List<Attachment> { CreateHeroCard(member.Id, saludar).ToAttachment() };
-                        reply.SuggestedActions = new SuggestedActions()
-                        {
-                            Actions = new List<CardAction>()
-                        {
-
-
-
-                            new CardAction(){ Title = "Consulta Office 365", Type=ActionTypes.ImBack, Value="Consulta Office 365" },
-
-                            /*new CardAction(){ Title = "VER ÚLTIMOS CORREOS", Type=ActionTypes.ImBack, Value="Ver últimos correos" },
-                            
-                            new CardAction(){ Title = "CONSULTAR ESTADO DE SERVICIO O365", Type=ActionTypes.ImBack, Value="Blue" },
-                            new CardAction(){ Title = "CHAT LIBRE CON BOT", Type=ActionTypes.ImBack, Value="Red" },
-                            new CardAction(){ Title = "PREGUNTA ACERCA DE SERVICIO", Type=ActionTypes.ImBack, Value="Green" },
-                            new CardAction(){ Title = "AYUDA", Type=ActionTypes.ImBack, Value="Ayuda" },*/
-                        }
-                        };
+                        var reply = ReplyWelcomeMessage(turnContext, member.Id, saludar);
                         await turnContext.SendActivityAsync(reply, cancellationToken);
 
                     }
                 }
+            }else if (!saludar)
+            {
+                var reply = ReplyWelcomeMessage(turnContext, "", saludar);
+                await turnContext.SendActivityAsync(reply, cancellationToken);
             }
 
 
         }
+
+        private static Activity ReplyWelcomeMessage(ITurnContext turnContext, string memberId, bool saludar)
+        {
+            Activity reply = turnContext.Activity.CreateReply();
+            reply.Text = WelcomeText;
+            reply.Attachments = new List<Attachment> { CreateHeroCard(memberId, saludar).ToAttachment() };
+            reply.SuggestedActions = new SuggestedActions()
+            {
+                Actions = new List<CardAction>()
+                {
+
+
+
+                    new CardAction(){ Title = "Consulta Office 365", Type=ActionTypes.ImBack, Value="Consulta Office 365" },
+
+                    /*new CardAction(){ Title = "VER ÚLTIMOS CORREOS", Type=ActionTypes.ImBack, Value="Ver últimos correos" },
+                            
+                    new CardAction(){ Title = "CONSULTAR ESTADO DE SERVICIO O365", Type=ActionTypes.ImBack, Value="Blue" },
+                    new CardAction(){ Title = "CHAT LIBRE CON BOT", Type=ActionTypes.ImBack, Value="Red" },
+                    new CardAction(){ Title = "PREGUNTA ACERCA DE SERVICIO", Type=ActionTypes.ImBack, Value="Green" },
+                    new CardAction(){ Title = "AYUDA", Type=ActionTypes.ImBack, Value="Ayuda" },*/
+                }
+            };
+
+            return reply;
+        }
+
         private async Task<DialogTurnResult> ConsultarTecnologiaAsync(WaterfallStepContext step, CancellationToken cancellationToken)
         {
             if (this.nuevaConversacion)
@@ -771,6 +808,28 @@ namespace BotPepe
             }
 
             return await step.EndDialogAsync(cancellationToken: cancellationToken);
+        }
+
+
+        public void LoginPorfa(string domainPorfa)
+        {
+            string clientId = "";
+            string clientsecret = "";
+            string tenant = domainPorfa + "yourdomain.onmicrosoft.com";
+
+            var authUri = "https://login.microsoftonline.com/" + tenant + "/oauth2/token";
+            var RESOURCE_URL = "https://outlook.office.com";
+
+            HttpClient client = new HttpClient();
+            var authContext = new AuthenticationContext(authUri);
+            var credential = new ClientCredential(clientId: clientId, clientSecret: clientsecret);
+            var result = authContext.AcquireTokenAsync(RESOURCE_URL, credential).Result;
+            client.DefaultRequestHeaders.Add("Authorization", "bearer " + result.AccessToken);
+
+
+            var response = client.GetAsync("https://outlook.office.com/api/v2.0/users/user1@" + domainPorfa + ".onmicrosoft/messages").Result;
+
+            Console.WriteLine(response.Content.ReadAsStringAsync().Result);
         }
     }
 }
