@@ -25,7 +25,7 @@
     <PackageReference Include="Google.Apis.Customsearch.v1" Version="1.39.0.1369" />
     <PackageReference Include="Google.Apis.Discovery.v1" Version="1.39.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.2.4" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.2.6" />
     <PackageReference Include="Microsoft.Bot.Builder" Version="4.4.4" />
     <PackageReference Include="Microsoft.Bot.Builder.AI.Luis" Version="4.4.4" />
     <PackageReference Include="Microsoft.Bot.Builder.AI.QnA" Version="4.4.4" />
